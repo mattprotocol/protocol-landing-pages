@@ -1,0 +1,64 @@
+name: CAMPAIGN_NAME
+slug: CAMPAIGN_NAME
+status: draft
+created: YYYY-MM-DD
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: longevity_audit
+  display_price: "$1,700"
+  anchor_price: null
+
+audience:
+  description: "TODO"
+  geo: []
+
+traffic_sources:
+  google_ads:
+    enabled: false
+    daily_budget: 0
+    bid_strategy: target_cpa
+    target_cpa: 0
+  meta_ads:
+    enabled: false
+    daily_budget: 0
+    objective: lead_generation
+
+cta:
+  type: discovery_call
+  url: https://protocol.us/book
+
+ghl:
+  tag: "source:CAMPAIGN_NAME"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 0
+  target_cvr: 0
+  test_budget_total: 0
+  test_duration_days: 14
+
+utm:
+  campaign: CAMPAIGN_NAME
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/CAMPAIGN_NAME"
+
+campaign_intent: test_new_angle
+
+experiments:
+  - id: "CAMPAIGN_NAME-v1"
+    hypothesis: "TODO"
+    variant: original
+    start_date: "YYYY-MM-DD"
+    status: active
+    result: null
+    change_notes: "Initial launch"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null

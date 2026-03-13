@@ -1,0 +1,24 @@
+{
+  "name": "protocol-landing-pages",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "new-campaign": "bash scripts/new-campaign.sh",
+    "build-registry": "node scripts/build-registry.mjs",
+    "health-check": "bash scripts/health-check.sh"
+  },
+  "dependencies": {
+    "@astrojs/vercel": "latest",
+    "@supabase/supabase-js": "latest",
+    "astro": "latest",
+    "gray-matter": "latest",
+    "marked": "latest",
+    "uuid": "latest",
+    "yaml": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

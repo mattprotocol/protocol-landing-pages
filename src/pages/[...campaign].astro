@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Benefits from '../components/Benefits.astro';
+import SocialProof from '../components/SocialProof.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABottom from '../components/CTABottom.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { loadCampaignContent, loadCampaignConfig } from '../lib/content-loader';
+
+const { campaign } = Astro.params;
+const content = loadCampaignContent(campaign as string);
+const config = loadCampaignConfig(campaign as string);
+
+if (!content || !config) {
+  return Astro.redirect('/');
+}
+
+const activeExperiment = config.experiments?.find(e => e.status === 'active');
+---
+
+<BaseLayout
+  title={content.hero.headline}
+  description={content.hero.subhead}
+  canonicalUrl={config.seo?.canonical || `https://landing.protocol.us/${config.slug}`}
+  noindex={config.seo?.index === true ? false : true}
+>
+  <Hero {...content.hero} />
+
+  {content.benefits && <Benefits {...content.benefits} />}
+
+  {content.bodyHtml && (
+    <section class="body-content">
+      <div class="body-inner" set:html={content.bodyHtml} />
+    </section>
+  )}
+
+  {content.social_proof && <SocialProof items={content.social_proof} />}
+
+  <LeadForm
+    campaignSlug={config.slug}
+    variantId={activeExperiment?.variant || 'v1'}
+    offerType={config.offer?.type || ''}
+    ctaLabel={content.hero.cta_label}
+  />
+
+  {content.faq && <FAQ items={content.faq} />}
+
+  {content.cta_bottom && <CTABottom {...content.cta_bottom} />}
+</BaseLayout>

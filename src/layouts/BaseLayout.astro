@@ -1,0 +1,60 @@
+---
+import Tracking from '../components/Tracking.astro';
+import UTMCapture from '../components/UTMCapture.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const { title, description, canonicalUrl, ogImage, noindex = true } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalUrl}>
+  {noindex ? (
+    <meta name="robots" content="noindex, nofollow">
+  ) : (
+    <meta name="robots" content="index, follow">
+  )}
+
+  <!-- OG Tags -->
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:type" content="website">
+  {ogImage && <meta property="og:image" content={ogImage}>}
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=saans@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/icon-dark.svg">
+
+  <!-- Tracking -->
+  <Tracking />
+</head>
+<body>
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <UTMCapture />
+</body>
+</html>

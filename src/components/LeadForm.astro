@@ -1,0 +1,147 @@
+---
+interface Props {
+  campaignSlug: string;
+  variantId?: string;
+  offerType?: string;
+  ctaLabel?: string;
+}
+
+const { campaignSlug, variantId = 'v1', offerType = '', ctaLabel = 'Get Started' } = Astro.props;
+const metaPixelId = import.meta.env.META_PIXEL_ID || '';
+const googleAdsId = import.meta.env.GOOGLE_ADS_ID || '';
+const googleAdsConversionLabel = import.meta.env.GOOGLE_ADS_CONVERSION_LABEL || '';
+---
+
+<section class="lead-form-section" id="lead-form">
+  <div class="lead-form-inner">
+    <h2>Book Your Discovery Call</h2>
+    <p>Tell us a bit about yourself and we'll be in touch within one business day.</p>
+    <form id="protocol-lead-form" class="lead-form" data-campaign={campaignSlug} data-variant={variantId} data-offer={offerType}>
+      <div class="form-fields">
+        <input type="text" name="name" placeholder="Full name" required autocomplete="name" class="form-input">
+        <input type="email" name="email" placeholder="Email address" required autocomplete="email" class="form-input">
+        <input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel" class="form-input">
+      </div>
+      <button type="submit" class="form-submit cta-btn" id="form-submit-btn">
+        {ctaLabel}
+      </button>
+      <div class="form-status" id="form-status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<script define:vars={{ campaignSlug, variantId, offerType, metaPixelId, googleAdsId, googleAdsConversionLabel }}>
+  function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+
+  const form = document.getElementById('protocol-lead-form');
+  const submitBtn = document.getElementById('form-submit-btn');
+  const statusEl = document.getElementById('form-status');
+
+  // Track form_start on first input focus
+  let formStarted = false;
+  form.querySelectorAll('input').forEach(input => {
+    input.addEventListener('focus', () => {
+      if (!formStarted) {
+        formStarted = true;
+        if (window.gtag) gtag('event', 'form_start', { campaign: campaignSlug });
+      }
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Dedup: prevent double-submit
+    const existingRequestId = sessionStorage.getItem(`submitted_${campaignSlug}`);
+    if (existingRequestId) {
+      statusEl.textContent = 'You have already submitted this form.';
+      statusEl.className = 'form-status info';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    const requestId = uuidv4();
+    const eventId = uuidv4(); // Shared between pixel + CAPI for dedup
+    const utmData = JSON.parse(sessionStorage.getItem('utm_data') || '{}');
+    const formData = new FormData(form);
+
+    const payload = {
+      request_id: requestId,
+      event_id: eventId,
+      campaign_slug: campaignSlug,
+      variant_id: variantId,
+      offer_type: offerType,
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone') || '',
+      page_url: window.location.href,
+      referrer: document.referrer,
+      ...utmData
+    };
+
+    // Fire gtag form_submit BEFORE the fetch call (fires regardless of network)
+    if (window.gtag) {
+      gtag('event', 'form_submit', {
+        campaign: campaignSlug,
+        variant: variantId
+      });
+    }
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        sessionStorage.setItem(`submitted_${campaignSlug}`, requestId);
+
+        statusEl.textContent = "Thank you! We'll be in touch within one business day.";
+        statusEl.className = 'form-status success';
+        form.querySelector('.form-fields').style.display = 'none';
+        submitBtn.style.display = 'none';
+
+        // GA4 lead event
+        if (window.gtag) {
+          gtag('event', 'generate_lead', {
+            campaign: campaignSlug,
+            variant: variantId,
+            value: 0,
+            currency: 'USD'
+          });
+        }
+
+        // Meta Pixel Lead (with event_id for CAPI dedup)
+        if (window.fbq && metaPixelId) {
+          fbq('track', 'Lead', {}, { eventID: eventId });
+        }
+
+        // Google Ads conversion
+        if (window.gtag && googleAdsId && googleAdsConversionLabel) {
+          gtag('event', 'conversion', {
+            send_to: `${googleAdsId}/${googleAdsConversionLabel}`,
+            event_callback: function() {}
+          });
+        }
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
+    } catch (err) {
+      statusEl.textContent = 'Something went wrong. Please try again.';
+      statusEl.className = 'form-status error';
+      submitBtn.disabled = false;
+      submitBtn.textContent = ctaLabel || 'Get Started';
+      console.error('Form submission error:', err);
+    }
+  });
+</script>

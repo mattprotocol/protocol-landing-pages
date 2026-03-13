@@ -1,0 +1,12 @@
+---
+interface Props {
+  label: string;
+  url: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+}
+
+const { label, url, variant = 'primary' } = Astro.props;
+const className = variant === 'primary' ? 'cta-btn' : `cta-btn ${variant}`;
+---
+
+<a href={url} class={className}>{label}</a>

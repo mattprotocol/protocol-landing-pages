@@ -1,0 +1,12 @@
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+  const utmData: Record<string, string> = {};
+  utmKeys.forEach(key => {
+    const val = params.get(key);
+    if (val) utmData[key] = val;
+  });
+  if (Object.keys(utmData).length > 0) {
+    sessionStorage.setItem('utm_data', JSON.stringify(utmData));
+  }
+</script>

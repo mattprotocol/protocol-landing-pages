@@ -1,0 +1,65 @@
+name: "The Longevity Audit"
+slug: sample-longevity-audit
+status: live
+created: 2026-03-12
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: longevity_audit
+  display_price: "$1,700"
+  anchor_price: null
+
+audience:
+  description: "Health-conscious professionals 35-55 seeking data-driven health optimization"
+  geo:
+    - Austin, TX
+
+traffic_sources:
+  google_ads:
+    enabled: true
+    daily_budget: 100
+    bid_strategy: target_cpa
+    target_cpa: 150
+  meta_ads:
+    enabled: true
+    daily_budget: 75
+    objective: lead_generation
+
+cta:
+  type: discovery_call
+  url: https://protocol.us/book
+
+ghl:
+  tag: "source:sample-longevity-audit"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 150
+  target_cvr: 5
+  test_budget_total: 2500
+  test_duration_days: 14
+
+utm:
+  campaign: longevity-audit
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/sample-longevity-audit"
+
+campaign_intent: validate_system
+
+experiments:
+  - id: "longevity-audit-v1"
+    hypothesis: "Direct audit offer at $1,700 converts health-conscious professionals searching longevity/biohacking terms"
+    variant: original
+    start_date: "2026-03-12"
+    status: active
+    result: null
+    change_notes: "Initial system validation campaign"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null

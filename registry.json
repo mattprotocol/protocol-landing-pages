@@ -1,0 +1,14 @@
+{
+  "campaigns": [
+    {
+      "slug": "sample-longevity-audit",
+      "name": "The Longevity Audit",
+      "status": "live",
+      "offer_type": "longevity_audit",
+      "template": "standard",
+      "created": "2026-03-12",
+      "url": "https://landing.protocol.us/sample-longevity-audit"
+    }
+  ],
+  "generated_at": "2026-03-13T01:20:20.438Z"
+}

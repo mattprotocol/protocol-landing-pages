@@ -1,0 +1,62 @@
+---
+interface SocialProofItem {
+  type: 'stat' | 'testimonial' | 'logo_bar';
+  value?: string;
+  label?: string;
+  quote?: string;
+  author?: string;
+  detail?: string;
+}
+
+interface Props {
+  items: SocialProofItem[];
+}
+
+const { items } = Astro.props;
+const stats = items.filter(i => i.type === 'stat');
+const testimonials = items.filter(i => i.type === 'testimonial');
+
+function initials(name?: string): string {
+  if (!name) return '?';
+  return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+}
+---
+
+<section class="social-proof-section">
+  <div class="section-tag" style="text-align: center;">Real members, real results</div>
+  <h2 style="text-align: center; margin-bottom: 40px;">Measured. Verified. Guaranteed.</h2>
+
+  {stats.length > 0 && (
+    <div class="stats-row">
+      {stats.map((stat) => (
+        <div class="stat-card">
+          <div class="stat-value">{stat.value}</div>
+          <div class="stat-label">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {testimonials.length > 0 && (
+    <div class="testimonials-grid">
+      {testimonials.map((t) => (
+        <div class="testimonial-card">
+          {t.value && (
+            <div class="testimonial-result">
+              <div class="testimonial-metric">{t.value}</div>
+              {t.label && <div class="testimonial-metric-label">{t.label}</div>}
+            </div>
+          )}
+          <div class="testimonial-quote">&ldquo;{t.quote}&rdquo;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">{initials(t.author)}</div>
+            <div>
+              <div class="testimonial-name">{t.author}</div>
+              {t.detail && <div class="testimonial-detail">{t.detail}</div>}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+</section>

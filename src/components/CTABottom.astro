@@ -1,0 +1,16 @@
+---
+interface Props {
+  headline: string;
+  body: string;
+  cta_label: string;
+  cta_url: string;
+}
+
+const { headline, body, cta_label, cta_url } = Astro.props;
+---
+
+<section class="cta-bottom-section dark-section">
+  <h2>{headline}</h2>
+  <p>{body}</p>
+  <a href={cta_url} class="cta-btn">{cta_label}</a>
+</section>

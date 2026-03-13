@@ -1,0 +1,17 @@
+---
+interface Props {
+  headline: string;
+  subhead: string;
+  cta_label: string;
+  cta_url: string;
+  background?: 'dark' | 'light' | 'image';
+}
+
+const { headline, subhead, cta_label, cta_url, background = 'dark' } = Astro.props;
+---
+
+<section class={`hero-section dark-section${background !== 'dark' ? ' hero-light' : ''}`}>
+  <h1>{headline}</h1>
+  <p class="hero-sub">{subhead}</p>
+  <a href={cta_url} class="cta-btn">{cta_label}</a>
+</section>
