@@ -5,35 +5,68 @@ interface FAQItem {
 }
 
 interface Props {
+  eyebrow?: string;
+  title?: string;
+  theme?: 'dark' | 'light';
   items: FAQItem[];
+  cta_label?: string;
+  cta_url?: string;
 }
 
-const { items } = Astro.props;
+const {
+  eyebrow = 'Common Questions',
+  title = 'Frequently asked questions',
+  theme = 'dark',
+  items,
+  cta_label,
+  cta_url
+} = Astro.props;
 ---
 
-<section class="faq-section">
-  <div class="section-tag" style="text-align: center;">Common questions</div>
-  <h2 style="text-align: center;">Frequently Asked Questions</h2>
-  <div class="faq-list">
-    {items.map((item) => (
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>{item.q}</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>{item.a}</p>
+<section class="faq-section" id="faq" data-theme={theme}>
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag center">{eyebrow}</div>
+      <h2 class="section-heading center">{title}</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      {items.map((item, i) => (
+        <div class={`card faq-item ${i === 0 ? 'open' : ''}`}>
+          <button class="faq-question" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+            <span>{item.q}</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>{item.a}</p>
+          </div>
         </div>
+      ))}
+    </div>
+
+    {cta_label && cta_url && (
+      <div class="reveal" style="text-align: center; margin-top: 48px;">
+        <a href={cta_url} class="cta-btn">{cta_label}</a>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px; font-family: var(--font-mono); letter-spacing: 0.04em;">15 min. Free. No obligation.</p>
       </div>
-    ))}
+    )}
   </div>
 </section>
 
 <script>
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      if (item) item.classList.toggle('open');
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 </script>

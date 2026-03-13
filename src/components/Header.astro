@@ -1,6 +1,25 @@
-<header class="site-header">
-  <a href="https://protocol.us" class="logo">
-    <img src="/assets/icon-nav.svg" alt="" class="logo-icon">
-    <img src="/assets/logo-dark.svg" alt="Protocol" class="logo-img">
+---
+interface Props {
+  ctaLabel?: string;
+  ctaUrl?: string;
+  theme?: 'dark' | 'light';
+  showNav?: boolean;
+}
+const { ctaLabel, ctaUrl, theme = 'dark', showNav = true } = Astro.props;
+const logoSrc = theme === 'light' ? '/assets/logo-dark.svg' : '/assets/logo-light.svg';
+---
+
+<header class="site-header" data-theme={theme}>
+  <a href="https://protocol.us" class="logo-link">
+    <img src={logoSrc} alt="Protocol" class="logo-img">
   </a>
+  {showNav && (
+    <nav class="header-nav">
+      <a href="#how" class="nav-link">How It Works</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+  )}
+  {ctaLabel && ctaUrl && (
+    <a href={ctaUrl} class="cta-btn sm nav-cta">{ctaLabel}</a>
+  )}
 </header>

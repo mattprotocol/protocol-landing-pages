@@ -6,6 +6,9 @@ import SocialProof from '../components/SocialProof.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABottom from '../components/CTABottom.astro';
 import LeadForm from '../components/LeadForm.astro';
+import GHLFormModal from '../components/GHLFormModal.astro';
+import Timeline from '../components/Timeline.astro';
+import EvidenceBlock from '../components/EvidenceBlock.astro';
 import { loadCampaignContent, loadCampaignConfig } from '../lib/content-loader';
 
 const { campaign } = Astro.params;
@@ -17,6 +20,8 @@ if (!content || !config) {
 }
 
 const activeExperiment = config.experiments?.find(e => e.status === 'active');
+const pageTheme = config.theme || 'dark';
+const useGHLModal = config.cta?.type === 'ghl_modal';
 ---
 
 <BaseLayout
@@ -24,27 +29,54 @@ const activeExperiment = config.experiments?.find(e => e.status === 'active');
   description={content.hero.subhead}
   canonicalUrl={config.seo?.canonical || `https://landing.protocol.us/${config.slug}`}
   noindex={config.seo?.index === true ? false : true}
+  theme={pageTheme}
 >
-  <Hero {...content.hero} />
+  <Hero {...content.hero} theme={content.hero.theme || pageTheme} />
 
-  {content.benefits && <Benefits {...content.benefits} />}
+  {content.benefits && (
+    <Benefits {...content.benefits} theme={content.benefits.theme || pageTheme} />
+  )}
 
   {content.bodyHtml && (
-    <section class="body-content">
-      <div class="body-inner" set:html={content.bodyHtml} />
+    <section class="body-content" data-theme={pageTheme}>
+      <div class="body-inner section-inner" set:html={content.bodyHtml} />
     </section>
   )}
 
-  {content.social_proof && <SocialProof items={content.social_proof} />}
+  {content.social_proof && (
+    <SocialProof {...content.social_proof} theme={content.social_proof.theme || pageTheme} />
+  )}
 
-  <LeadForm
-    campaignSlug={config.slug}
-    variantId={activeExperiment?.variant || 'v1'}
-    offerType={config.offer?.type || ''}
-    ctaLabel={content.hero.cta_label}
-  />
+  {content.timeline && (
+    <Timeline {...content.timeline} theme={content.timeline.theme || pageTheme} />
+  )}
 
-  {content.faq && <FAQ items={content.faq} />}
+  {useGHLModal ? (
+    <GHLFormModal
+      formUrl={config.cta?.form_url}
+      bookingUrl={config.cta?.booking_url}
+      formName={`Protocol Form - ${config.slug}`}
+      theme={pageTheme}
+    />
+  ) : (
+    <LeadForm
+      campaignSlug={config.slug}
+      variantId={activeExperiment?.variant || 'v1'}
+      offerType={config.offer?.type || ''}
+      ctaLabel={content.hero.cta_label}
+      theme={pageTheme}
+    />
+  )}
 
-  {content.cta_bottom && <CTABottom {...content.cta_bottom} />}
+  {content.faq && (
+    <FAQ {...content.faq} theme={content.faq.theme || pageTheme} />
+  )}
+
+  {content.evidence && (
+    <EvidenceBlock {...content.evidence} theme={content.evidence.theme || pageTheme} />
+  )}
+
+  {content.cta_bottom && (
+    <CTABottom {...content.cta_bottom} theme={content.cta_bottom.theme || pageTheme} />
+  )}
 </BaseLayout>

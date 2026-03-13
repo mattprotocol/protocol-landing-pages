@@ -1,17 +1,105 @@
 ---
 interface Props {
+  eyebrow?: string;
   headline: string;
+  headline_accent?: string;
   subhead: string;
+  credentials?: string[];
   cta_label: string;
   cta_url: string;
-  background?: 'dark' | 'light' | 'image';
+  cta_secondary_label?: string;
+  cta_secondary_url?: string;
+  layout?: 'split' | 'full' | 'dark';
+  background?: string;
+  background_image?: string;
+  background_video?: string;
+  background_overlay?: boolean;
+  theme?: 'dark' | 'light';
 }
 
-const { headline, subhead, cta_label, cta_url, background = 'dark' } = Astro.props;
+const {
+  eyebrow, headline, headline_accent, subhead,
+  credentials, cta_label, cta_url,
+  cta_secondary_label, cta_secondary_url,
+  layout = 'dark', background_image, background_video,
+  background_overlay = true,
+  theme = 'dark'
+} = Astro.props;
+
+function renderHeadline(text: string, accent?: string): string {
+  if (!accent) return text;
+  return text.replace(
+    new RegExp(`(${accent})`, 'gi'),
+    '<span class="headline-accent">$1</span>'
+  );
+}
 ---
 
-<section class={`hero-section dark-section${background !== 'dark' ? ' hero-light' : ''}`}>
-  <h1>{headline}</h1>
-  <p class="hero-sub">{subhead}</p>
-  <a href={cta_url} class="cta-btn">{cta_label}</a>
+<section class={`hero-section hero-${layout}`} data-theme={theme}>
+  {layout === 'full' && background_video && (
+    <div class="hero-media-wrap">
+      <video autoplay muted loop playsinline preload="metadata"
+             poster={background_image || undefined}>
+        <source src={background_video} type="video/mp4">
+      </video>
+    </div>
+  )}
+  {layout === 'full' && background_image && !background_video && (
+    <div class="hero-media-wrap">
+      <img src={background_image} alt="" loading="eager" />
+    </div>
+  )}
+  {layout === 'full' && background_overlay && (
+    <div class="hero-overlay"></div>
+  )}
+
+  {layout === 'split' ? (
+    <div class="hero-split-inner">
+      <div class="hero-split-text">
+        {eyebrow && <div class="section-tag hero-eyebrow reveal">{eyebrow}</div>}
+        <h1 class="hero-headline reveal"
+            set:html={renderHeadline(headline, headline_accent)} />
+        <p class="hero-sub reveal">{subhead}</p>
+        {credentials && credentials.length > 0 && (
+          <p class="hero-credentials reveal">
+            {credentials.join(' \u00A0·\u00A0 ')}
+          </p>
+        )}
+        <div class="hero-ctas reveal">
+          <a href={cta_url} class="cta-btn">{cta_label}</a>
+          {cta_secondary_label && cta_secondary_url && (
+            <a href={cta_secondary_url} class="cta-btn outline">{cta_secondary_label}</a>
+          )}
+        </div>
+      </div>
+      <div class="hero-split-image">
+        {background_image && (
+          <div class="hero-image-wrap">
+            <img src={background_image} alt="" loading="eager" class="hero-split-img" />
+            <div class="reeded-glass-overlay"></div>
+          </div>
+        )}
+      </div>
+    </div>
+  ) : (
+    <div class="hero-content">
+      <div class="hero-inner">
+        {eyebrow && <div class="section-tag hero-eyebrow reveal">{eyebrow}</div>}
+        <h1 class="hero-headline reveal"
+            set:html={renderHeadline(headline, headline_accent)} />
+        <p class="hero-sub reveal">{subhead}</p>
+        {credentials && credentials.length > 0 && (
+          <p class="hero-credentials reveal">
+            {credentials.join(' \u00A0·\u00A0 ')}
+          </p>
+        )}
+        <div class="hero-ctas reveal">
+          <a href={cta_url} class="cta-btn">{cta_label}</a>
+          {cta_secondary_label && cta_secondary_url && (
+            <a href={cta_secondary_url} class="cta-btn outline">{cta_secondary_label}</a>
+          )}
+        </div>
+      </div>
+    </div>
+  )}
 </section>

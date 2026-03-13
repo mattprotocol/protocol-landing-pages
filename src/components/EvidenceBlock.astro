@@ -1,0 +1,29 @@
+---
+interface Props {
+  eyebrow?: string;
+  headline: string;
+  headline_accent?: string;
+  body: string;
+  theme?: 'dark' | 'light';
+}
+
+const { eyebrow, headline, headline_accent, body, theme = 'dark' } = Astro.props;
+
+function renderHL(text: string, accent?: string): string {
+  if (!accent) return text;
+  return text.replace(
+    new RegExp(`(${accent})`, 'gi'),
+    '<em class="headline-accent">$1</em>'
+  );
+}
+---
+
+<section class="evidence-section reveal" data-theme={theme}>
+  <hr class="gradient-divider" style="margin-bottom: 80px; opacity: 0.4;" />
+  <div class="crosshatch"></div>
+  <div class="evidence-inner">
+    {eyebrow && <div class="section-tag center">{eyebrow}</div>}
+    <h2 class="evidence-headline" set:html={renderHL(headline, headline_accent)} />
+    <p class="evidence-body">{body}</p>
+  </div>
+</section>

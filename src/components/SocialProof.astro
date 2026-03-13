@@ -1,6 +1,6 @@
 ---
 interface SocialProofItem {
-  type: 'stat' | 'testimonial' | 'logo_bar';
+  type: 'stat' | 'testimonial';
   value?: string;
   label?: string;
   quote?: string;
@@ -9,25 +9,35 @@ interface SocialProofItem {
 }
 
 interface Props {
+  eyebrow?: string;
+  title?: string;
+  theme?: 'dark' | 'light';
   items: SocialProofItem[];
+  layout?: 'marquee' | 'scroll';
 }
 
-const { items } = Astro.props;
+const { eyebrow, title, theme = 'dark', items, layout = 'marquee' } = Astro.props;
 const stats = items.filter(i => i.type === 'stat');
 const testimonials = items.filter(i => i.type === 'testimonial');
 
-function initials(name?: string): string {
-  if (!name) return '?';
-  return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+function getInitial(name?: string): string {
+  return name ? name.charAt(0).toUpperCase() : '?';
 }
+
+const useScroll = layout === 'scroll';
+const displayTestimonials = useScroll ? testimonials : [...testimonials, ...testimonials];
 ---
 
-<section class="social-proof-section">
-  <div class="section-tag" style="text-align: center;">Real members, real results</div>
-  <h2 style="text-align: center; margin-bottom: 40px;">Measured. Verified. Guaranteed.</h2>
+<section class="social-proof-section" data-theme={theme}>
+  {(eyebrow || title) && (
+    <div class="section-inner reveal" style="padding-bottom: 0; margin-bottom: 48px;">
+      {eyebrow && <div class="section-tag">{eyebrow}</div>}
+      {title && <h2 class="section-heading">{title}</h2>}
+    </div>
+  )}
 
   {stats.length > 0 && (
-    <div class="stats-row">
+    <div class="stats-row section-inner reveal">
       {stats.map((stat) => (
         <div class="stat-card">
           <div class="stat-value">{stat.value}</div>
@@ -38,25 +48,79 @@ function initials(name?: string): string {
   )}
 
   {testimonials.length > 0 && (
-    <div class="testimonials-grid">
-      {testimonials.map((t) => (
-        <div class="testimonial-card">
-          {t.value && (
-            <div class="testimonial-result">
-              <div class="testimonial-metric">{t.value}</div>
-              {t.label && <div class="testimonial-metric-label">{t.label}</div>}
-            </div>
-          )}
-          <div class="testimonial-quote">&ldquo;{t.quote}&rdquo;</div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">{initials(t.author)}</div>
-            <div>
-              <div class="testimonial-name">{t.author}</div>
-              {t.detail && <div class="testimonial-detail">{t.detail}</div>}
+    <div class={useScroll ? 'testimonial-scroll' : 'testimonial-marquee'}>
+      <div class={useScroll ? 'scroll-track' : 'marquee-track'} id={useScroll ? 'scrollTrack' : 'marqueeTrack'}>
+        {displayTestimonials.map((t) => (
+          <div class="card testimonial-card">
+            {t.value && (
+              <div class="testimonial-metric-row">
+                <span class="testimonial-metric">{t.value}</span>
+                {t.label && <span class="testimonial-metric-label">{t.label}</span>}
+              </div>
+            )}
+            <p class="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">{getInitial(t.author)}</div>
+              <div>
+                <div class="testimonial-name">{t.author}</div>
+                {t.detail && <div class="testimonial-detail">{t.detail}</div>}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )}
 </section>
+
+<style>
+  .testimonial-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+  }
+  .testimonial-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-track {
+    display: flex;
+    gap: 20px;
+    padding: 0 48px;
+    scroll-snap-type: x mandatory;
+  }
+  .scroll-track .testimonial-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  @media (max-width: 768px) {
+    .scroll-track {
+      padding: 0 24px;
+    }
+  }
+</style>
+
+<script>
+  const marqueeTrack = document.getElementById('marqueeTrack');
+  if (marqueeTrack) {
+    let paused = false;
+    let pos = 0;
+    const speed = 0.45;
+
+    function animate() {
+      if (!paused && marqueeTrack) {
+        pos += speed;
+        const half = marqueeTrack.scrollWidth / 2;
+        if (pos >= half) pos = 0;
+        marqueeTrack.style.transform = `translateX(-${pos}px)`;
+      }
+      requestAnimationFrame(animate);
+    }
+
+    marqueeTrack.addEventListener('mouseenter', () => { paused = true; });
+    marqueeTrack.addEventListener('mouseleave', () => { paused = false; });
+    requestAnimationFrame(animate);
+  }
+</script>

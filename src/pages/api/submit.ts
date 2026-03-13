@@ -20,6 +20,20 @@ export const POST: APIRoute = async ({ request }) => {
       gclid, fbclid
     } = body;
 
+    // Input validation
+    if (!request_id || !name?.trim()) {
+      return new Response(JSON.stringify({ success: false, error: 'Missing required fields' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return new Response(JSON.stringify({ success: false, error: 'Invalid email address' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
     // Server-side dedup
     if (recentRequestIds.has(request_id)) {
       return new Response(JSON.stringify({ success: true, deduplicated: true }), {

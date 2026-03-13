@@ -1,6 +1,15 @@
 {
   "campaigns": [
     {
+      "slug": "healthspan-plus",
+      "name": "Healthspan Plus",
+      "status": "draft",
+      "offer_type": "healthspan_plus_membership",
+      "template": "standard",
+      "created": "2026-03-13",
+      "url": "https://landing.protocol.us/healthspan-plus"
+    },
+    {
       "slug": "sample-longevity-audit",
       "name": "The Longevity Audit",
       "status": "live",
@@ -10,5 +19,5 @@
       "url": "https://landing.protocol.us/sample-longevity-audit"
     }
   ],
-  "generated_at": "2026-03-13T01:20:20.438Z"
+  "generated_at": "2026-03-13T19:06:59.857Z"
 }

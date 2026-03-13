@@ -1,28 +1,70 @@
 ---
 interface BenefitItem {
+  number?: string;
   icon?: string;
+  photo?: string;
   title: string;
   body: string;
+  bullets?: string[];
+  link_label?: string;
+  link_url?: string;
 }
 
 interface Props {
+  eyebrow?: string;
   title: string;
-  layout?: 'grid' | 'list' | 'alternating';
+  subtitle?: string;
+  layout?: 'grid' | 'numbered_steps';
+  theme?: 'dark' | 'light';
   items: BenefitItem[];
 }
 
-const { title, items } = Astro.props;
+const { eyebrow, title, subtitle, layout = 'grid', theme = 'dark', items } = Astro.props;
 ---
 
-<section class="benefits-section">
-  <div class="section-tag">{title}</div>
-  <div class="benefits-grid">
-    {items.map((item) => (
-      <div class="benefit-item">
-        {item.icon && <div class="benefit-icon">{item.icon}</div>}
-        <h3>{item.title}</h3>
-        <p>{item.body}</p>
-      </div>
-    ))}
+<section class="benefits-section" id="how" data-theme={theme}>
+  <div class="section-inner">
+    <div class="reveal">
+      {eyebrow && <div class="section-tag center">{eyebrow}</div>}
+      <h2 class="section-heading center">{title}</h2>
+      {subtitle && <p class="section-subtitle center">{subtitle}</p>}
+    </div>
+
+    <div class={`${layout === 'numbered_steps' ? 'steps-grid' : 'benefits-grid'}`}>
+      {items.map((item) => (
+        <div class="card benefit-card reveal">
+          {item.photo && (
+            <div class="benefit-photo-wrap">
+              <img src={item.photo} alt="" class="benefit-photo" loading="lazy" />
+              <div class="reeded-glass-overlay"></div>
+            </div>
+          )}
+          <div class="benefit-card-body">
+            {item.number && <div class="benefit-number">{item.number}</div>}
+            {item.icon && !item.number && <div class="benefit-icon">{item.icon}</div>}
+            <h3 class="benefit-title">{item.title}</h3>
+            <p class="benefit-body">{item.body}</p>
+            {item.bullets && item.bullets.length > 0 && (
+              <ul class="benefit-bullets">
+                {item.bullets.map(b => (
+                  <li>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2.5"
+                         stroke-linecap="round" stroke-linejoin="round"
+                         class="check-icon" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {item.link_label && item.link_url && (
+              <a href={item.link_url} class="benefit-link">{item.link_label} →</a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
 </section>

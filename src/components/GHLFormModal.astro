@@ -1,0 +1,363 @@
+---
+interface Props {
+  formUrl?: string;
+  bookingUrl?: string;
+  formName?: string;
+  theme?: 'dark' | 'light';
+}
+
+const {
+  formUrl = 'https://link.decyphernow.com/widget/form/HbRcETn4W9DoqYXBp2a4',
+  bookingUrl = 'https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5',
+  formName = 'Protocol Form',
+  theme = 'dark'
+} = Astro.props;
+
+const formId = formUrl.split('/').pop() || '';
+---
+
+<!-- GHL Form Modal -->
+<div id="form-modal-overlay">
+  <div id="form-modal" data-theme={theme}>
+    <button id="form-modal-close" aria-label="Close form">&times;</button>
+    <iframe
+      src={formUrl}
+      sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
+      id={`inline-${formId}`}
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name={formName}
+      data-height="1942"
+      data-layout-iframe-id={`inline-${formId}`}
+      data-form-id={formId}
+      title={formName}
+    ></iframe>
+  </div>
+</div>
+
+<!-- Legal Modals -->
+<div id="legalBackdrop"></div>
+<div id="legalPanel" role="dialog" aria-modal="true" aria-labelledby="legalTitle" data-theme={theme}>
+  <button class="legal-close" aria-label="Close">&times;</button>
+  <h3 id="legalTitle"></h3>
+  <div id="legalBody"></div>
+</div>
+
+<script src="https://link.decyphernow.com/js/form_embed.js"></script>
+
+<style>
+  /* GHL Form Modal */
+  #form-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  #form-modal-overlay.open {
+    display: flex;
+  }
+  #form-modal {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    max-height: 85vh;
+    background: #fbf1e3;
+    border-radius: 8px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #form-modal iframe {
+    width: 100%;
+    height: 85vh;
+    border: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #form-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  /* Legal Modals */
+  #legalBackdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 60;
+    display: none;
+  }
+  #legalBackdrop.open {
+    display: block;
+  }
+  #legalPanel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.96);
+    z-index: 71;
+    width: 90%;
+    max-width: 520px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  }
+  #legalPanel.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  #legalPanel h3 {
+    margin-bottom: 16px;
+  }
+  #legalPanel h4 {
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  #legalPanel p, #legalPanel li {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  #legalPanel ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  #legalPanel a {
+    color: var(--accent);
+  }
+  .legal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    z-index: 10;
+  }
+</style>
+
+<script define:vars={{ formId, bookingUrl }}>
+  var _formOpened = false;
+  var _bookingShown = false;
+  var iframeLoadCount = 0;
+
+  function openForm() {
+    var gclid = new URLSearchParams(window.location.search).get('gclid');
+    if (gclid) {
+      var iframe = document.getElementById('inline-' + formId);
+      if (iframe) {
+        var src = iframe.src;
+        iframe.src = src + (src.indexOf('?') > -1 ? '&' : '?') + 'gclid=' + encodeURIComponent(gclid);
+      }
+    }
+    document.getElementById('form-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    iframeLoadCount = 0;
+    _formOpened = false;
+    _bookingShown = false;
+    setTimeout(function() { _formOpened = true; }, 3000);
+  }
+
+  function closeForm() {
+    document.getElementById('form-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showBooking() {
+    if (_bookingShown) return;
+    _bookingShown = true;
+    var modal = document.getElementById('form-modal');
+    modal.style.maxWidth = '700px';
+    modal.style.height = '90vh';
+    modal.style.maxHeight = '90vh';
+    modal.innerHTML = '<button id="form-modal-close" onclick="closeForm()" aria-label="Close">&times;</button>' +
+      '<iframe src="' + bookingUrl + '" style="width:100%;height:100%;border:none;" title="Schedule Your Call"></iframe>';
+  }
+
+  // Detect form submission via postMessage
+  window.addEventListener('message', function(e) {
+    if (!_formOpened) return;
+    if (Array.isArray(e.data) && e.data[0] === 'set-sticky-contacts' && !_bookingShown) {
+      setTimeout(showBooking, 500);
+      return;
+    }
+    var data = e.data;
+    if (typeof data === 'string') {
+      try { data = JSON.parse(data); } catch(err) {}
+    }
+    var isSubmit = false;
+    if (data && (data.type === 'form:submit' || data.type === 'form_submit' || data.action === 'submission' || data.formSubmitted || data.event === 'form_submit')) {
+      isSubmit = true;
+    }
+    if (typeof e.data === 'string' && (e.data.includes('form_submit') || e.data.includes('formSubmit') || e.data.includes('submission'))) {
+      isSubmit = true;
+    }
+    if (isSubmit) {
+      showBooking();
+    }
+  });
+
+  // Fallback: detect submission via iframe reload
+  var formIframe = document.getElementById('inline-' + formId);
+  if (formIframe) {
+    formIframe.addEventListener('load', function() {
+      iframeLoadCount++;
+      if (iframeLoadCount > 1 && _formOpened) {
+        showBooking();
+      }
+    });
+  }
+
+  // Close on overlay click
+  document.getElementById('form-modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeForm();
+  });
+
+  // Close button
+  document.getElementById('form-modal-close').addEventListener('click', closeForm);
+
+  // Intercept all #lead-form links to open modal (wait for full DOM)
+  function interceptLeadFormLinks() {
+    document.querySelectorAll('a[href="#lead-form"]').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        openForm();
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', interceptLeadFormLinks);
+  } else {
+    interceptLeadFormLinks();
+  }
+
+  // Store GCLID
+  (function() {
+    var g = new URLSearchParams(window.location.search).get('gclid');
+    if (g) sessionStorage.setItem('protocol_gclid', g);
+  })();
+
+  // Legal modals
+  var legalContent = {
+    privacy: {
+      title: 'Privacy Policy',
+      body: '<p>At Protocol, we are committed to protecting your privacy. This Privacy Policy outlines the types of information we collect, how we use and safeguard that information, and your rights regarding your personal data.</p>' +
+        '<h4>1. Information We Collect</h4>' +
+        '<p>We collect the following personal information when you fill out contact forms on our website:</p>' +
+        '<ul><li>Name</li><li>Email Address</li></ul>' +
+        '<h4>2. How We Use Your Information</h4>' +
+        '<p>We use the information collected to:</p>' +
+        '<ul><li>Respond to your inquiries and provide customer support.</li><li>Send you updates, news, or information related to our services if you have opted in to receive such communications.</li></ul>' +
+        '<h4>3. How We Protect Your Information</h4>' +
+        '<p>We take reasonable measures to protect your personal information from unauthorized access, use, or disclosure. However, please note that no method of transmission over the internet or electronic storage is completely secure.</p>' +
+        '<h4>4. Cookies and Tracking Technologies</h4>' +
+        '<p>Protocol does not use cookies or other tracking technologies to collect information about your visit to our website.</p>' +
+        '<h4>5. Third-Party Disclosure</h4>' +
+        '<p>We do not sell, trade, or otherwise transfer your personal information to outside parties, except when necessary to comply with the law or protect our rights.</p>' +
+        '<h4>6. Your Rights</h4>' +
+        '<p>You have the right to:</p>' +
+        '<ul><li>Access the personal information we hold about you.</li><li>Request corrections to any inaccurate information.</li><li>Request deletion of your personal data.</li></ul>' +
+        '<p>To exercise any of these rights, please contact us using the information provided below.</p>' +
+        '<h4>7. Contact Us</h4>' +
+        '<p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:info@protocol.us">info@protocol.us</a></p>'
+    },
+    terms: {
+      title: 'Terms of Service',
+      body: '<p style="font-size:0.875rem;opacity:0.6;">Updated: March 3, 2026</p>' +
+        '<p>These Terms of Service ("Terms") govern your purchase of and participation in services offered by Protocol Healthspan Partners, LLC ("Protocol," "we," "us," or "our"), including but not limited to the Protocol Longevity Audit, healthspan coaching, membership programs, and related services (collectively, the "Services").</p>' +
+        '<p>By purchasing, scheduling, or participating in any Protocol Services, you agree to these Terms. If you do not agree to these Terms, you should not purchase or participate in the Services.</p>' +
+        '<h4>1. Scope of Services</h4>' +
+        '<p>Protocol provides health education, wellness guidance, and program coordination designed to support individuals in understanding and optimizing factors that may influence long-term healthspan. Protocol does not provide medical care or medical services.</p>' +
+        '<h4>2. Independent Physician Practices</h4>' +
+        '<p>Certain services offered in connection with Protocol, including concierge primary care or medical consultations, may be provided by independent physician practices or healthcare providers ("Partner Practices"). Partner Practices are separate legal entities that maintain independent clinical judgment and are solely responsible for the medical services they provide.</p>' +
+        '<h4>3. Nature of Protocol Services</h4>' +
+        '<p>Protocol services are designed for educational and informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease.</p>' +
+        '<h4>4. Voluntary Participation</h4>' +
+        '<p>Participation in Protocol services is voluntary. Certain assessments may involve physical activity or diagnostic testing that carries inherent risks.</p>' +
+        '<h4>5. Privacy and Confidentiality</h4>' +
+        '<p>Personal information collected in connection with the Services will be handled in accordance with our Privacy Policy.</p>' +
+        '<h4>6. Payment Terms</h4>' +
+        '<p>Certain Services require advance payment. Membership services are subject to separate membership agreements.</p>' +
+        '<h4>7. No Guarantees or Warranties</h4>' +
+        '<p>Protocol makes no guarantees regarding specific outcomes, health improvements, or results from participation in the Services.</p>' +
+        '<h4>8. Limitation of Liability</h4>' +
+        '<p>To the fullest extent permitted by law, Protocol shall not be liable for any indirect, incidental, consequential, or special damages arising out of or related to your participation in the Services.</p>' +
+        '<h4>9. Governing Law</h4>' +
+        '<p>These Terms are governed by the laws of the State of Delaware.</p>' +
+        '<h4>Contact</h4>' +
+        '<p>Email: <a href="mailto:info@protocol.us">info@protocol.us</a><br>Website: <a href="https://protocol.us">protocol.us</a></p>'
+    }
+  };
+
+  function openLegal(key) {
+    var d = legalContent[key];
+    if (!d) return;
+    document.getElementById('legalTitle').textContent = d.title;
+    document.getElementById('legalBody').innerHTML = d.body;
+    document.getElementById('legalBackdrop').classList.add('open');
+    document.getElementById('legalPanel').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLegal() {
+    document.getElementById('legalBackdrop').classList.remove('open');
+    document.getElementById('legalPanel').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  var legalBackdrop = document.getElementById('legalBackdrop');
+  if (legalBackdrop) legalBackdrop.addEventListener('click', closeLegal);
+  var legalCloseBtn = document.querySelector('.legal-close');
+  if (legalCloseBtn) legalCloseBtn.addEventListener('click', closeLegal);
+
+  // Escape key closes both modals
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (document.getElementById('form-modal-overlay').classList.contains('open')) {
+        closeForm();
+      }
+      if (document.getElementById('legalPanel').classList.contains('open')) {
+        closeLegal();
+      }
+    }
+  });
+
+  // Expose globally
+  window.openForm = openForm;
+  window.closeForm = closeForm;
+  window.openLegal = openLegal;
+  window.closeLegal = closeLegal;
+</script>

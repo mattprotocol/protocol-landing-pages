@@ -7,13 +7,14 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
-  description: string;
-  canonicalUrl: string;
+  description?: string;
+  canonicalUrl?: string;
   ogImage?: string;
   noindex?: boolean;
+  theme?: 'dark' | 'light';
 }
 
-const { title, description, canonicalUrl, ogImage, noindex = true } = Astro.props;
+const { title, description, canonicalUrl, ogImage, noindex = true, theme = 'dark' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,8 +23,8 @@ const { title, description, canonicalUrl, ogImage, noindex = true } = Astro.prop
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
-  <meta name="description" content={description}>
-  <link rel="canonical" href={canonicalUrl}>
+  {description && <meta name="description" content={description}>}
+  {canonicalUrl && <link rel="canonical" href={canonicalUrl}>}
   {noindex ? (
     <meta name="robots" content="noindex, nofollow">
   ) : (
@@ -32,8 +33,8 @@ const { title, description, canonicalUrl, ogImage, noindex = true } = Astro.prop
 
   <!-- OG Tags -->
   <meta property="og:title" content={title}>
-  <meta property="og:description" content={description}>
-  <meta property="og:url" content={canonicalUrl}>
+  {description && <meta property="og:description" content={description}>}
+  {canonicalUrl && <meta property="og:url" content={canonicalUrl}>}
   <meta property="og:type" content="website">
   {ogImage && <meta property="og:image" content={ogImage}>}
 
@@ -41,7 +42,8 @@ const { title, description, canonicalUrl, ogImage, noindex = true } = Astro.prop
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=saans@400,500,600,700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/icon-dark.svg">
@@ -49,12 +51,36 @@ const { title, description, canonicalUrl, ogImage, noindex = true } = Astro.prop
   <!-- Tracking -->
   <Tracking />
 </head>
-<body>
-  <Header />
+<body data-theme={theme}>
+  <Header theme={theme} ctaLabel="Book Now" ctaUrl="#lead-form" />
   <main>
     <slot />
   </main>
-  <Footer />
+  <Footer theme={theme} />
   <UTMCapture />
+
+  <!-- Scroll reveal observer -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+  <!-- Header scroll blur -->
+  <script>
+    const header = document.querySelector('.site-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+    }
+  </script>
 </body>
 </html>

@@ -1,12 +1,37 @@
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-left">
-      <img src="/assets/logo-light.svg" alt="Protocol" class="footer-logo">
-      <span class="footer-copyright">&copy; {new Date().getFullYear()} Protocol Health, Inc.</span>
+---
+interface Props {
+  theme?: 'dark' | 'light';
+}
+const { theme = 'dark' } = Astro.props;
+const logoSrc = theme === 'light' ? '/assets/logo-dark.svg' : '/assets/logo-light.svg';
+---
+
+<footer class="site-footer" data-theme={theme}>
+  <hr class="gradient-divider footer-divider" />
+  <div class="footer-grid section-inner">
+    <div class="footer-brand">
+      <img src={logoSrc} alt="Protocol" class="footer-logo" />
+      <p class="footer-tagline">A physician-led medical practice specializing in longevity medicine for high performers.</p>
     </div>
-    <div class="footer-links">
-      <a href="https://protocol.us/privacy">Privacy</a>
-      <a href="https://protocol.us/terms">Terms</a>
+    <div class="footer-col">
+      <div class="footer-col-heading">Site Navigation</div>
+      <a href="https://protocol.us">Home</a>
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
     </div>
+    <div class="footer-col">
+      <div class="footer-col-heading">Connect</div>
+      <a href="mailto:info@protocol.us">info@protocol.us</a>
+      <a href="https://instagram.com/protocolhealth" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-heading">Legal</div>
+      <a href="javascript:void(0)" onclick="openLegal('privacy')">Privacy Policy</a>
+      <a href="javascript:void(0)" onclick="openLegal('terms')">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom section-inner">
+    <p class="footer-copyright">&copy; {new Date().getFullYear()} Protocol Health, Inc. All rights reserved.</p>
+    <p class="footer-disclaimer">Medical disclaimer: The content on this site is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider before making any health-related decisions. Individual results may vary.</p>
   </div>
 </footer>

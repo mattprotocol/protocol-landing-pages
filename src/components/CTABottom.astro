@@ -1,16 +1,28 @@
 ---
 interface Props {
+  eyebrow?: string;
   headline: string;
   body: string;
   cta_label: string;
   cta_url: string;
+  subtext?: string;
+  theme?: 'dark' | 'light';
+  use_gradient?: boolean;
 }
 
-const { headline, body, cta_label, cta_url } = Astro.props;
+const {
+  eyebrow, headline, body, cta_label, cta_url,
+  subtext, theme = 'dark', use_gradient = false
+} = Astro.props;
 ---
 
-<section class="cta-bottom-section dark-section">
-  <h2>{headline}</h2>
-  <p>{body}</p>
-  <a href={cta_url} class="cta-btn">{cta_label}</a>
+<section class={`cta-bottom-section ${use_gradient ? 'cta-gradient-bg' : ''} reveal`}
+         data-theme={theme}>
+  <div class="cta-bottom-inner">
+    {eyebrow && <div class="section-tag center">{eyebrow}</div>}
+    <h2 class="section-heading center">{headline}</h2>
+    <p class="cta-bottom-body">{body}</p>
+    <a href={cta_url} class="cta-btn lg">{cta_label}</a>
+    {subtext && <p class="cta-subtext">{subtext}</p>}
+  </div>
 </section>

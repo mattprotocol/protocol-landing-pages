@@ -1,0 +1,66 @@
+name: Healthspan Plus
+slug: healthspan-plus
+status: draft
+created: 2026-03-13
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: healthspan_plus_membership
+  display_price: "$749/mo"
+  anchor_price: "$27,000+/yr à la carte"
+
+audience:
+  description: "Health-optimizers and high-income professionals seeking a proactive, data-driven physician relationship"
+  geo: []
+
+traffic_sources:
+  google_ads:
+    enabled: true
+    daily_budget: 100
+    bid_strategy: target_cpa
+    target_cpa: 200
+  meta_ads:
+    enabled: true
+    daily_budget: 75
+    objective: lead_generation
+
+cta:
+  type: ghl_modal
+  url: "#lead-form"
+  form_url: "https://link.decyphernow.com/widget/form/HbRcETn4W9DoqYXBp2a4"
+  booking_url: "https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5"
+
+ghl:
+  tag: "source:healthspan-plus"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 200
+  target_cvr: 0.03
+  test_budget_total: 5000
+  test_duration_days: 14
+
+utm:
+  campaign: healthspan-plus
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/healthspan-plus"
+
+campaign_intent: test_new_angle
+
+experiments:
+  - id: "healthspan-plus-v1"
+    hypothesis: "Outcomes-focused positioning of full PCP + longevity membership at $749/mo converts health-optimizers from cold paid traffic to discovery call bookings"
+    variant: original
+    start_date: "2026-03-13"
+    status: active
+    result: null
+    change_notes: "Initial launch"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null
