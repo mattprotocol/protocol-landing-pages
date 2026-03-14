@@ -69,20 +69,20 @@ benefits:
         - "Measurable outcome targets"
 
 social_proof:
-  eyebrow: "Member Results"
-  title: "50% Cholesterol Reduction. 30 Days."
+  eyebrow: "Member Outcomes"
+  title: "27% to 69% Optimal ApoB. During Membership."
   layout: scroll
   theme: dark
   items:
     - type: stat
-      value: "80%"
-      label: "of chronic disease is preventable with early detection (CDC)"
+      value: "27% → 69%"
+      label: "of members reached optimal ApoB during membership"
     - type: stat
-      value: "5"
-      label: "dedicated specialists on your care team"
+      value: "95%"
+      label: "maintained or improved cardiovascular risk through lifestyle alone"
     - type: stat
-      value: "$25"
-      label: "per day for physician-led longevity medicine"
+      value: "16%"
+      label: "prediabetes rate among members vs 38% nationally (CDC)"
     - type: testimonial
       value: "-50%"
       label: "cholesterol in 30 days"
@@ -128,10 +128,10 @@ timeline:
   cta_url: "#lead-form"
 
 evidence:
-  eyebrow: "The Evidence"
-  headline: "80% of Chronic Disease Is Preventable."
-  headline_accent: "Preventable"
-  body: "The CDC reports that early detection and lifestyle change can prevent the majority of chronic conditions. Yet the average primary care visit lasts 18 minutes, and most end with 'everything looks fine' until it doesn't. Healthspan Plus gives you the physician, the data, and the team to act on that window, before symptoms force the conversation."
+  eyebrow: "The Data"
+  headline: "38% of Americans Are Prediabetic. 16% of Our Members Are."
+  headline_accent: "16%"
+  body: "Our members' median HbA1c is 5.3%. 71% maintain levels most physicians would never flag. Triglycerides, inflammation, lipid quality, all trending the same direction. This is what happens when your doctor tests what matters and builds a plan around your data."
   theme: dark
 
 faq:
@@ -153,6 +153,8 @@ faq:
       a: "Healthspan Plus is an optimization service, not diagnostic care, so it is not typically covered by insurance. Most HSA/FSA plans do cover it. We provide documentation upon request."
     - q: "What does the membership cost?"
       a: "Healthspan Plus is $749/month with a 12-month commitment, or $7,995 paid in full for the year. The annual option saves you $993 and locks in your rate. Both include the full membership."
+    - q: "Where does your outcomes data come from?"
+      a: "Clinical data from 72 active Protocol members, extracted from lab reports and clinical notes. Biomarker thresholds follow published standards: ApoB below 80 mg/dL per Sniderman et al. (European Heart Journal, 2021), HbA1c per CDC guidelines. Cardiovascular risk is age-adjusted using AHA PREVENT equations. This is observational data from a self-selected population, not a clinical trial. We publish it because we believe transparency about outcomes is what separates real medicine from marketing."
   cta_label: "Still have questions? Book a call."
   cta_url: "#lead-form"
 
@@ -172,6 +174,8 @@ cta_bottom:
 You want a physician who tests ApoB, not just total cholesterol. Who tracks body composition, not just BMI. Who monitors your trajectory across years, not a single snapshot every spring.
 
 You want a physician-led system that treats prevention as real medicine.
+
+72 members. Measured quarterly. Every claim on this page comes from their data.
 
 ### On your discovery call, you will:
 
