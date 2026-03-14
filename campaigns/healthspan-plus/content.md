@@ -84,6 +84,12 @@ social_proof:
       value: "16%"
       label: "prediabetes rate among members vs 38% nationally (CDC)"
     - type: testimonial
+      value: "104 → 67"
+      label: "ApoB in 10 months"
+      quote: "Male, early 40s. ApoB started at 104 mg/dL. Over 10 months of physician-directed lifestyle changes: 104 to 67. ASCVD 10-year risk cut in half. No medication changes. Just a physician who tested the right things, set real targets, and tracked every data point."
+      author: "Member B"
+      detail: "Anonymized Case Study"
+    - type: testimonial
       value: "-50%"
       label: "cholesterol in 30 days"
       quote: "My former primary care said my cholesterol was 'a little borderline, you don't need to do anything.' Protocol's response was very different. This is the number one thing. I went on medication and 30 days later I cut my cholesterol in half. Best-in-class numbers now."
@@ -129,9 +135,9 @@ timeline:
 
 evidence:
   eyebrow: "The Data"
-  headline: "38% of Americans Are Prediabetic. 16% of Our Members Are."
-  headline_accent: "16%"
-  body: "Our members' median HbA1c is 5.3%. We flag it at 5.4%, not the conventional 5.7%. That 0.3% difference in threshold is the entire clinical philosophy: test earlier, intervene sooner, track the trajectory. Triglycerides, inflammation, lipid quality, all held to the same standard."
+  headline: "Median ApoB: 79. The US Average Is 105."
+  headline_accent: "79"
+  body: "ApoB is the number of atherogenic particles in your blood, the causal driver of cardiovascular disease. Only 15 to 20% of the general population is below 80 mg/dL without medication. 52% of our members are. 88% are below 100. These are not projections. These are lab results from 58 members, tested against the thresholds that longevity medicine actually uses."
   theme: dark
 
 faq:
@@ -174,12 +180,6 @@ cta_bottom:
 You want a physician who tests ApoB, not just total cholesterol. Who knows that Lp(a) is the most underdiagnosed cardiovascular risk factor and orders it on day one. Who flags your HbA1c at 5.4%, not 5.7%, because the goal is prevention, not diagnosis.
 
 You want a physician-led system that treats prevention as real medicine.
-
-### One member's journey
-
-Male, early 40s. ApoB started at 104 mg/dL. Over 10 months of physician-directed lifestyle changes: 104 to 67. ASCVD 10-year risk: cut in half. No medication changes. Just a physician who tested the right things, set real targets, and tracked every data point.
-
-72 members. Measured quarterly. Every claim on this page comes from their data.
 
 ### On your discovery call, you will:
 
