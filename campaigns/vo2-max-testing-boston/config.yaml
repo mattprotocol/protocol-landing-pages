@@ -1,0 +1,74 @@
+name: "VO2 Max Testing Boston"
+slug: vo2-max-testing-boston
+status: draft
+created: 2026-03-18
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: vo2_max_test
+  display_price: null
+  anchor_price: null
+
+audience:
+  description: "Fitness-focused professionals and longevity-minded adults in Boston seeking clinical-grade VO2 max testing"
+  geo:
+    - Boston, MA
+
+traffic_sources:
+  google_ads:
+    enabled: true
+    daily_budget: 75
+    bid_strategy: target_cpa
+    target_cpa: 150
+    keywords:
+      - "vo2 max testing near me"
+      - "vo2 max test boston"
+      - "cardiopulmonary fitness test boston"
+      - "metabolic testing boston"
+  meta_ads:
+    enabled: false
+    daily_budget: 0
+    objective: lead_generation
+
+cta:
+  type: ghl_modal
+  url: "#lead-form"
+  form_url: "https://link.decyphernow.com/widget/form/HbRcETn4W9DoqYXBp2a4"
+  booking_url: "https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5"
+
+ghl:
+  tag: "source:vo2-max-testing-boston"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 150
+  target_cvr: 0.04
+  test_budget_total: 3000
+  test_duration_days: 14
+
+utm:
+  campaign: vo2-max-testing-boston
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/vo2-max-testing-boston"
+  meta_title: "VO2 Max Testing Boston | Clinical Cardiorespiratory Fitness Test | Protocol"
+  meta_description: "Clinical-grade VO2 max testing in Boston with physician interpretation. Measure your cardiorespiratory fitness, ventilatory thresholds, and metabolic efficiency. Book your test today."
+
+campaign_intent: test_new_angle
+
+experiments:
+  - id: "vo2-max-testing-boston-v1"
+    hypothesis: "Clinical VO2 max testing positioning converts fitness-focused searchers in Boston to discovery call bookings"
+    variant: original
+    start_date: "2026-03-18"
+    status: active
+    result: null
+    change_notes: "Initial launch"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null

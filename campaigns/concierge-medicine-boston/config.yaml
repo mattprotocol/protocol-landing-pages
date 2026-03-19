@@ -1,0 +1,72 @@
+name: "Concierge Medicine Boston"
+slug: concierge-medicine-boston
+status: draft
+created: 2026-03-18
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: concierge_membership
+  display_price: "$749/mo"
+  anchor_price: "$27,000+/yr à la carte"
+
+audience:
+  description: "Boston-area professionals searching for concierge primary care, concierge medicine, and concierge doctors"
+  geo:
+    - Boston, MA
+
+traffic_sources:
+  google_ads:
+    enabled: true
+    daily_budget: 100
+    bid_strategy: target_cpa
+    target_cpa: 200
+    keywords:
+      - "concierge primary care"
+      - "concierge medicine boston"
+      - "Boston concierge medicine"
+      - "concierge doctor boston"
+  meta_ads:
+    enabled: false
+    daily_budget: 0
+    objective: lead_generation
+
+cta:
+  type: ghl_modal
+  url: "#lead-form"
+  form_url: "https://link.decyphernow.com/widget/form/HbRcETn4W9DoqYXBp2a4"
+  booking_url: "https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5"
+
+ghl:
+  tag: "source:concierge-medicine-boston"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 200
+  target_cvr: 0.03
+  test_budget_total: 5000
+  test_duration_days: 14
+
+utm:
+  campaign: concierge-medicine-boston
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/concierge-medicine-boston"
+
+campaign_intent: keyword_targeting
+
+experiments:
+  - id: "concierge-medicine-boston-v1"
+    hypothesis: "Concierge medicine keyword targeting with content-rich page converts Boston searchers to discovery call bookings"
+    variant: original
+    start_date: "2026-03-18"
+    status: active
+    result: null
+    change_notes: "Initial launch"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null

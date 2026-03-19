@@ -1,6 +1,24 @@
 {
   "campaigns": [
     {
+      "slug": "concierge-medicine-boston",
+      "name": "Concierge Medicine Boston",
+      "status": "draft",
+      "offer_type": "concierge_membership",
+      "template": "standard",
+      "created": "2026-03-18",
+      "url": "https://landing.protocol.us/concierge-medicine-boston"
+    },
+    {
+      "slug": "longevity-doctor-boston",
+      "name": "Longevity Doctor Boston",
+      "status": "draft",
+      "offer_type": "longevity_audit",
+      "template": "standard",
+      "created": "2026-03-18",
+      "url": "https://landing.protocol.us/longevity-doctor-boston"
+    },
+    {
       "slug": "sample-longevity-audit",
       "name": "The Longevity Audit",
       "status": "live",
@@ -8,7 +26,16 @@
       "template": "standard",
       "created": "2026-03-12",
       "url": "https://landing.protocol.us/sample-longevity-audit"
+    },
+    {
+      "slug": "vo2-max-testing-boston",
+      "name": "VO2 Max Testing Boston",
+      "status": "draft",
+      "offer_type": "vo2_max_test",
+      "template": "standard",
+      "created": "2026-03-18",
+      "url": "https://landing.protocol.us/vo2-max-testing-boston"
     }
   ],
-  "generated_at": "2026-03-13T01:20:20.438Z"
+  "generated_at": "2026-03-19T01:52:29.781Z"
 }

@@ -1,0 +1,73 @@
+name: "Longevity Doctor Boston"
+slug: longevity-doctor-boston
+status: draft
+created: 2026-03-18
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: longevity_audit
+  display_price: "$1,700"
+  anchor_price: null
+
+audience:
+  description: "Health-conscious professionals 30-65 in Boston searching for longevity medicine, proactive health optimization, and data-driven healthcare"
+  geo:
+    - Boston, MA
+
+traffic_sources:
+  google_ads:
+    enabled: true
+    daily_budget: 100
+    bid_strategy: target_cpa
+    target_cpa: 150
+    keywords:
+      - "longevity doctor"
+      - "longevity doctor near me"
+      - "longevity clinic boston"
+      - "longevity medicine boston"
+      - "healthspan doctor"
+  meta_ads:
+    enabled: false
+    daily_budget: 0
+    objective: lead_generation
+
+cta:
+  type: discovery_call
+  url: https://protocol.us/book
+
+ghl:
+  tag: "source:longevity-doctor-boston"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 150
+  target_cvr: 5
+  test_budget_total: 3000
+  test_duration_days: 14
+
+utm:
+  campaign: longevity-doctor-boston
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/longevity-doctor-boston"
+  title: "Longevity Doctor Boston | Data-Driven Longevity Medicine | Protocol"
+  description: "Find a longevity doctor in Boston. Protocol offers data-driven longevity medicine with 60+ biomarkers, DEXA, VO2 Max, and physician-led protocols to extend your healthspan."
+
+campaign_intent: test_new_angle
+
+experiments:
+  - id: "longevity-doctor-boston-v1"
+    hypothesis: "Boston-area professionals searching for longevity doctors will convert to discovery calls when presented with data-driven testing approach and comparison to standard physicals"
+    variant: original
+    start_date: "2026-03-18"
+    status: active
+    result: null
+    change_notes: "Initial launch targeting longevity doctor keywords in Boston market"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null

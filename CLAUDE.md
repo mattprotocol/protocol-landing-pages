@@ -164,9 +164,52 @@ Set in Vercel dashboard. See `.env.example` for full list.
 
 ---
 
+## Conversion Tracking Configuration
+
+All tracking is built into the Astro templates (`Tracking.astro`, `UTMCapture.astro`, `LeadForm.astro`). It activates via environment variables — no code changes needed to enable tracking for new campaigns.
+
+### Required Tracking IDs (set in Vercel)
+
+| Variable | Value | Source |
+|---|---|---|
+| `GOOGLE_ADS_ID` | `AW-11484308994` | Google Ads account |
+| `GOOGLE_ADS_CONVERSION_LABEL` | `pQxWCKK2-PgZEILMkuQq` | Google Ads conversion action |
+| `GTM_ID` | `GTM-NNR8NM3F` | GTM web container |
+| `GA4_MEASUREMENT_ID` | `G-WTVZNW15PP` | Google Analytics 4 |
+| `META_PIXEL_ID` | `3871435226469247` | Meta/Facebook Pixel |
+
+### Tracking Flow
+
+1. **Page load** → `Tracking.astro` injects GTM, GA4, Meta Pixel, Google Ads base tag
+2. **UTM capture** → `UTMCapture.astro` reads `gclid`, `fbclid`, and UTM params from URL → stores in sessionStorage
+3. **Form submit** → `LeadForm.astro` fires `form_submit` event to GTM, then POSTs to `/api/submit`
+4. **Server-side** → `/api/submit` fires GHL webhook + Supabase insert + Meta CAPI in parallel
+5. **On success** → Client fires `generate_lead` (GA4) + `conversion` (Google Ads) + `Lead` (Meta Pixel)
+
+### GHL Form Modal Tracking
+
+When using `cta.type: ghl_modal` in campaign config, the `GHLFormModal.astro` component:
+- Extracts `gclid` from URL and appends to GHL iframe src
+- Stores gclid in sessionStorage
+- Detects form submission via postMessage from DecypherNow iframe
+- Triggers booking flow after form submit
+
+### Consistency with protocol.us (WordPress)
+
+The WordPress site (protocol.us) uses the SAME GTM container (`GTM-NNR8NM3F`) with tags configured for:
+- Google Ads conversions (Lead Form, Meeting Scheduled, Newsletter Signup)
+- GA4 events
+- Facebook Pixel
+- Conversion Linker
+
+When building new landing pages, ensure the GTM dataLayer events match what's configured in GTM (e.g., `form_submit`, `generate_lead`). The GTM container handles the mapping to Google Ads conversion actions.
+
+---
+
 ## Key Rules
 
 - **`noindex` is true by default** — paid traffic pages should not be indexed
 - **No hardcoded tracking IDs** — always from env vars
 - **Don't skip form dedup** — prevents double charges in GHL
 - **`registry.json` is generated** — never edit manually, always via `npm run build-registry`
+- **Always verify tracking** — after deploying a new campaign, use GTM Preview mode to confirm tags fire on form submit
