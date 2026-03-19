@@ -9,11 +9,19 @@ import LeadForm from '../components/LeadForm.astro';
 import { loadCampaignContent, loadCampaignConfig } from '../lib/content-loader';
 
 const { campaign } = Astro.params;
-const content = loadCampaignContent(campaign as string);
-const config = loadCampaignConfig(campaign as string);
+let content: ReturnType<typeof loadCampaignContent> = null;
+let config: ReturnType<typeof loadCampaignConfig> = null;
+let loadError = '';
+
+try {
+  content = loadCampaignContent(campaign as string);
+  config = loadCampaignConfig(campaign as string);
+} catch (e: unknown) {
+  loadError = e instanceof Error ? e.message : String(e);
+}
 
 if (!content || !config) {
-  return Astro.redirect('/');
+  return new Response(`Campaign not found: ${campaign}. Error: ${loadError}`, { status: 404 });
 }
 
 const activeExperiment = config.experiments?.find(e => e.status === 'active');
@@ -25,9 +33,9 @@ const activeExperiment = config.experiments?.find(e => e.status === 'active');
   canonicalUrl={config.seo?.canonical || `https://landing.protocol.us/${config.slug}`}
   noindex={config.seo?.index === true ? false : true}
 >
-  <Hero {...content.hero} />
+  <Hero headline={content.hero.headline} subhead={content.hero.subhead} cta_label={content.hero.cta_label} cta_url={content.hero.cta_url} background={content.hero.background || 'dark'} />
 
-  {content.benefits && <Benefits {...content.benefits} />}
+  {content.benefits && content.benefits.items && <Benefits title={content.benefits.title} items={content.benefits.items} layout={content.benefits.layout} />}
 
   {content.bodyHtml && (
     <section class="body-content">
@@ -35,7 +43,7 @@ const activeExperiment = config.experiments?.find(e => e.status === 'active');
     </section>
   )}
 
-  {content.social_proof && <SocialProof items={content.social_proof} />}
+  {content.social_proof && Array.isArray(content.social_proof) && content.social_proof.length > 0 && <SocialProof items={content.social_proof} />}
 
   <LeadForm
     campaignSlug={config.slug}
@@ -44,7 +52,7 @@ const activeExperiment = config.experiments?.find(e => e.status === 'active');
     ctaLabel={content.hero.cta_label}
   />
 
-  {content.faq && <FAQ items={content.faq} />}
+  {content.faq && Array.isArray(content.faq) && <FAQ items={content.faq} />}
 
-  {content.cta_bottom && <CTABottom {...content.cta_bottom} />}
+  {content.cta_bottom && content.cta_bottom.headline && <CTABottom headline={content.cta_bottom.headline} body={content.cta_bottom.body} cta_label={content.cta_bottom.cta_label} cta_url={content.cta_bottom.cta_url} />}
 </BaseLayout>
