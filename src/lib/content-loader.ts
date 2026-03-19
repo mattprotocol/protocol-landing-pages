@@ -75,6 +75,16 @@ export interface CampaignConfig {
   [key: string]: unknown;
 }
 
+// Handle social_proof as either flat array or object with items array
+function normalizeSocialProof(sp: unknown): CampaignContent['social_proof'] {
+  if (!sp) return null;
+  if (Array.isArray(sp)) return sp;
+  if (typeof sp === 'object' && sp !== null && 'items' in sp && Array.isArray((sp as Record<string, unknown>).items)) {
+    return (sp as Record<string, unknown>).items as CampaignContent['social_proof'];
+  }
+  return null;
+}
+
 export function loadCampaignContent(slug: string): CampaignContent | null {
   const contentPath = path.join(CAMPAIGNS_DIR, slug, 'content.md');
   if (!fs.existsSync(contentPath)) return null;
@@ -85,7 +95,7 @@ export function loadCampaignContent(slug: string): CampaignContent | null {
   return {
     hero: data.hero,
     benefits: data.benefits || null,
-    social_proof: data.social_proof || null,
+    social_proof: normalizeSocialProof(data.social_proof),
     faq: data.faq || null,
     cta_bottom: data.cta_bottom || null,
     pricing: data.pricing || null,
