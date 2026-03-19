@@ -7,10 +7,20 @@ import yaml from 'yaml';
 
 // Resolve campaigns dir relative to this file, not process.cwd()
 // This works reliably on Vercel serverless where cwd may differ
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const PROJECT_ROOT = path.resolve(__dirname, '..', '..');
-const CAMPAIGNS_DIR = path.join(PROJECT_ROOT, 'campaigns');
+// Resolve campaigns dir: try multiple strategies since compiled output
+// path differs from source path (src/lib/ vs dist/server/chunks/)
+function findCampaignsDir(): string {
+  const candidates = [
+    path.join(process.cwd(), 'campaigns'),                    // Vercel function root
+    path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..', 'campaigns'),  // from dist/server/chunks/
+    path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'campaigns'),         // from src/lib/
+  ];
+  for (const dir of candidates) {
+    if (fs.existsSync(dir)) return dir;
+  }
+  return candidates[0]; // fallback
+}
+const CAMPAIGNS_DIR = findCampaignsDir();
 
 export interface CampaignContent {
   hero: {
