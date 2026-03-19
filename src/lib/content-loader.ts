@@ -2,7 +2,15 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import yaml from 'yaml';
+
+// Resolve campaigns dir relative to this file, not process.cwd()
+// This works reliably on Vercel serverless where cwd may differ
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, '..', '..');
+const CAMPAIGNS_DIR = path.join(PROJECT_ROOT, 'campaigns');
 
 export interface CampaignContent {
   hero: {
@@ -58,7 +66,7 @@ export interface CampaignConfig {
 }
 
 export function loadCampaignContent(slug: string): CampaignContent | null {
-  const contentPath = path.join(process.cwd(), 'campaigns', slug, 'content.md');
+  const contentPath = path.join(CAMPAIGNS_DIR, slug, 'content.md');
   if (!fs.existsSync(contentPath)) return null;
 
   const raw = fs.readFileSync(contentPath, 'utf-8');
@@ -78,7 +86,7 @@ export function loadCampaignContent(slug: string): CampaignContent | null {
 }
 
 export function loadCampaignConfig(slug: string): CampaignConfig | null {
-  const configPath = path.join(process.cwd(), 'campaigns', slug, 'config.yaml');
+  const configPath = path.join(CAMPAIGNS_DIR, slug, 'config.yaml');
   if (!fs.existsSync(configPath)) return null;
 
   const raw = fs.readFileSync(configPath, 'utf-8');
@@ -86,10 +94,9 @@ export function loadCampaignConfig(slug: string): CampaignConfig | null {
 }
 
 export function getAllCampaignSlugs(): string[] {
-  const campaignsDir = path.join(process.cwd(), 'campaigns');
-  if (!fs.existsSync(campaignsDir)) return [];
+  if (!fs.existsSync(CAMPAIGNS_DIR)) return [];
 
-  return fs.readdirSync(campaignsDir)
+  return fs.readdirSync(CAMPAIGNS_DIR)
     .filter(dir => dir !== '_template' && !dir.startsWith('.'))
-    .filter(dir => fs.existsSync(path.join(campaignsDir, dir, 'content.md')));
+    .filter(dir => fs.existsSync(path.join(CAMPAIGNS_DIR, dir, 'content.md')));
 }
