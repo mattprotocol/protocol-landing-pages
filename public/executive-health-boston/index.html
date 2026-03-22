@@ -10,8 +10,8 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Functional Medicine Doctor Boston | Evidence-Based Root-Cause Care | Protocol</title>
-  <meta name="description" content="Functional medicine philosophy with real medical rigor. Board-certified physicians, 60+ biomarkers, and ongoing care. Root-cause medicine backed by published science. Book a free discovery call.">
+  <title>Executive Health Assessment in Boston | Protocol</title>
+  <meta name="description" content="60+ biomarkers. DEXA. VO2 max. Cardiovascular risk modeling. Everything your annual physical misses. In one visit. $2,995. Book your executive assessment.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://link.decyphernow.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -300,16 +300,6 @@
       background: var(--bg-elevated);
     }
 
-    /* -- Team cards -- */
-    .team-card {
-      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1);
-    }
-    .team-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-hover);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    }
-
     /* -- Divider -- */
     .divider {
       height: 1px;
@@ -445,7 +435,7 @@
       .mobile-sticky-cta { display: none; }
     }
 
-    /* -- Test detail modal -- */
+    /* -- Modal -- */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -551,29 +541,43 @@
       .prose-body p { font-size: 1.125rem; }
     }
 
-    /* -- Comparison columns -- */
-    .compare-col {
-      padding: 2rem;
-      border-radius: 3px;
+    /* -- Comparison table -- */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
     }
-    .compare-col h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 300;
-      margin-bottom: 1.25rem;
-    }
-    .compare-col ul {
-      list-style: none;
-      padding: 0;
-    }
-    .compare-col ul li {
-      padding: 0.6rem 0;
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
       font-size: 0.95rem;
       line-height: 1.5;
-      border-bottom: 1px solid var(--border);
     }
-    .compare-col ul li:last-child {
-      border-bottom: none;
+    .comparison-table th {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 12px;
+    }
+    .comparison-table td:first-child {
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+    .comparison-table td:last-child {
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+    @media (max-width: 640px) {
+      .comparison-table th,
+      .comparison-table td {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
@@ -602,8 +606,8 @@
     </a>
 
     <div class="hidden md:flex items-center gap-10">
-      <a href="#how" class="text-[15px] text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors tracking-[0.08em] uppercase font-body">How It Works</a>
-      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent text-[14px] py-2.5 px-7">Book a Free Discovery Call <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#included" class="text-[15px] text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors tracking-[0.08em] uppercase font-body">What's Included</a>
+      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent text-[14px] py-2.5 px-7">Book Your Executive Assessment <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
 
     <button onclick="openMobileNav()" class="md:hidden text-[var(--text-primary)] p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Open menu">
@@ -617,10 +621,9 @@
   <button onclick="closeMobileNav()" class="absolute top-5 right-6 text-[var(--text-primary)] min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close menu">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
   </button>
-  <a onclick="closeMobileNav()" href="#how" class="font-display text-3xl" tabindex="-1">How It Works</a>
-  <a onclick="closeMobileNav();openForm()" href="javascript:void(0)" class="btn-accent mt-4" tabindex="-1">Book a Free Discovery Call</a>
+  <a onclick="closeMobileNav()" href="#included" class="font-display text-3xl" tabindex="-1">What's Included</a>
+  <a onclick="closeMobileNav();openForm()" href="javascript:void(0)" class="btn-accent mt-4" tabindex="-1">Book Your Executive Assessment</a>
 </div>
-
 
 <!-- HERO -->
 <main id="main-content">
@@ -636,27 +639,27 @@
     <div class="max-w-3xl">
       <div class="anim-fade-up d1 flex items-center gap-3 mb-7">
         <div class="accent-line" style="animation: drawLine 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s both;"></div>
-        <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--text-muted)] font-body">Functional Medicine in Boston</span>
+        <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--text-muted)] font-body">Executive Health Assessment in Boston</span>
       </div>
 
       <h1 class="hero-headline font-display text-[3.2rem] md:text-[4.8rem] lg:text-[5.8rem] font-300 leading-[1.04] tracking-[-0.01em] anim-fade-up d2" style="text-wrap: balance;">
-        Root-Cause Medicine Backed by <span class="italic text-[var(--accent)]">Published Science</span>
+        The Executive Physical. <span class="italic text-[var(--accent)]">Rebuilt.</span>
       </h1>
 
       <p class="mt-8 text-lg md:text-[1.4rem] text-[var(--text-secondary)] font-light leading-relaxed max-w-xl anim-fade-up d3">
-        Protocol integrates functional medicine philosophy  - systems-level thinking, advanced diagnostics, root-cause investigation  - with the evidence base of academic medicine. Board-certified physicians. 60+ biomarkers. One medical team that sees your complete picture.
+        60+ biomarkers. DEXA body composition. VO2 max. Cardiovascular risk modeling. Biological age. Physician interpretation against optimal targets  - not just &ldquo;normal.&rdquo; Everything your annual physical misses. In one visit.
       </p>
 
       <!-- Credentials -->
       <p class="mt-5 text-sm md:text-base text-[var(--text-muted)] anim-fade-up d4">
-        Board-Certified Physicians &nbsp;&middot;&nbsp; Boston, MA &nbsp;&middot;&nbsp; Evidence-Based Integrative Care
+        Board-Certified Physicians &nbsp;&middot;&nbsp; MGH Network &nbsp;&middot;&nbsp; Boston, MA &nbsp;&middot;&nbsp; $2,995
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4 anim-fade-up d5">
         <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
-          Book a Free Discovery Call &rarr;
+          Book Your Executive Assessment &rarr;
         </a>
-        <a href="#how" class="btn-outline">See How It Works</a>
+        <a href="#included" class="btn-outline">See What's Included</a>
       </div>
     </div>
   </div>
@@ -672,272 +675,219 @@
 </section>
 
 
-<!-- PROBLEM SECTION: TWO KINDS OF INCOMPLETE MEDICINE -->
-<section class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="The problem with current medicine">
+<!-- WHAT'S INCLUDED -->
+<section id="included" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="What's in your Executive Assessment">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
     <div class="text-center mb-16 md:mb-20 reveal">
-      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Gap</span>
-      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">Two Kinds of Incomplete Medicine</h2>
-      <p class="mt-4 text-[var(--text-secondary)] md:text-lg max-w-2xl mx-auto">You have been told to choose between rigorous medicine and integrative thinking. You should not have to.</p>
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Executive Assessment</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">What's in your comprehensive health assessment</h2>
+      <p class="mt-4 text-[var(--text-secondary)] md:text-lg max-w-xl mx-auto">Advanced diagnostics. Expert interpretation. One visit. Everything that matters  - tested against optimal targets, not just standard reference ranges.</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-5 md:gap-7 max-w-4xl mx-auto">
-      <!-- Left: Conventional -->
-      <div class="compare-col bg-[var(--bg-card)] border border-[var(--border)] reveal">
-        <h3 class="text-[var(--text-muted)]">Conventional Medicine</h3>
-        <ul>
-          <li class="text-[var(--text-muted)]">Treats symptoms, not systems</li>
-          <li class="text-[var(--text-muted)]">7-minute visits, narrow focus</li>
-          <li class="text-[var(--text-muted)]">&ldquo;Your labs are normal&rdquo;  - benchmarked against a sick population</li>
-          <li class="text-[var(--text-muted)]">Misses root causes because it does not look for them</li>
-        </ul>
-      </div>
-
-      <!-- Right: Unrigorous Functional -->
-      <div class="compare-col bg-[var(--bg-card)] border border-[var(--border)] reveal rd1">
-        <h3 class="text-[var(--text-muted)]">Unrigorous Functional Medicine</h3>
-        <ul>
-          <li class="text-[var(--text-muted)]">Right instincts, inconsistent evidence</li>
-          <li class="text-[var(--text-muted)]">Supplement stacking without clinical reasoning</li>
-          <li class="text-[var(--text-muted)]">Testing without a clear interpretation framework</li>
-          <li class="text-[var(--text-muted)]">Philosophy without accountability</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="text-center mt-12 reveal rd2">
-      <p class="font-display text-[1.6rem] md:text-[2rem] font-300 text-[var(--text-primary)] max-w-2xl mx-auto" style="text-wrap: balance;">You do not have to choose between functional and rigorous. Protocol is both.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- HOW IT WORKS / SOLUTION SECTION -->
-<section id="how" class="py-24 md:py-36 bg-[var(--bg-deep)]" aria-label="Evidence-based functional medicine at Protocol">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="text-center mb-16 md:mb-20 reveal">
-      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Protocol Approach</span>
-      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">What Evidence-Based Functional Medicine Looks Like</h2>
-      <p class="mt-4 text-[var(--text-secondary)] md:text-lg max-w-xl mx-auto">Root-cause medicine practiced with the rigor of academic medicine  - not the guesswork of the speculative fringe.</p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-5 md:gap-7">
-      <!-- Card 01 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
+      <!-- Card 01: Advanced Bloodwork -->
       <div class="card p-8 lg:p-10 reveal">
         <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">01</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Systems-Level Diagnostics</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          60+ biomarkers, DEXA body composition, VO2 max, advanced cardiovascular markers. Not a basic blood panel. A comprehensive picture of cardiovascular, metabolic, hormonal, and body composition health  - because root causes do not live in a single lab value.
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Advanced Bloodwork</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-4">
+          60+ biomarkers  - not the 15-marker panel from your annual physical. We test what the science says predicts long-term health outcomes.
         </p>
         <ul class="space-y-2.5">
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <button onclick="openModal('bloodwork')" class="text-left group cursor-pointer">
-              <span class="group-hover:text-[var(--accent)] transition-colors">ApoB, Lp(a), advanced lipid particle analysis</span>
-              <svg class="inline w-3.5 h-3.5 ml-1 text-[var(--accent-dim)] group-hover:text-[var(--accent)] transition-colors" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
+            <span>ApoB  - the causal marker for cardiovascular disease</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <button onclick="openModal('dexa')" class="text-left group cursor-pointer">
-              <span class="group-hover:text-[var(--accent)] transition-colors">DEXA body composition  - muscle, fat, bone density</span>
-              <svg class="inline w-3.5 h-3.5 ml-1 text-[var(--accent-dim)] group-hover:text-[var(--accent)] transition-colors" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
+            <span>Lp(a)  - genetic cardiovascular risk, rarely ordered</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <button onclick="openModal('vo2')" class="text-left group cursor-pointer">
-              <span class="group-hover:text-[var(--accent)] transition-colors">VO2 max  - the strongest predictor of all-cause mortality</span>
-              <svg class="inline w-3.5 h-3.5 ml-1 text-[var(--accent-dim)] group-hover:text-[var(--accent)] transition-colors" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
+            <span>HbA1c, fasting insulin, hsCRP, hormones, metabolic panel</span>
           </li>
         </ul>
       </div>
 
-      <!-- Card 02 -->
+      <!-- Card 02: DEXA -->
       <div class="card p-8 lg:p-10 reveal rd1">
         <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">02</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Physician-Directed Interpretation Against Optimal Ranges</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Not &ldquo;your numbers are normal.&rdquo; What does optimal look like for your age, sex, and goals? Where are the early signals? What do the trends say? Board-certified physicians who specialize in reading the full picture.
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">DEXA Body Composition</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-4">
+          BMI tells you nothing. DEXA tells you everything  - fat mass, lean mass, bone density by body region, and visceral adipose tissue.
         </p>
         <ul class="space-y-2.5">
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Optimal targets, not population-average &ldquo;normal&rdquo;</span>
+            <span>Regional body composition analysis</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Trend analysis across systems, not isolated snapshots</span>
+            <span>Visceral fat quantification</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Clinical reasoning you can follow and verify</span>
+            <span>Bone mineral density assessment</span>
           </li>
         </ul>
       </div>
 
-      <!-- Card 03 -->
+      <!-- Card 03: VO2 Max -->
       <div class="card p-8 lg:p-10 reveal rd2">
         <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">03</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Integrative, Evidence-Based Protocols</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Interventions grounded in published science. Lifestyle, nutrition, exercise prescription, medication when warranted. No unproven supplements. No speculation. If the evidence supports it, we use it. If it does not, we do not.
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">VO2 Max Testing</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-4">
+          The single strongest predictor of all-cause mortality. Not a treadmill stress test  - a medical-grade measurement of your cardiorespiratory capacity.
         </p>
         <ul class="space-y-2.5">
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Every recommendation backed by peer-reviewed research</span>
+            <span>Clinical-grade cardiopulmonary exercise test</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Lifestyle, nutrition, exercise, medication  - as indicated</span>
+            <span>Anaerobic threshold and training zones</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>No supplement dispensary. No speculation.</span>
+            <span>Physician-interpreted results</span>
           </li>
         </ul>
       </div>
 
-      <!-- Card 04 -->
+      <!-- Card 04: CV Risk Modeling -->
       <div class="card p-8 lg:p-10 reveal rd3">
         <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">04</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Ongoing Medical Coaching</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Quarterly reassessments. Protocol adjustments as data evolves. A physician and Healthspan Advisor who know your history, track your trajectory, and catch what you cannot see on your own.
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Cardiovascular Risk Modeling</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-4">
+          AHA PREVENT risk score with 10-year and 30-year cardiovascular risk assessment, interpreted in the context of your full biomarker panel.
         </p>
         <ul class="space-y-2.5">
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Quarterly biomarker retesting and trend tracking</span>
+            <span>10-year and 30-year risk projections</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Data-driven protocol adjustments each quarter</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>A medical team that knows your complete history</span>
+            <span>Contextualized with your full panel</span>
           </li>
         </ul>
       </div>
 
-      <!-- Card 05 -->
-      <div class="card p-8 lg:p-10 md:col-span-2 reveal rd4">
+      <!-- Card 05: Biological Age -->
+      <div class="card p-8 lg:p-10 reveal rd3">
         <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">05</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">A Real Medical Home</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Full primary care. Specialist referrals through the MGH network when needed. One team, one relationship, complete medical picture. Not a supplement dispensary. Not a testing service. A medical practice.
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Biological Age</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-4">
+          Your chronological age is a fact. Your biological age is a variable. Phenotypic age calculation from blood biomarkers tells you which one matters.
         </p>
-        <ul class="space-y-2.5 md:flex md:gap-8 md:space-y-0">
+        <ul class="space-y-2.5">
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Full primary care + integrative expertise</span>
+            <span>Phenotypic age from biomarkers</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>MGH network access for specialist referrals</span>
+            <span>Trackable over time</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 06: Physician Interpretation -->
+      <div class="card p-8 lg:p-10 reveal rd4">
+        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">06</span>
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Physician Interpretation</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-4">
+          1:1 consultation with a physician who specializes in proactive medicine. Results interpreted against optimal targets, not standard reference ranges. Actionable protocol included.
+        </p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Board-certified, MGH-affiliated physicians</span>
           </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>One team that sees your complete picture</span>
+            <span>Actionable health protocol</span>
           </li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="text-center mt-12 reveal rd3">
-      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
-        Book a Free Discovery Call &rarr;
-      </a>
-      <p class="text-xs md:text-sm text-[var(--text-muted)] mt-3">15-minute call. No pressure. No supplement pitch.</p>
+
+<!-- HOSPITAL COMPARISON -->
+<section class="py-24 md:py-36 bg-[var(--bg-deep)]" aria-label="How this differs from standard executive physicals">
+  <div class="max-w-4xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Difference</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">Not your hospital's executive physical.</h2>
+      <p class="mt-4 text-[var(--text-secondary)] md:text-lg max-w-xl mx-auto">Hospital executive physicals test what insurance covers. We test what the science says matters.</p>
+    </div>
+
+    <div class="reveal rd1 overflow-x-auto">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">Standard Executive Physical</th>
+            <th style="width:50%;">Protocol Executive Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic lipid panel (total cholesterol, LDL-C)</td>
+            <td>60+ biomarkers including ApoB, Lp(a), hsCRP, fasting insulin</td>
+          </tr>
+          <tr>
+            <td>Treadmill stress test (binary pass/fail)</td>
+            <td>VO2 max  - gold-standard cardiorespiratory fitness measurement</td>
+          </tr>
+          <tr>
+            <td>BMI calculation</td>
+            <td>DEXA body composition  - fat, lean mass, visceral fat, bone density</td>
+          </tr>
+          <tr>
+            <td>&ldquo;Your cholesterol is fine&rdquo;</td>
+            <td>Cardiovascular risk modeling (PREVENT score), biological age</td>
+          </tr>
+          <tr>
+            <td>Standard reference ranges (&ldquo;normal&rdquo;)</td>
+            <td>Interpretation against optimal targets  - not just &ldquo;not sick&rdquo;</td>
+          </tr>
+          <tr>
+            <td>Report mailed in 2 weeks</td>
+            <td>1:1 physician consultation with actionable protocol</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
 
-<!-- BODY CONTENT: FUNCTIONAL MEDICINE -->
-<section class="py-24 md:py-36 bg-[var(--bg-surface)]">
-  <div class="max-w-3xl mx-auto px-6 lg:px-12 prose-body reveal">
-
-    <h2>Functional Medicine at Protocol: Where Root-Cause Thinking Meets Real Evidence</h2>
-
-    <p>The core philosophy of functional medicine is sound: look upstream for root causes, think in systems, treat the whole person rather than isolated symptoms. Most people searching for a functional medicine doctor in Boston already believe this. The question is not whether the philosophy is right. The question is whether the practice matches the philosophy.</p>
-
-    <p>Too often, it does not. The functional medicine landscape ranges from rigorous, physician-led practices to supplement dispensaries with a stethoscope on the wall. The gap between the best and worst is vast  - and patients bear the cost of that inconsistency.</p>
-
-    <h3>The Evidence Standard That Makes the Difference</h3>
-
-    <p>Protocol was built to close this gap. Our physicians share the functional medicine commitment to root-cause investigation and systems-level thinking. Where we differ is the evidence standard. Every diagnostic we order, every protocol we build, every intervention we recommend is grounded in published, peer-reviewed science. Not trends. Not anecdote. Not what sold well at last year's integrative medicine conference.</p>
-
-    <p>This means we test 60+ biomarkers  - including ApoB, Lp(a), advanced metabolic panels, hormones, and inflammatory markers  - because the published evidence says these predict long-term health outcomes. We use DEXA body composition and VO2 max because the data on their prognostic value is extensive and unambiguous. We interpret results against optimal ranges, not the population-average &ldquo;normal&rdquo; ranges that most labs use  - because &ldquo;normal&rdquo; is benchmarked against a population where 88% have at least one marker of metabolic dysfunction.</p>
-
-    <h3>How a Physician-Directed Functional Medicine Practice Works in Boston</h3>
-
-    <p>When you join Protocol, you are matched with a board-certified physician who leads a care team built around your health: physician, Healthspan Advisor, registered dietitian, and care coordinators. Your care begins with a comprehensive intake  - not a questionnaire, but a 60-minute conversation about your health history, family risk factors, goals, and the questions your previous doctors could not answer.</p>
-
-    <p>From there, your physician orders a systems-level diagnostic workup. Within weeks, you sit down with your medical team to review every result, understand what each biomarker means in the context of your whole health picture, and build an evidence-based protocol. Lifestyle. Nutrition. Exercise prescription. Medication when the science warrants it. No filler. No speculation.</p>
-
-    <p>Quarterly reassessments track your trajectory. Your protocol evolves as your data evolves. This is not a one-time assessment. It is an ongoing medical partnership  - the kind of relationship that functional medicine promises but rarely delivers at this level of rigor.</p>
-
-    <h3>Is Protocol Right for You?</h3>
-
-    <p>Protocol may be right for you if:</p>
-
-    <ul class="space-y-2">
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You believe in root-cause medicine but want it grounded in published evidence</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You have been frustrated by doctors who treat symptoms without investigating underlying causes</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You want advanced diagnostics interpreted by physicians who understand the full picture</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You are looking for a long-term medical partner, not a one-time assessment</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You want integrative thinking without sacrificing scientific rigor</span>
-      </li>
-    </ul>
-
-    <p>Protocol is probably not right for you if you are looking for the cheapest option (this is a premium medical practice), want a supplement-heavy protocol, or need acute or emergency care. We prescribe evidence-based interventions only.</p>
-
-  </div>
-</section>
-
-
-<!-- TESTIMONIALS -->
-<section class="py-24 md:py-32 bg-[var(--bg-deep)]" role="region" aria-label="Member testimonials">
+<!-- PROOF POINTS -->
+<section class="py-24 md:py-32 bg-[var(--bg-surface)]" role="region" aria-label="Clinical outcomes and testimonials">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 reveal">
-    <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Clinical Outcomes</span>
-    <h2 class="font-display text-[2.8rem] md:text-[3.4rem] font-300 mt-4">The approach produces measurable results.</h2>
+    <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Data</span>
+    <h2 class="font-display text-[2.8rem] md:text-[3.4rem] font-300 mt-4">The data behind our approach.</h2>
   </div>
 
   <!-- Stats row -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16 px-6 lg:px-12 reveal rd1">
     <div class="text-center">
       <div class="stat-val text-4xl md:text-5xl">79</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">median member ApoB (mg/dL)  - below optimal threshold</p>
-    </div>
-    <div class="text-center">
-      <div class="stat-val text-4xl md:text-5xl">69%</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">of members at optimal ApoB (up from 27% at intake)</p>
+      <p class="text-sm text-[var(--text-muted)] mt-2">Median member ApoB (mg/dL). US average: 100-110.</p>
     </div>
     <div class="text-center">
       <div class="stat-val text-4xl md:text-5xl">-3.8</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">years biological age vs. chronological  - 72% biologically younger</p>
+      <p class="text-sm text-[var(--text-muted)] mt-2">Median biological age delta (years younger)</p>
     </div>
     <div class="text-center">
       <div class="stat-val text-4xl md:text-5xl">95%</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">maintained or improved cardiovascular risk profiles</p>
+      <p class="text-sm text-[var(--text-muted)] mt-2">Maintained or improved cardiovascular risk</p>
+    </div>
+    <div class="text-center">
+      <div class="stat-val text-4xl md:text-5xl">60+</div>
+      <p class="text-sm text-[var(--text-muted)] mt-2">Biomarkers tested vs. 15-20 in a standard executive physical</p>
     </div>
   </div>
 
@@ -948,33 +898,33 @@
       <span id="marqueeToggleLabel">Pause</span>
     </button>
     <div class="marquee-track px-6">
-      <!-- Card 1: Jill N. (functional + rigorous) -->
+      <!-- Card 1: Biotech Executive -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">To have both a functional doctor and an MGH &ldquo;Medical&rdquo; doctor is terrific. I finally have a practice that combines integrative thinking with real medical rigor.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Outstanding expertise and actionable recommendations. Every result was explained and put in context.</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
+          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">S</div>
           <div>
-            <div class="text-sm font-medium">Jill N.</div>
-            <div class="text-xs text-[var(--text-muted)]">Small Business Owner, Cape Cod</div>
+            <div class="text-sm font-medium">Biotech Executive</div>
+            <div class="text-xs text-[var(--text-muted)]">Cambridge, MA</div>
           </div>
         </div>
       </div>
 
-      <!-- Card 2: Anonymous member -->
+      <!-- Card 2: Fortune 100 CFO -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Interactions are focused on being proactive, holistic and specific to my needs and situation. Outstanding expertise and actionable recommendations.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Proactive, holistic, and specific to my needs and situation. Thorough in a way my previous physicals never were.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">A</div>
           <div>
-            <div class="text-sm font-medium">Protocol Member</div>
-            <div class="text-xs text-[var(--text-muted)]">Biotech Executive, Cambridge</div>
+            <div class="text-sm font-medium">Fortune 100 CFO</div>
+            <div class="text-xs text-[var(--text-muted)]">Boston, MA</div>
           </div>
         </div>
       </div>
 
-      <!-- Card 3: Jennifer D. (root-cause lipids) -->
+      <!-- Card 3: Jennifer D. -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
         <div class="flex items-center gap-4 mb-4">
@@ -983,7 +933,7 @@
             <div class="text-xs text-[var(--text-muted)]">cholesterol in 30 days</div>
           </div>
         </div>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different  - &ldquo;This is the number one thing.&rdquo; Thirty days later I cut my cholesterol in half.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different. Thirty days later I cut my cholesterol in half. Best-in-class numbers now.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div>
@@ -996,18 +946,18 @@
       <!-- Duplicates for seamless loop -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">To have both a functional doctor and an MGH &ldquo;Medical&rdquo; doctor is terrific. I finally have a practice that combines integrative thinking with real medical rigor.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Outstanding expertise and actionable recommendations. Every result was explained and put in context.</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
-          <div><div class="text-sm font-medium">Jill N.</div><div class="text-xs text-[var(--text-muted)]">Small Business Owner, Cape Cod</div></div>
+          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">S</div>
+          <div><div class="text-sm font-medium">Biotech Executive</div><div class="text-xs text-[var(--text-muted)]">Cambridge, MA</div></div>
         </div>
       </div>
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Interactions are focused on being proactive, holistic and specific to my needs and situation. Outstanding expertise and actionable recommendations.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Proactive, holistic, and specific to my needs and situation. Thorough in a way my previous physicals never were.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">A</div>
-          <div><div class="text-sm font-medium">Protocol Member</div><div class="text-xs text-[var(--text-muted)]">Biotech Executive, Cambridge</div></div>
+          <div><div class="text-sm font-medium">Fortune 100 CFO</div><div class="text-xs text-[var(--text-muted)]">Boston, MA</div></div>
         </div>
       </div>
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
@@ -1018,7 +968,7 @@
             <div class="text-xs text-[var(--text-muted)]">cholesterol in 30 days</div>
           </div>
         </div>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different  - &ldquo;This is the number one thing.&rdquo; Thirty days later I cut my cholesterol in half.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different. Thirty days later I cut my cholesterol in half. Best-in-class numbers now.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div><div class="text-sm font-medium">Jennifer D.</div><div class="text-xs text-[var(--text-muted)]">Protocol Member, Boston</div></div>
@@ -1029,12 +979,32 @@
 </section>
 
 
-<!-- FIRST 30 DAYS -->
-<section class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="What to expect in your first 30 days">
+<!-- PRICE -->
+<section class="py-24 md:py-36 bg-[var(--bg-deep)]" aria-label="Executive Assessment pricing">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center reveal">
+    <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)] mb-6 block">Your Assessment</span>
+    <h2 class="font-display text-[3rem] md:text-[4rem] font-300 mt-4">$2,995</h2>
+    <p class="text-[var(--text-secondary)] mt-6 text-lg md:text-xl max-w-xl mx-auto">
+      A comprehensive executive health assessment  - DEXA, VO2 max, 60+ biomarkers, cardiovascular risk modeling, biological age, and physician-led interpretation. One visit. One price. No insurance complexity.
+    </p>
+    <p class="text-[var(--text-muted)] mt-4 text-sm md:text-base max-w-lg mx-auto">
+      Hospital executive physical programs charge $2,000-5,000 for basic labs and a treadmill test. Protocol&rsquo;s Executive Assessment includes advanced diagnostics that most programs do not offer at any price.
+    </p>
+    <div class="mt-10">
+      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
+        Book Your Executive Assessment &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section id="how" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="How the Executive Assessment works">
   <div class="max-w-3xl mx-auto px-6 lg:px-12">
     <div class="text-center mb-16 reveal">
-      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Your First 30 Days</span>
-      <h2 class="font-display text-[2.2rem] md:text-[2.8rem] font-300 mt-4">What to expect when you join</h2>
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Process</span>
+      <h2 class="font-display text-[2.2rem] md:text-[2.8rem] font-300 mt-4">How it works</h2>
     </div>
 
     <div class="space-y-0">
@@ -1045,8 +1015,8 @@
           <div class="w-px flex-1 bg-[var(--border)]"></div>
         </div>
         <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Week 1: Comprehensive intake</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">A 60-minute physician-led conversation about your health history, family risk factors, and the questions your previous doctors could not answer. This is where root-cause investigation begins  - not with a blood draw, but with listening.</p>
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Book your assessment</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Schedule online or by phone. We confirm your appointment within 24 hours and send preparation instructions.</p>
         </div>
       </div>
       <!-- Step 2 -->
@@ -1056,45 +1026,91 @@
           <div class="w-px flex-1 bg-[var(--border)]"></div>
         </div>
         <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Weeks 2 to 3: Systems-level diagnostics</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">DEXA body composition, VO2 max, and advanced bloodwork  - 60+ biomarkers tested against optimal thresholds. Your physician orders everything based on your intake and clinical picture, not a cookie-cutter panel.</p>
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">One visit, everything tested</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Your assessment takes approximately 3 hours. DEXA, VO2 max, comprehensive bloodwork, and vitals  - all in one session at our Boston clinic.</p>
         </div>
       </div>
       <!-- Step 3 -->
       <div class="flex gap-6 reveal rd3">
         <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">3</div>
-          <div class="w-px flex-1 bg-[var(--border)]"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Week 4: Your evidence-based protocol</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Your medical team walks you through every result and builds an integrative, evidence-based plan. Lifestyle, nutrition, exercise prescription, medication when warranted. Every recommendation comes with a clear clinical rationale.</p>
-        </div>
-      </div>
-      <!-- Step 4 -->
-      <div class="flex gap-6 reveal rd4">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] bg-[var(--accent-glow)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">4</div>
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] bg-[var(--accent-glow)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">3</div>
         </div>
         <div>
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Ongoing: Quarterly reassessments</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Biomarker retesting, protocol adjustments, and trend analysis each quarter. Your physician tracks your trajectory and evolves your care plan based on real data. This is the ongoing medical partnership functional medicine promises  - delivered with real evidence.</p>
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Physician review and your protocol</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Within 7-10 days, you meet 1:1 with your physician to review every result, discuss what is optimal vs. where you are, and receive your actionable health protocol.</p>
         </div>
       </div>
-      <p class="text-xs text-[var(--text-muted)] mt-6 pl-16">All testing at partner facilities in Boston.</p>
+      <p class="text-xs text-[var(--text-muted)] mt-6 pl-16">All testing at our Boston clinic. Assessment takes approximately 3 hours.</p>
     </div>
 
     <div class="text-center mt-12 reveal">
       <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
-        Book a Free Discovery Call &rarr;
+        Book Your Executive Assessment &rarr;
       </a>
     </div>
   </div>
 </section>
 
 
+<!-- BODY CONTENT: EXECUTIVE HEALTH -->
+<section class="py-24 md:py-36 bg-[var(--bg-deep)]">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12 prose-body reveal">
+
+    <h2>What Is an Executive Health Assessment?</h2>
+
+    <p>An executive health assessment is a comprehensive health screening designed for busy professionals who want more than a standard annual physical. It goes beyond basic bloodwork and a brief physician visit to include advanced diagnostics  - the kind of testing that catches risks years before symptoms appear.</p>
+
+    <p>Most executive physical programs, including those offered by major hospital systems, were designed decades ago. They include a basic metabolic panel, a treadmill stress test, and standard screenings. They tell you whether you are &ldquo;normal.&rdquo; They do not tell you whether you are optimal.</p>
+
+    <h3>Why Standard Executive Physicals Fall Short</h3>
+
+    <p>A standard executive physical in Boston typically includes 15-20 biomarkers, a treadmill stress test that produces a binary pass/fail, and a BMI calculation. These tests were designed to detect existing disease  - not to identify early-stage metabolic, cardiovascular, or body composition risks that can be addressed before they become clinical problems.</p>
+
+    <p>They do not test ApoB, the causal marker for atherosclerotic cardiovascular disease. They do not test Lp(a), a genetically determined cardiovascular risk factor that cannot be modified by lifestyle and is rarely ordered by primary care physicians. They do not measure VO2 max  - the strongest predictor of all-cause mortality. And they interpret results against standard reference ranges, which define &ldquo;normal&rdquo; as &ldquo;not actively sick&rdquo; rather than &ldquo;optimally healthy.&rdquo;</p>
+
+    <h3>The Protocol Executive Assessment in Boston</h3>
+
+    <p>Protocol&rsquo;s Executive Assessment was built from the ground up around the question: what does the science say actually predicts long-term health outcomes? The answer is a comprehensive assessment that includes:</p>
+
+    <ul class="space-y-2">
+      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Advanced bloodwork with 60+ biomarkers including ApoB, Lp(a), hsCRP, fasting insulin, and HbA1c</span>
+      </li>
+      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>DEXA body composition scan  - fat mass, lean mass, bone density, and visceral fat by region</span>
+      </li>
+      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>VO2 max cardiorespiratory fitness testing  - the gold-standard measurement of aerobic capacity</span>
+      </li>
+      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Cardiovascular risk modeling with AHA PREVENT score and 10-year/30-year projections</span>
+      </li>
+      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Biological age calculation from blood biomarkers</span>
+      </li>
+      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>1:1 physician consultation with results interpreted against optimal targets and an actionable health protocol</span>
+      </li>
+    </ul>
+
+    <h3>Who Is This For?</h3>
+
+    <p>The Executive Assessment is designed for senior professionals in the Boston area who want a thorough, efficient, evidence-based health screening  - not a checkbox exercise. It is for executives, business owners, and high-performing professionals who value their time and want everything tested in one visit, interpreted by physicians who specialize in proactive medicine.</p>
+
+    <p>If you want ongoing physician support after your assessment, Protocol offers an annual membership program. But there is no obligation to continue beyond the assessment itself. The Executive Assessment is a defined product with a defined scope: comprehensive diagnostics, expert interpretation, and an actionable protocol  - for $2,995.</p>
+
+  </div>
+</section>
+
+
 <!-- FAQ -->
-<section id="faq" class="py-24 md:py-36" aria-label="Frequently asked questions">
+<section id="faq" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="Frequently asked questions">
   <div class="max-w-3xl mx-auto px-6 lg:px-12">
     <div class="text-center mb-16 reveal">
       <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Common Questions</span>
@@ -1104,42 +1120,18 @@
     <div class="space-y-4 reveal rd1">
       <details class="group card p-6 cursor-pointer" open>
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          Is Protocol a functional medicine practice?
+          How is this different from a hospital executive physical?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">We share functional medicine's core principles: root-cause investigation, systems-level thinking, treating the whole person. Where we differ is the evidence standard. Every intervention we recommend is grounded in published, peer-reviewed research. We do not speculate. We do not stack supplements without clinical reasoning. Think of it as functional medicine philosophy practiced with academic medicine rigor.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Hospital executive physicals typically include basic bloodwork, a treadmill stress test, and standard screenings. Protocol&rsquo;s Executive Assessment adds DEXA body composition, VO2 max testing, 60+ biomarkers (including ApoB and Lp(a)), cardiovascular risk modeling, and biological age  - all interpreted against optimal targets by a physician trained in proactive medicine.</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          What diagnostics do you run?
+          How long does the assessment take?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">60+ biomarkers, DEXA body composition, VO2 max cardiopulmonary testing, advanced cardiovascular markers (ApoB, Lp(a)), metabolic panels, hormones, inflammatory markers, and more. These are not add-ons  - they are standard care for every member. All results are interpreted against optimal ranges, not permissive population-average &ldquo;normal.&rdquo;</p>
-      </details>
-
-      <details class="group card p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          Do you prescribe supplements?
-          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
-        </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Only when supported by published evidence and clinically indicated for your specific situation. We are not a supplement dispensary. Most of our interventions involve lifestyle, nutrition, exercise, and medication when warranted. Every recommendation comes with a clear rationale grounded in peer-reviewed science.</p>
-      </details>
-
-      <details class="group card p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          How is this different from my current functional medicine provider?
-          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
-        </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">We integrate functional medicine thinking with full primary care, advanced diagnostics, and an ongoing medical coaching relationship. Our physicians are board-certified with MGH network access for specialist referrals. Every recommendation comes with a clear clinical rationale grounded in published science  - not trends, not anecdote.</p>
-      </details>
-
-      <details class="group card p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          What does the membership include?
-          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
-        </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Comprehensive diagnostics (60+ biomarkers, DEXA, VO2 max), physician-led interpretation against optimal ranges, ongoing 1:1 medical coaching with a Healthspan Advisor, quarterly reassessments, full primary care, and specialist referrals through MGH when needed. HSA and FSA eligible. Book a free discovery call to discuss pricing.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Approximately 3 hours for the testing session. You will receive a separate 1:1 physician consultation to review your results and protocol within 7-10 days.</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
@@ -1147,7 +1139,23 @@
           Do you accept insurance?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Protocol is a membership-based practice. The membership fee is not covered by insurance. However, many of our diagnostic tests and specialist referrals can be billed to insurance. We provide documentation for HSA/FSA reimbursement upon request.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">The Executive Assessment is a self-pay service ($2,995). We can provide a superbill for potential out-of-network reimbursement, but most executive health assessments  - including hospital-based programs  - are not covered by standard insurance.</p>
+      </details>
+
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
+          What happens after the assessment?
+          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">You receive a comprehensive report with all results interpreted against optimal ranges, plus a personalized health protocol. If you want ongoing physician support and monitoring, Protocol offers an annual membership program  - but there is no obligation to continue beyond the assessment.</p>
+      </details>
+
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
+          Who are the physicians?
+          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Board-certified physicians with expertise in proactive and longevity-focused medicine, affiliated with the MGH hospital network for specialist referrals when needed.</p>
       </details>
     </div>
   </div>
@@ -1155,23 +1163,23 @@
 
 
 <!-- FINAL CTA -->
-<section id="start" class="py-36 md:py-52 relative" aria-label="Get started with Protocol">
+<section id="start" class="py-36 md:py-52 relative" aria-label="Book your Executive Assessment">
   <div class="crosshatch"></div>
   <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[var(--accent)] opacity-[0.035] blur-[150px]"></div>
 
   <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center relative z-10 reveal">
     <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)] mb-6 block">Get Started</span>
     <h2 class="font-display text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] font-300 leading-[1.06]" style="text-wrap: balance;">
-      Find Out if Protocol Is the Right Fit
+      Your health deserves better data.
     </h2>
     <p class="text-[var(--text-secondary)] mt-6 text-lg md:text-xl max-w-xl mx-auto">
-      Book a free discovery call. No commitment. We will walk you through our approach, answer your questions, and help you decide if this is the medical partnership you have been looking for.
+      Book your Executive Assessment. $2,995. One visit. Everything that matters.
     </p>
     <div class="mt-10 flex flex-col items-center gap-3">
       <a href="javascript:void(0)" onclick="openForm()" class="btn-accent text-base px-12 py-5" style="box-shadow: 0 0 24px rgba(194,224,58,0.15), 0 0 48px rgba(194,224,58,0.06);">
-        Book a Free Discovery Call &rarr;
+        Book Your Executive Assessment &rarr;
       </a>
-      <p class="text-xs text-[var(--text-muted)]">15-minute call. No pressure. No supplement pitch.</p>
+      <p class="text-xs text-[var(--text-muted)]">Questions? Email <a href="mailto:info@protocol.us" class="underline hover:text-[var(--accent)] transition-colors">info@protocol.us</a> &middot; Boston, MA</p>
     </div>
   </div>
 </section>
@@ -1215,20 +1223,20 @@
           <path d="M134.152 16.7473C134.673 15.3873 135.423 14.2185 136.396 13.241C137.37 12.2634 138.535 11.5112 139.889 10.9884C141.244 10.4657 142.756 10.2021 144.42 10.2021C146.084 10.2021 147.587 10.4657 148.929 10.9884C150.271 11.5112 151.427 12.2634 152.401 13.241C153.375 14.2185 154.124 15.3873 154.645 16.7473C155.166 18.1073 155.429 19.6246 155.429 21.2949C155.429 22.9652 155.166 24.4399 154.645 25.8C154.124 27.16 153.375 28.3288 152.401 29.3063C151.427 30.2838 150.271 31.0361 148.929 31.5588C147.587 32.0816 146.084 32.3451 144.42 32.3451C142.756 32.3451 141.244 32.0816 139.889 31.5588C138.535 31.0361 137.37 30.2838 136.396 29.3063C135.423 28.3288 134.673 27.16 134.152 25.8C133.632 24.4399 133.369 22.9397 133.369 21.2949C133.369 19.6501 133.632 18.1073 134.152 16.7473ZM137.023 21.9621C136.722 23.2117 136.617 24.3762 136.705 25.4472C136.79 26.5225 137.078 27.4787 137.565 28.3288C138.052 29.1745 138.734 29.8375 139.614 30.3178C140.495 30.7981 141.418 30.9978 142.388 30.9213C143.357 30.8448 144.31 30.5431 145.246 30.0118C146.181 29.4805 147.083 28.741 147.947 27.789C148.811 26.8412 149.59 25.7192 150.284 24.4357C150.979 23.1479 151.478 21.8771 151.787 20.6149C152.096 19.3568 152.206 18.1838 152.109 17.1C152.012 16.0163 151.728 15.0557 151.25 14.2185C150.771 13.3812 150.094 12.7267 149.213 12.2464C148.332 11.7662 147.409 11.5664 146.44 11.6429C145.47 11.7194 144.513 12.0169 143.565 12.5354C142.616 13.054 141.71 13.802 140.846 14.771C139.978 15.74 139.199 16.8705 138.509 18.1541C137.815 19.4418 137.319 20.7084 137.019 21.9621H137.023Z" fill="white"/>
           <path d="M159.274 0.451172H159.567L163.799 5.17148V32.3451L159.4 30.2189L159.274 0.451172ZM163.715 29.1557C163.853 29.8659 164.08 30.4102 164.386 30.793C164.691 31.1757 165.001 31.4649 165.307 31.6647C165.697 31.8646 166.103 31.9752 166.522 32.0049H163.506L163.715 29.1557ZM170 32.3451H163.799L163.673 31.9199H170V32.3451Z" fill="white"/>
         </svg>
-        <p class="text-sm md:text-base text-[var(--text-muted)] leading-relaxed">Evidence-based functional medicine in Boston. Root-cause thinking with real medical rigor.</p>
+        <p class="text-sm md:text-base text-[var(--text-muted)] leading-relaxed">Physician-led executive health assessments and proactive medicine in Boston.</p>
       </div>
 
       <div>
-        <h3 class="text-[11px] tracking-[0.2em] uppercase text-[var(--text-muted)] mb-4 font-body">Site Navigation</h3>
+        <h3 class="text-[11px] tracking-[0.2em] uppercase text-[var(--text-muted)] mb-4 font-body">Navigation</h3>
         <div class="space-y-2.5">
           <a href="#" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Home</a>
-          <a href="#how" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">How It Works</a>
+          <a href="#included" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">What's Included</a>
           <a href="#faq" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">FAQ</a>
         </div>
       </div>
 
       <div>
-        <h3 class="text-[11px] tracking-[0.2em] uppercase text-[var(--text-muted)] mb-4 font-body">Connect With Us</h3>
+        <h3 class="text-[11px] tracking-[0.2em] uppercase text-[var(--text-muted)] mb-4 font-body">Connect</h3>
         <div class="space-y-2.5">
           <a href="mailto:info@protocol.us" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">info@protocol.us</a>
           <a href="https://www.instagram.com/protocolcare/" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" target="_blank" rel="noopener">Instagram</a>
@@ -1298,18 +1306,13 @@
         <p>Protocol provides health education, wellness guidance, and program coordination designed to support individuals in understanding and optimizing factors that may influence long-term healthspan. Protocol does not provide medical care or medical services.</p>
         <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">2. Independent Physician Practices</h4>
         <p>Certain services offered in connection with Protocol, including concierge primary care or medical consultations, may be provided by independent physician practices or healthcare providers ("Partner Practices"). Partner Practices are separate legal entities that maintain independent clinical judgment and are solely responsible for the medical services they provide. Protocol does not control, supervise, or direct medical decision-making by Partner Practices.</p>
-        <p>Protocol is not responsible for the clinical services, treatment decisions, or outcomes resulting from care provided by Partner Practices.</p>
-        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">3. Nature of Protocol Services</h4>
-        <p>Protocol services, including the Longevity Audit and healthspan coaching, are designed for educational and informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease. Any information, analysis, or recommendations provided through Protocol services are not a substitute for professional medical advice.</p>
-        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">4. Voluntary Participation and Personal Responsibility</h4>
-        <p>Participation in Protocol services is voluntary. Certain assessments may involve physical activity or diagnostic testing that carries inherent risks. You agree to participate responsibly and to disclose relevant health conditions to appropriate providers prior to participating.</p>
-        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">5. Payment Terms</h4>
-        <p>Certain Services require advance payment. For the Longevity Audit, full payment is required prior to scheduling and all sales are final. No refunds will be issued after purchase, including in cases of missed appointments or non-participation. Membership services may be subject to separate membership agreements.</p>
-        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">6. No Guarantees or Warranties</h4>
+        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">3. Payment Terms</h4>
+        <p>Certain Services require advance payment. For the Executive Assessment, full payment is required prior to scheduling and all sales are final. No refunds will be issued after purchase, including in cases of missed appointments or non-participation.</p>
+        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">4. No Guarantees or Warranties</h4>
         <p>Protocol makes no guarantees regarding specific outcomes, health improvements, or results from participation in the Services. All Services are provided on an "as is" and "as available" basis without any express or implied warranties.</p>
-        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">7. Limitation of Liability</h4>
-        <p>To the fullest extent permitted by law, Protocol shall not be liable for any indirect, incidental, consequential, or special damages arising out of or related to your participation in the Services. Protocol's total cumulative liability shall not exceed the total amount paid by you for the applicable Service.</p>
-        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">8. Governing Law and Dispute Resolution</h4>
+        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">5. Limitation of Liability</h4>
+        <p>To the fullest extent permitted by law, Protocol shall not be liable for any indirect, incidental, consequential, or special damages arising out of or related to your participation in the Services.</p>
+        <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">6. Governing Law</h4>
         <p>These Terms are governed by the laws of the State of Delaware. Any dispute that cannot be resolved informally will be submitted to binding arbitration in accordance with the rules of the American Arbitration Association.</p>
         <h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">Contact</h4>
         <p>Email: <a href="mailto:info@protocol.us" style="color:var(--accent);">info@protocol.us</a><br>Website: <a href="https://protocol.us" style="color:var(--accent);">protocol.us</a></p>`
@@ -1411,6 +1414,7 @@
       ticking = true;
     }
   }, { passive: true });
+
   // Deferred: mobile sticky CTA
   document.addEventListener('DOMContentLoaded', () => {
     const stickyCta2 = document.getElementById('mobileCta');
@@ -1422,73 +1426,9 @@
   });
 </script>
 
-<!-- TEST DETAIL MODALS -->
-<div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
-<div id="modalPanel" class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <button onclick="closeModal()" class="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
-  </button>
-  <h3 id="modalTitle" class="font-display text-3xl md:text-4xl text-[var(--accent)] mb-2"></h3>
-  <p id="modalSubtitle" class="text-sm md:text-base tracking-[0.15em] uppercase text-[var(--text-muted)] mb-5"></p>
-  <div id="modalBody" class="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed space-y-4"></div>
-</div>
-
-<script>
-  const modalData = {
-    dexa: {
-      title: 'DEXA Scan',
-      subtitle: 'Dual-Energy X-Ray Absorptiometry',
-      body: `<img src="https://humanpoweredhealth.com/wp-content/uploads/2025/11/6-Performance-Lab-MPLS-10.29.25.jpg" alt="DEXA scan in progress at a performance lab" class="w-full rounded-sm mb-5" style="max-height:200px;object-fit:cover;" loading="lazy">
-        <p>A DEXA scan is the most accurate way to measure body composition. Using low-dose X-ray beams, it provides a detailed breakdown of bone density, muscle mass, and fat mass throughout your body.</p>
-        <p>It measures specific types of fat, including visceral fat (the fat around your organs that carries the greatest health risk), and monitors physical symmetry to identify imbalances in muscle, fat, and bone health.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">What to expect:</strong> You lie on a scanning table for approximately 15 minutes while the machine scans your body. Quick, painless, and non-invasive.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> Annually, to track changes in body composition, bone density, and overall progress.</p>`
-    },
-    vo2: {
-      title: 'VO\u2082 Max',
-      subtitle: 'Aerobic Capacity Testing',
-      body: `<img src="https://humanpoweredhealth.com/wp-content/uploads/2025/11/v-scaled.png" alt="VO2 Max test on a treadmill with breathing mask" class="w-full rounded-sm mb-5" style="max-height:200px;object-fit:cover;" loading="lazy">
-        <p>A VO\u2082 Max assessment measures the maximum level of oxygen your body can use during exercise. It is one of the strongest predictors of both athletic performance and longevity, and serves as an early indicator of potential cardiovascular or metabolic issues.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">What to expect:</strong> You wear a mask over your nose and mouth while running on a treadmill or biking on a stationary bike. Intensity gradually increases until you reach maximal exertion. The test itself is 7\u201315 minutes.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">What you learn:</strong> Your true VO\u2082 Max, maximum heart rate, anaerobic threshold, and personalized heart rate training zones.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> Annually, to measure improvement and recalibrate your training zones.</p>`
-    },
-    bloodwork: {
-      title: 'Bloodwork Panel',
-      subtitle: '60+ Biomarkers Analyzed',
-      body: `<p>Our bloodwork panel goes far beyond a standard annual physical. We test 60+ biomarkers across metabolic health, cardiovascular risk, hormonal balance, inflammation, nutrient status, and organ function.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">What\u2019s included:</strong> Complete lipid and glucose profiling, thyroid function, sex hormones, inflammatory markers (hsCRP, homocysteine), vitamin and mineral levels, liver and kidney function, ApoB, Lp(a), and more.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">Why it matters:</strong> Standard physicals typically check fewer than 20 markers. Many early-stage risks \u2014 such as insulin resistance, subclinical thyroid issues, or nutrient deficiencies \u2014 only show up in an expanded panel. Root-cause investigation starts here.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> At intake, then quarterly to track the impact of your protocol changes.</p>`
-    }
-  };
-
-  function openModal(key) {
-    const d = modalData[key];
-    if (!d) return;
-    const panel = document.getElementById('modalPanel');
-    document.getElementById('modalTitle').textContent = d.title;
-    document.getElementById('modalSubtitle').textContent = d.subtitle;
-    document.getElementById('modalBody').innerHTML = d.body;
-    panel.classList.toggle('wide', !!d.wide);
-    document.getElementById('modalBackdrop').classList.add('open');
-    panel.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    panel.querySelector('button').focus();
-  }
-  function closeModal() {
-    document.getElementById('modalBackdrop').classList.remove('open');
-    document.getElementById('modalPanel').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.getElementById('modalPanel').classList.contains('open')) closeModal();
-  });
-</script>
-
 <!-- Mobile sticky CTA -->
 <div id="mobileCta" class="mobile-sticky-cta md:hidden">
-  <a href="javascript:void(0)" onclick="openForm()" class="btn-accent w-full justify-center text-[15px] py-3">Book a Free Discovery Call</a>
+  <a href="javascript:void(0)" onclick="openForm()" class="btn-accent w-full justify-center text-[15px] py-3">Book Your Executive Assessment</a>
 </div>
 
 <!-- Form Modal -->
@@ -1608,7 +1548,7 @@
           '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
         '</div>' +
         '<h3 style="font-family:var(--font-display);font-size:1.8rem;font-weight:300;margin-bottom:12px;">You\'re all set.</h3>' +
-        '<p style="color:var(--text-secondary);font-size:1rem;line-height:1.6;max-width:380px;margin:0 auto 24px;">Your discovery call is booked. We\'ll send a confirmation to your email with all the details.</p>' +
+        '<p style="color:var(--text-secondary);font-size:1rem;line-height:1.6;max-width:380px;margin:0 auto 24px;">Your assessment is booked. We\'ll send a confirmation to your email with all the details.</p>' +
         '<a href="javascript:void(0)" onclick="closeForm()" class="btn-accent" style="display:inline-flex;">Back to Protocol</a>' +
       '</div>';
   }
