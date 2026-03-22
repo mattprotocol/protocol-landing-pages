@@ -1408,7 +1408,7 @@
       stripeUrl += (stripeUrl.indexOf('?') > -1 ? '&' : '?') + trackingParams.join('&');
     }
 
-    // Fire GTM/dataLayer event for Google Ads and GA4 conversion tracking
+    // Fire GTM/dataLayer event
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'begin_checkout',
@@ -1418,10 +1418,39 @@
       'currency': 'USD'
     });
 
-    // Small delay to let tracking fire, then navigate
+    // Google Ads conversion (AW-11484308994 / pQxWCKK2-PgZEILMkuQq)
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-11484308994/pQxWCKK2-PgZEILMkuQq',
+        'value': 1700.0,
+        'currency': 'USD',
+        'transaction_id': 'audit-' + Date.now()
+      });
+    }
+
+    // GA4 begin_checkout event
+    if (typeof gtag === 'function') {
+      gtag('event', 'begin_checkout', {
+        'value': 1700.0,
+        'currency': 'USD',
+        'items': [{ 'item_name': 'Longevity Audit', 'price': 1700.0, 'quantity': 1 }]
+      });
+    }
+
+    // Meta Pixel InitiateCheckout event
+    if (typeof fbq === 'function') {
+      fbq('track', 'InitiateCheckout', {
+        value: 1700.0,
+        currency: 'USD',
+        content_name: 'Longevity Audit',
+        content_type: 'product'
+      });
+    }
+
+    // Delay to let all tracking pixels fire, then navigate to Stripe
     setTimeout(function() {
       window.location.href = stripeUrl;
-    }, 300);
+    }, 500);
   }
 
   var _formOpened = false;
