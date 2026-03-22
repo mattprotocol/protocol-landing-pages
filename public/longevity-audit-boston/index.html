@@ -129,6 +129,65 @@
       }
     }
 
+    /* -- Test detail modal -- */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      background: rgba(12,15,10,0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1), visibility 0.3s;
+    }
+    .modal-backdrop.open { opacity: 1; visibility: visible; }
+    .modal-panel {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.96);
+      z-index: 71;
+      width: 90%;
+      max-width: 520px;
+      max-height: 85vh;
+      overflow-y: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 4px;
+      padding: 32px;
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+      transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.3s cubic-bezier(0.16,1,0.3,1), visibility 0.3s;
+    }
+    .modal-panel.open { display: block; opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
+    .modal-panel.wide { max-width: 720px; }
+    @media (max-width: 768px) {
+      .modal-panel {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        max-width: none;
+        max-height: none;
+        transform: none;
+        border-radius: 0;
+        padding: 24px 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-sizing: border-box;
+      }
+      .modal-panel.open {
+        transform: none;
+      }
+      .modal-panel img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
     /* -- Skip link -- */
     .skip-link {
       position: absolute;
@@ -677,6 +736,7 @@
             Most annual physicals check fewer than 20 markers. We check 60+. This is how early-stage risks like insulin resistance, subclinical thyroid dysfunction, and elevated ApoB get caught years before symptoms appear.
           </p>
         </div>
+        <a href="javascript:void(0)" onclick="openModal('bloodwork')" class="text-[var(--accent)] text-sm hover:underline mt-4 inline-block">Learn more about the bloodwork panel →</a>
       </div>
 
       <!-- Card 2: DEXA Body Composition -->
@@ -691,6 +751,7 @@
             Scale weight tells you almost nothing. DEXA gives you the complete picture. Visceral fat, lean mass distribution, bone density. Your Healthspan Specialist uses this data alongside your bloodwork to identify metabolic risks that would otherwise go undetected.
           </p>
         </div>
+        <a href="javascript:void(0)" onclick="openModal('dexa')" class="text-[var(--accent)] text-sm hover:underline mt-4 inline-block">Learn more about DEXA scanning →</a>
       </div>
 
       <!-- Card 3: Clinical VO2 Max -->
@@ -705,6 +766,7 @@
             VO2 max is the single strongest predictor of all-cause mortality. Wearable estimates can be off by 10-20%. A clinical test gives you ground-truth data and precise heart rate training zones based on YOUR physiology, not age-based formulas.
           </p>
         </div>
+        <a href="javascript:void(0)" onclick="openModal('vo2')" class="text-[var(--accent)] text-sm hover:underline mt-4 inline-block">Learn more about VO2 max testing →</a>
       </div>
     </div>
   </div>
@@ -1236,6 +1298,70 @@
         stickyCta2.classList.toggle('visible', window.scrollY > 600);
       }, { passive: true });
     }
+  });
+</script>
+
+<!-- Test Detail Modals -->
+<div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
+<div id="modalPanel" class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <button onclick="closeModal()" class="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+  <h3 id="modalTitle" class="font-display text-3xl md:text-4xl text-[var(--accent)] mb-2"></h3>
+  <p id="modalSubtitle" class="text-sm md:text-base tracking-[0.15em] uppercase text-[var(--text-muted)] mb-5"></p>
+  <div id="modalBody" class="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed space-y-4"></div>
+</div>
+
+<script>
+  const modalData = {
+    bloodwork: {
+      title: 'Bloodwork Panel',
+      subtitle: '60+ Biomarkers Analyzed',
+      body: `<p>Our bloodwork panel goes far beyond a standard annual physical. We test 60+ biomarkers across metabolic health, cardiovascular risk, hormonal balance, inflammation, nutrient status, and organ function.</p>
+        <p><strong style="color:var(--text-primary);font-weight:400;">What\u2019s included:</strong> Complete lipid and glucose profiling, thyroid function, sex hormones, inflammatory markers (hsCRP, homocysteine), vitamin and mineral levels, liver and kidney function, and more.</p>
+        <p><strong style="color:var(--text-primary);font-weight:400;">Why it matters:</strong> Standard physicals typically check fewer than 20 markers. Many early-stage risks, such as insulin resistance, subclinical thyroid issues, or nutrient deficiencies, only show up in an expanded panel.</p>
+        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> At intake, then periodically throughout the year to track the impact of your protocol changes.</p>`
+    },
+    dexa: {
+      title: 'DEXA Scan',
+      subtitle: 'Dual-Energy X-Ray Absorptiometry',
+      body: `<img src="https://humanpoweredhealth.com/wp-content/uploads/2025/11/6-Performance-Lab-MPLS-10.29.25.jpg" alt="DEXA scan in progress at a performance lab" class="w-full rounded-sm mb-5" style="max-height:200px;object-fit:cover;" loading="lazy">
+        <p>A DEXA scan is the most accurate way to measure body composition. Using low-dose X-ray beams, it provides a detailed breakdown of bone density, muscle mass, and fat mass throughout your body.</p>
+        <p>It measures specific types of fat, including visceral fat (the fat around your organs that carries the greatest health risk), and monitors physical symmetry to identify imbalances in muscle, fat, and bone health.</p>
+        <p><strong style="color:var(--text-primary);font-weight:400;">What to expect:</strong> You lie on a scanning table for approximately 15 minutes while the machine scans your body. It's quick, painless, and non-invasive. Your results are reviewed with you immediately afterward.</p>
+        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> Annually, to track changes in body composition, bone density, and overall progress.</p>`
+    },
+    vo2: {
+      title: 'VO\u2082 Max',
+      subtitle: 'Aerobic Capacity Testing',
+      body: `<img src="https://humanpoweredhealth.com/wp-content/uploads/2025/11/v-scaled.png" alt="VO2 Max test on a treadmill with breathing mask" class="w-full rounded-sm mb-5" style="max-height:200px;object-fit:cover;" loading="lazy">
+        <p>A VO\u2082 Max assessment measures the maximum level of oxygen your body can use during exercise. It is one of the strongest predictors of both athletic performance and longevity, and serves as an early indicator of potential cardiovascular or metabolic issues.</p>
+        <p><strong style="color:var(--text-primary);font-weight:400;">What to expect:</strong> You wear a mask over your nose and mouth while running on a treadmill or biking on a stationary bike. The mask measures the volume of oxygen you inhale and carbon dioxide you exhale. Intensity gradually increases until you reach maximal exertion. The test itself is 7\u201315 minutes.</p>
+        <p><strong style="color:var(--text-primary);font-weight:400;">What you learn:</strong> Your true VO\u2082 Max, maximum heart rate, anaerobic threshold, and personalized heart rate training zones. Your team uses these to build your exercise protocol.</p>
+        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> Annually, to measure improvement and recalibrate your training zones.</p>`
+    }
+  };
+
+  function openModal(key) {
+    const d = modalData[key];
+    if (!d) return;
+    const panel = document.getElementById('modalPanel');
+    document.getElementById('modalTitle').textContent = d.title;
+    document.getElementById('modalSubtitle').textContent = d.subtitle;
+    document.getElementById('modalBody').innerHTML = d.body;
+    panel.classList.toggle('wide', !!d.wide);
+    document.getElementById('modalBackdrop').classList.add('open');
+    panel.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    panel.querySelector('button').focus();
+  }
+  function closeModal() {
+    document.getElementById('modalBackdrop').classList.remove('open');
+    document.getElementById('modalPanel').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('modalPanel').classList.contains('open')) closeModal();
   });
 </script>
 
