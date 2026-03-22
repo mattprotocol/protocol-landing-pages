@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NNR8NM3F');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthspan+ | A Longevity Doctor in Your Corner. From Anywhere. | Protocol</title>
+<meta name="description" content="Remote longevity medicine. A physician-led medical team, health coach, and registered dietitian building evidence-based protocols to optimize your healthspan. $749/month. Join the waitlist.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="icon" type="image/svg+xml" href="assets/icon-lime.svg">
+<style>
+  :root {
+    --bg-deep: #0C0F0A;
+    --bg-surface: #111610;
+    --bg-card: #181D14;
+    --bg-elevated: #1F2619;
+    --accent: #C2E03A;
+    --accent-hover: #D4F24A;
+    --accent-dim: #9BB830;
+    --accent-glow: rgba(194, 224, 58, 0.15);
+    --text-primary: #EAE8E3;
+    --text-secondary: #B5B2A3;
+    --text-muted: #ABA88F;
+    --border: rgba(155, 152, 136, 0.1);
+    --border-hover: rgba(194, 224, 58, 0.2);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', system-ui, sans-serif;
+    --font-mono: 'DM Mono', 'SF Mono', monospace;
+  }
+  html { font-size: 18px; overflow-x: hidden; max-width: 100%; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { font-family: var(--font-body); font-weight: 300; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  ::selection { background: var(--accent); color: var(--bg-deep); }
+
+  /* Film grain */
+  body::after { content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.022; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 256px; }
+  .bg-glow { position: fixed; inset: 0; z-index: -1; background: radial-gradient(ellipse 70% 50% at 15% 5%, rgba(194,224,58,0.035) 0%, transparent 60%), radial-gradient(ellipse 50% 70% at 85% 95%, rgba(194,224,58,0.025) 0%, transparent 50%), var(--bg-deep); }
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+  .font-mono { font-family: var(--font-mono); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes drawLine { from { width: 0; } to { width: 40px; } }
+
+  .anim-fade-up { animation: fadeUp 0.85s cubic-bezier(0.16,1,0.3,1) both; }
+  .anim-fade-in { animation: fadeIn 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+  .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.45s}.d5{animation-delay:.6s}.d6{animation-delay:.75s}.d7{animation-delay:.9s}
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.vis { opacity: 1; transform: translateY(0); }
+  .rd1{transition-delay:.1s}.rd2{transition-delay:.25s}.rd3{transition-delay:.4s}.rd4{transition-delay:.55s}
+
+  .skip-link { position: absolute; top: -100%; left: 16px; z-index: 200; padding: 8px 16px; background: var(--accent); color: var(--bg-deep); font-weight: 600; font-size: 1rem; border-radius: 2px; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .btn-accent { display: inline-flex; align-items: center; gap: 10px; padding: 15px 36px; background: var(--accent); color: var(--bg-deep); font-family: var(--font-body); font-weight: 600; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; border: none; border-radius: 2px; cursor: pointer; text-decoration: none; transition: background 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.3s cubic-bezier(0.16,1,0.3,1); }
+  .btn-accent:hover { background: var(--accent-hover); box-shadow: 0 0 32px rgba(194,224,58,0.3); transform: translateY(-2px) scale(1.02); }
+  .btn-accent:active { transform: translateY(0) scale(0.98); box-shadow: none; transition-duration: 0.1s; }
+  .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 15px 36px; background: transparent; color: var(--text-primary); font-family: var(--font-body); font-weight: 400; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 2px; cursor: pointer; text-decoration: none; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1), color 0.3s cubic-bezier(0.16,1,0.3,1); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; transition: border-color 0.4s cubic-bezier(0.16,1,0.3,1), background 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .card:hover { border-color: var(--border-hover); background: var(--bg-elevated); }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+  .accent-line { height: 2px; width: 40px; background: var(--accent); }
+  /* -- Hero video -- */
+  .hero-video-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .hero-video-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(12,15,10,0.55) 0%,
+      rgba(12,15,10,0.7) 40%,
+      rgba(12,15,10,0.92) 80%,
+      var(--bg-deep) 100%
+    );
+  }
+  .hero-video-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+  }
+
+  .crosshatch { position: absolute; inset: 0; opacity: 0.025; background-image: linear-gradient(45deg, var(--text-primary) 1px, transparent 1px), linear-gradient(-45deg, var(--text-primary) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+
+  .nav-bar { backdrop-filter: blur(24px) saturate(1.6); -webkit-backdrop-filter: blur(24px) saturate(1.6); }
+  .mobile-nav { transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.16,1,0.3,1); }
+  .mobile-nav.open { transform: translateX(0); }
+  ::-webkit-scrollbar { width: 5px; } ::-webkit-scrollbar-track { background: var(--bg-deep); } ::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 3px; }
+  .mobile-sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; padding: 12px 16px; background: var(--bg-deep); border-top: 1px solid var(--border); transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.16,1,0.3,1); }
+  .mobile-sticky-cta.visible { transform: translateY(0); }
+
+  .modal-backdrop { position: fixed; inset: 0; z-index: 70; background: rgba(12,15,10,0.8); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1), visibility 0.3s; }
+  .modal-backdrop.open { opacity: 1; visibility: visible; }
+  .modal-panel { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.96); z-index: 71; width: 90%; max-width: 520px; max-height: 85vh; overflow-y: auto; background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: 4px; padding: 32px; opacity: 0; visibility: hidden; display: none; transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.3s cubic-bezier(0.16,1,0.3,1), visibility 0.3s; }
+  .modal-panel.open { display: block; opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
+  .modal-panel.wide { max-width: 720px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+
+  /* Waitlist form styles */
+  .waitlist-input { width: 100%; padding: 14px 18px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 2px; color: var(--text-primary); font-family: var(--font-body); font-size: 1rem; font-weight: 300; transition: border-color 0.3s; }
+  .waitlist-input:focus { outline: none; border-color: var(--accent); }
+  .waitlist-input::placeholder { color: var(--text-muted); }
+
+  @media (max-width: 768px) {
+    .modal-panel { top: 0; left: 0; right: 0; bottom: 0; width: auto; max-width: none; max-height: none; transform: none; border-radius: 0; padding: 24px 20px; overflow-x: hidden; overflow-y: auto; }
+    .modal-panel.open { transform: none; }
+  }
+  @media (max-width: 480px) { .hero-headline { font-size: 2.4rem !important; } }
+  @media (min-width: 769px) { .mobile-sticky-cta { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+  noscript .reveal { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNR8NM3F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="bg-glow"></div>
+
+<!-- NAV -->
+<nav class="nav-bar fixed top-0 w-full z-50 bg-[var(--bg-deep)]/75 border-b border-[var(--border)]" aria-label="Primary navigation">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-[72px]">
+    <a href="/" aria-label="Protocol Home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="130" height="25" viewBox="0 0 170 33" fill="none" aria-hidden="true"><path d="M4.4449 0.542739L3.89458 11.2966L3.0056 15.692H3.64059L4.27557 17.9111L4.4449 32.5483L0 30.4146V0.542739H4.4449ZM3.42892 16.9722C3.51359 16.0334 3.71255 15.0306 4.02158 13.9637C4.3306 12.8969 4.76239 11.7788 5.31272 10.6138C5.86304 9.44881 6.56152 8.27954 7.40817 7.11454C8.50881 5.60815 9.63062 4.35353 10.7736 3.35923C11.9166 2.36492 13.0214 1.62239 14.0967 1.14018C15.1677 0.653692 16.1921 0.427519 17.1658 0.453124C18.1394 0.482995 18.9945 0.764644 19.7269 1.3066C20.4889 1.84856 21.0265 2.62097 21.3355 3.63234C21.6446 4.64372 21.7292 5.78738 21.5895 7.0676C21.4498 8.34782 21.0815 9.7262 20.4889 11.207C19.8962 12.6878 19.0496 14.1814 17.9489 15.6878C16.7086 17.4246 15.3963 18.8158 14.012 19.8698C12.6278 20.9239 11.2816 21.6195 9.96928 21.9608C8.65697 22.3022 7.42934 22.2681 6.28636 21.8542C5.14339 21.4402 4.19091 20.6251 3.42892 19.4004C3.34426 18.7176 3.34426 17.9068 3.42892 16.968V16.9722ZM5.03755 30.9907C5.34658 31.3747 5.65984 31.6649 5.96887 31.8655C6.36256 32.0661 6.77318 32.177 7.19651 32.2069H4.14857L4.36024 29.3477C4.49993 30.0604 4.72853 30.6066 5.03755 30.9907ZM4.4449 32.5483L4.3179 32.1215H10.7101V32.5483H4.4449ZM16.7425 13.1743C17.2632 12.0093 17.6399 10.904 17.8643 9.86702C18.0886 8.83004 18.1394 7.89121 18.0124 7.05053C17.8854 6.20985 17.5552 5.60815 17.0176 5.23688C16.5096 4.86562 15.8365 4.76747 15.0068 4.93817C14.1729 5.10886 13.2839 5.48013 12.3399 6.04769C11.3959 6.61526 10.4476 7.34071 9.50362 8.22407C8.55961 9.10742 7.7045 10.0889 6.94251 11.1686C6.26519 12.1373 5.75721 13.1102 5.41855 14.0917C5.07989 15.0733 4.89786 15.9993 4.86823 16.8656C4.83859 17.7318 4.94442 18.5 5.18572 19.17C5.42701 19.8399 5.76991 20.3435 6.22286 20.6849C6.76048 21.0818 7.3997 21.2482 8.14899 21.1756C8.89827 21.1031 9.66449 20.8641 10.4561 20.4502C11.2477 20.0362 12.0224 19.4815 12.7844 18.7859C13.5464 18.0903 14.2237 17.3264 14.8163 16.5028C15.5783 15.4488 16.2218 14.3393 16.7425 13.1743Z" fill="white"/><path d="M25.5 11.0538H29.9503L29.9079 16.2489L28.7211 19.911H29.3569C29.7256 18.8038 30.1876 17.7691 30.7555 16.8024C31.3192 15.8358 31.8999 14.9714 32.4933 14.2049C33.0866 13.4384 33.6503 12.7997 34.1886 12.2887C34.7269 11.7777 35.1507 11.4498 35.4601 11.3093L38.3846 10.2021H41.6905V13.1403L37.2402 15.1843V14.8862C37.2402 13.9792 37.0622 13.3958 36.7104 13.1403C36.3586 12.8849 35.9051 12.8636 35.3541 13.0765C34.8032 13.2894 34.2183 13.6939 33.5952 14.2901C32.9722 14.8862 32.3873 15.5974 31.8363 16.4192C31.2853 17.241 30.8318 18.1225 30.4801 19.0593C30.1283 19.9961 29.9503 20.9202 29.9503 21.8272V32.3451H25.5V11.0538ZM34.2734 17.4412L34.0615 17.1431L39.4018 13.3958L40.2071 13.8217L34.2734 17.4412Z" fill="white"/><path d="M44.2951 16.7473C44.8159 15.3873 45.5654 14.2185 46.5392 13.241C47.513 12.2634 48.6774 11.5112 50.0323 10.9884C51.3872 10.4657 52.8988 10.2021 54.5628 10.2021C56.2268 10.2021 57.7299 10.4657 59.0721 10.9884C60.4143 11.5112 61.5702 12.2634 62.544 13.241C63.5178 14.2185 64.2673 15.3873 64.7881 16.7473C65.3088 18.1073 65.5714 19.6246 65.5714 21.2949C65.5714 22.9652 65.3088 24.4399 64.7881 25.8C64.2673 27.16 63.5178 28.3288 62.544 29.3063C61.5702 30.2838 60.4143 31.0361 59.0721 31.5588C57.7299 32.0816 56.2268 32.3451 54.5628 32.3451C52.8988 32.3451 51.3872 32.0816 50.0323 31.5588C48.6774 31.0361 47.513 30.2838 46.5392 29.3063C45.5654 28.3288 44.8159 27.16 44.2951 25.8C43.7744 24.4399 43.5118 22.9397 43.5118 21.2949C43.5118 19.6501 43.7744 18.1073 44.2951 16.7473ZM47.1658 21.9621C46.8652 23.2117 46.7594 24.3762 46.8483 25.4472C46.933 26.5225 47.2209 27.4787 47.7078 28.3288C48.1947 29.1745 48.8764 29.8375 49.7571 30.3178C50.6378 30.7981 51.5608 30.9978 52.5304 30.9213C53.5 30.8448 54.4527 30.5431 55.3884 30.0118C56.3241 29.4805 57.226 28.741 58.0898 27.789C58.9535 26.8412 59.7326 25.7192 60.427 24.4357C61.1214 23.1479 61.621 21.8771 61.9301 20.6149C62.2391 19.3568 62.3492 18.1838 62.2519 17.1C62.1545 16.0163 61.8708 15.0557 61.3923 14.2185C60.9139 13.3812 60.2364 12.7267 59.3557 12.2464C58.4751 11.7662 57.552 11.5664 56.5824 11.6429C55.6128 11.7194 54.6559 12.0169 53.7075 12.5354C52.7591 13.054 51.853 13.802 50.9892 14.771C50.1212 15.74 49.3422 16.8705 48.652 18.1541C47.9576 19.4418 47.4622 20.7084 47.1616 21.9621H47.1658Z" fill="white"/><path d="M72.48 30.9277C71.5702 29.9842 71.1299 28.6641 71.1592 26.9716L71.2431 17.3671C71.2431 16.5505 71.4234 15.7085 71.7882 14.8496C72.153 13.9907 72.7106 13.2629 73.4654 12.6706L73.2977 12.0782H67.5952V11.1897H71.7043V9.41264L77.1552 0.654297H78.4131L78.497 1.20434C77.7716 1.25934 77.2055 1.62745 76.7988 2.30442C76.3921 2.98139 76.0986 3.81492 75.9183 4.80076C75.738 5.7866 75.6248 6.85283 75.5828 7.99523C75.5409 9.13762 75.5199 10.2039 75.5199 11.1897L82.7738 11.1474V12.0782H75.5619V29.8911C75.5619 30.6231 75.8009 31.1477 76.2747 31.4566C76.7485 31.7654 77.1846 31.922 77.5745 31.922H81.5998V32.3451H76.3166C74.6688 32.3451 73.3899 31.8712 72.48 30.9277Z" fill="white"/><path d="M84.9737 16.7473C85.4945 15.3873 86.244 14.2185 87.2178 13.241C88.1916 12.2634 89.356 11.5112 90.7109 10.9884C92.0658 10.4657 93.5774 10.2021 95.2414 10.2021C96.9054 10.2021 98.4084 10.4657 99.7506 10.9884C101.093 11.5112 102.249 12.2634 103.223 13.241C104.196 14.2185 104.946 15.3873 105.467 16.7473C105.987 18.1073 106.25 19.6246 106.25 21.2949C106.25 22.9652 105.987 24.4399 105.467 25.8C104.946 27.16 104.196 28.3288 103.223 29.3063C102.249 30.2838 101.093 31.0361 99.7506 31.5588C98.4084 32.0816 96.9054 32.3451 95.2414 32.3451C93.5774 32.3451 92.0658 32.0816 90.7109 31.5588C89.356 31.0361 88.1916 30.2838 87.2178 29.3063C86.244 28.3288 85.4945 27.16 84.9737 25.8C84.4529 24.4399 84.1904 22.9397 84.1904 21.2949C84.1904 19.6501 84.4529 18.1073 84.9737 16.7473ZM87.8444 21.9621C87.5438 23.2117 87.438 24.3762 87.5269 25.4472C87.6116 26.5225 87.8995 27.4787 88.3864 28.3288C88.8733 29.1745 89.555 29.8375 90.4357 30.3178C91.3164 30.7981 92.2394 30.9978 93.209 30.9213C94.1786 30.8448 95.1313 30.5431 96.067 30.0118C97.0027 29.4805 97.9046 28.741 98.7683 27.789C99.6321 26.8412 100.411 25.7192 101.106 24.4357C101.8 23.1479 102.3 21.8771 102.609 20.6149C102.918 19.3568 103.028 18.1838 102.93 17.1C102.833 16.0163 102.549 15.0557 102.071 14.2185C101.592 13.3812 100.915 12.7267 100.034 12.2464C99.1536 11.7662 98.2306 11.5664 97.261 11.6429C96.2914 11.7194 95.3345 12.0169 94.3861 12.5354C93.4376 13.054 92.5316 13.802 91.6678 14.771C90.7998 15.74 90.0207 16.8705 89.3306 18.1541C88.6362 19.4418 88.1408 20.7084 87.8402 21.9621H87.8444Z" fill="white"/><path d="M125.392 24.5504C124.758 25.6725 124.055 26.6542 123.281 27.5042C122.419 28.4563 121.518 29.1958 120.579 29.727C119.644 30.2583 118.693 30.5601 117.724 30.6366C116.755 30.7131 115.833 30.5133 114.954 30.033C114.074 29.5528 113.393 28.8898 112.907 28.0398C112.42 27.194 112.133 26.2335 112.048 25.1624C111.959 24.0872 112.065 22.9269 112.365 21.6731C112.666 20.4236 113.16 19.1528 113.854 17.8693C114.543 16.5815 115.322 15.4553 116.189 14.482C117.052 13.513 117.961 12.7692 118.904 12.2507C119.851 11.7279 120.807 11.4304 121.776 11.3539C122.74 11.2774 123.666 11.4814 124.542 11.9617C125.422 12.4419 126.103 13.0965 126.58 13.9337C127.054 14.771 127.342 15.7315 127.439 16.8153C127.456 17.032 127.469 17.2488 127.469 17.474C127.473 17.525 127.473 17.5803 127.473 17.6313C127.477 17.7588 127.481 17.8906 127.481 18.0223H130.738C130.146 15.6125 128.911 13.7085 127.037 12.3059C125.164 10.9034 122.859 10.2021 120.122 10.2021C118.46 10.2021 116.95 10.4614 115.597 10.9884C114.243 11.5112 113.08 12.2634 112.107 13.241C111.135 14.2185 110.386 15.3873 109.866 16.7473C109.345 18.1073 109.083 19.6076 109.083 21.2524C109.083 22.8972 109.345 24.4399 109.866 25.8C110.386 27.16 111.135 28.3288 112.107 29.3063C113.08 30.2838 114.243 31.0318 115.597 31.5588C116.95 32.0816 118.46 32.3451 120.122 32.3451C122.715 32.3451 124.923 31.7118 126.741 30.4538C128.56 29.1915 129.82 26.7605 130.527 24.5504H125.392Z" fill="white"/><path d="M134.152 16.7473C134.673 15.3873 135.423 14.2185 136.396 13.241C137.37 12.2634 138.535 11.5112 139.889 10.9884C141.244 10.4657 142.756 10.2021 144.42 10.2021C146.084 10.2021 147.587 10.4657 148.929 10.9884C150.271 11.5112 151.427 12.2634 152.401 13.241C153.375 14.2185 154.124 15.3873 154.645 16.7473C155.166 18.1073 155.429 19.6246 155.429 21.2949C155.429 22.9652 155.166 24.4399 154.645 25.8C154.124 27.16 153.375 28.3288 152.401 29.3063C151.427 30.2838 150.271 31.0361 148.929 31.5588C147.587 32.0816 146.084 32.3451 144.42 32.3451C142.756 32.3451 141.244 32.0816 139.889 31.5588C138.535 31.0361 137.37 30.2838 136.396 29.3063C135.423 28.3288 134.673 27.16 134.152 25.8C133.632 24.4399 133.369 22.9397 133.369 21.2949C133.369 19.6501 133.632 18.1073 134.152 16.7473ZM137.023 21.9621C136.722 23.2117 136.617 24.3762 136.705 25.4472C136.79 26.5225 137.078 27.4787 137.565 28.3288C138.052 29.1745 138.734 29.8375 139.614 30.3178C140.495 30.7981 141.418 30.9978 142.388 30.9213C143.357 30.8448 144.31 30.5431 145.246 30.0118C146.181 29.4805 147.083 28.741 147.947 27.789C148.811 26.8412 149.59 25.7192 150.284 24.4357C150.979 23.1479 151.478 21.8771 151.787 20.6149C152.096 19.3568 152.206 18.1838 152.109 17.1C152.012 16.0163 151.728 15.0557 151.25 14.2185C150.771 13.3812 150.094 12.7267 149.213 12.2464C148.332 11.7662 147.409 11.5664 146.44 11.6429C145.47 11.7194 144.513 12.0169 143.565 12.5354C142.616 13.054 141.71 13.802 140.846 14.771C139.978 15.74 139.199 16.8705 138.509 18.1541C137.815 19.4418 137.319 20.7084 137.019 21.9621H137.023Z" fill="white"/><path d="M159.274 0.451172H159.567L163.799 5.17148V32.3451L159.4 30.2189L159.274 0.451172ZM163.715 29.1557C163.853 29.8659 164.08 30.4102 164.386 30.793C164.691 31.1757 165.001 31.4649 165.307 31.6647C165.697 31.8646 166.103 31.9752 166.522 32.0049H163.506L163.715 29.1557ZM170 32.3451H163.799L163.673 31.9199H170V32.3451Z" fill="white"/></svg>
+    </a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="#how-it-works" class="text-[15px] text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors tracking-[0.08em] uppercase font-body">How It Works</a>
+      <a href="#your-team" class="text-[15px] text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors tracking-[0.08em] uppercase font-body">Your Team</a>
+      <a href="#pricing" class="text-[15px] text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors tracking-[0.08em] uppercase font-body">Pricing</a>
+      <a href="#faq" class="text-[15px] text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors tracking-[0.08em] uppercase font-body">FAQ</a>
+      <a href="#waitlist" class="btn-accent text-[14px] py-2.5 px-7">Join the Waitlist <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <button onclick="openMobileNav()" class="md:hidden text-[var(--text-primary)] p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Open menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mobNav" class="mobile-nav fixed inset-0 z-[60] bg-[var(--bg-deep)] flex flex-col items-center justify-center gap-8" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button onclick="closeMobileNav()" class="absolute top-5 right-6 text-[var(--text-primary)] min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close menu">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+  <a onclick="closeMobileNav()" href="#how-it-works" class="font-display text-3xl" tabindex="-1">How It Works</a>
+  <a onclick="closeMobileNav()" href="#your-team" class="font-display text-3xl" tabindex="-1">Your Team</a>
+  <a onclick="closeMobileNav()" href="#pricing" class="font-display text-3xl" tabindex="-1">Pricing</a>
+  <a onclick="closeMobileNav()" href="#faq" class="font-display text-3xl" tabindex="-1">FAQ</a>
+  <a onclick="closeMobileNav()" href="#waitlist" class="btn-accent mt-4" tabindex="-1">Join the Waitlist</a>
+</div>
+
+<!-- HERO -->
+<main id="main-content">
+<section class="relative min-h-screen flex items-center" aria-label="Hero">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline preload="metadata" role="presentation" poster="https://protocol.us/wp-content/uploads/2025/11/Graph-4.jpg">
+      <source src="https://protocol.us/wp-content/uploads/2025/10/protocol_hero.webm" type="video/webm">
+    </video>
+  </div>
+  <div class="crosshatch"></div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24 md:pt-44 md:pb-36 w-full relative z-10">
+    <div class="max-w-3xl">
+      <div class="anim-fade-up d1 flex items-center gap-3 mb-7">
+        <div class="accent-line" style="animation: drawLine 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s both;"></div>
+        <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--text-muted)] font-body">Healthspan+ &middot; Remote Longevity Medicine</span>
+      </div>
+      <h1 class="hero-headline font-display text-[3.2rem] md:text-[4.8rem] lg:text-[5.8rem] font-300 leading-[1.04] tracking-[-0.01em] anim-fade-up d2" style="text-wrap: balance;">
+        A Longevity Doctor in Your Corner. <span class="italic text-[var(--accent)]">From Anywhere.</span>
+      </h1>
+      <p class="mt-8 text-lg md:text-[1.4rem] text-[var(--text-secondary)] font-light leading-relaxed max-w-xl anim-fade-up d3">
+        Physician-led longevity protocols, health coaching, advanced diagnostics interpretation, and a medical team that targets optimal. All remote. No zip code required.
+      </p>
+      <p class="mt-4 font-mono text-[13px] tracking-[0.1em] text-[var(--text-muted)] anim-fade-up d4">Board-Certified Physicians &middot; Remote &middot; $749/month</p>
+      <div class="mt-10 flex flex-wrap gap-4 anim-fade-up d5">
+        <a href="#waitlist" class="btn-accent">Join the Waitlist <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#how-it-works" class="btn-outline">See How It Works</a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 anim-fade-in d7" style="animation: float 3s ease-in-out infinite 1.2s;" aria-hidden="true">
+    <svg width="18" height="28" viewBox="0 0 18 28" fill="none"><rect x="1" y="1" width="16" height="26" rx="8" stroke="var(--text-muted)" stroke-width="1"/><circle cx="9" cy="9" r="1.5" fill="var(--accent)"><animate attributeName="cy" values="9;18;9" dur="2s" repeatCount="indefinite"/></circle></svg>
+  </div>
+</section>
+
+<!-- INDICTMENT -->
+<section class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="The problem with standard healthcare">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 md:mb-20 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Problem</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">The healthcare system wasn't built for you.</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 md:gap-7">
+      <div class="card p-8 lg:p-10 reveal">
+        <h3 class="font-display text-2xl mb-3">"Your labs are normal."</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">Normal compared to who? The average American? Normal range means you're not actively dying. It tells you nothing about where you could be.</p>
+      </div>
+      <div class="card p-8 lg:p-10 reveal rd1">
+        <h3 class="font-display text-2xl mb-3">Seven minutes, once a year.</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">That's what your doctor has. Seven minutes to understand your biology, your goals, your risks. It's not a care plan. It's a checkbox.</p>
+      </div>
+      <div class="card p-8 lg:p-10 reveal rd2">
+        <h3 class="font-display text-2xl mb-3">The standard of care is decades behind the science.</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">The research on VO2 max, ApoB, metabolic health, and early disease detection is clear. Most doctors don't test for it. Most don't know to.</p>
+      </div>
+      <div class="card p-8 lg:p-10 reveal rd3">
+        <h3 class="font-display text-2xl mb-3">You already know this.</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">You've done the reading. You've listened to the podcasts. You track your own data. But you can't find a doctor who speaks your language. And the ones who might are nowhere near you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHIFT -->
+<section class="py-28 md:py-40 relative overflow-hidden" aria-label="A better model of care">
+  <div class="crosshatch"></div>
+  <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center relative z-10 reveal">
+    <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">A Better Model</span>
+    <h2 class="font-display text-[2.8rem] md:text-[3.8rem] font-300 mt-6 leading-[1.08]" style="text-wrap: balance;">Proactive medicine. No geography required.</h2>
+    <p class="mt-8 text-[var(--text-secondary)] md:text-lg leading-relaxed max-w-xl mx-auto">
+      There is a different way to practice medicine. One that doesn't wait for disease to arrive. One that uses the best available science to find risks early, optimize what matters, and keep you at your best. Now available wherever you are.
+    </p>
+    <p class="mt-5 text-[var(--text-secondary)] md:text-lg leading-relaxed max-w-xl mx-auto">
+      Healthspan+ brings you a dedicated longevity physician, a health coach, and a registered dietitian. One medical team, working from your data, building protocols designed for your biology.
+    </p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="How it works">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 md:mb-20 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">How It Works</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">Your data. Your team. Your protocols.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 md:gap-7">
+      <div class="card p-8 lg:p-10 reveal">
+        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">01</span>
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Get tested locally</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">We order comprehensive bloodwork (60+ biomarkers including ApoB, Lp(a), metabolic panels, and hormones) through a lab near you, plus DEXA body composition and VO2 max testing at a facility in your area. You complete everything on your schedule.</p>
+      </div>
+      <div class="card p-8 lg:p-10 reveal rd1">
+        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">02</span>
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Physician-led interpretation</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">Your longevity physician reviews everything against optimal ranges, not "normal." You meet via video for a detailed review: where you stand, what the data means, and what to do about it. No rushed visits. No generic advice.</p>
+      </div>
+      <div class="card p-8 lg:p-10 reveal rd2">
+        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">03</span>
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Ongoing protocols and coaching</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">Your health coach and registered dietitian build your protocol and work with you through regular sessions. Exercise, nutrition, sleep, stress. Quarterly physician reassessments track progress and adjust course.</p>
+      </div>
+    </div>
+    <div class="text-center mt-12 reveal rd3">
+      <a href="#waitlist" class="btn-accent">Join the Waitlist <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <p class="text-xs md:text-sm text-[var(--text-muted)] mt-3">Onboarding earliest waitlist members in April. Nationwide, fully remote.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="py-24 md:py-36" aria-label="What's included">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">What's Included</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">Everything your doctor should be doing.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 md:gap-7">
+      <div class="card p-8 reveal">
+        <h3 class="font-body text-lg font-medium mb-5 pb-4 border-b border-[var(--border)]">Diagnostics</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Comprehensive bloodwork (60+ biomarkers)</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Advanced cardiovascular markers (ApoB, Lp(a))</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Metabolic, hormonal, and inflammatory panels</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>DEXA body composition scan (at a facility near you)</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>VO2 max cardiorespiratory fitness testing (at a facility near you)</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>All labs and testing coordinated for you locally</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Integration with your existing test results</li>
+        </ul>
+      </div>
+      <div class="card p-8 reveal rd1">
+        <h3 class="font-body text-lg font-medium mb-5 pb-4 border-b border-[var(--border)]">Physician-Directed Care</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated longevity physician via video</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Detailed results review against optimal targets</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Quarterly physician reassessments</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Evidence-based protocol adjustments</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Secure messaging between visits</li>
+        </ul>
+      </div>
+      <div class="card p-8 reveal rd2">
+        <h3 class="font-body text-lg font-medium mb-5 pb-4 border-b border-[var(--border)]">Coaching and Nutrition</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated Health Coach for exercise, sleep, and habits</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Registered Dietitian for data-driven nutrition</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Regular 1:1 coaching sessions via video</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized protocols based on your biomarkers</li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Care team coordination and scheduling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR TEAM -->
+<section id="your-team" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="Your medical team">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Your Medical Team</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">Three specialists. One coordinated team.</h2>
+      <p class="mt-6 text-[var(--text-secondary)] md:text-lg leading-relaxed max-w-2xl">You're not hiring a doctor. You're gaining a medical team that sees the complete picture and acts on it. Board-certified physicians, a dedicated health coach, and a registered dietitian, all working together on your protocol.</p>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-5 reveal rd1">
+      <div class="card p-7 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg">
+        <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)] mb-4">M</div>
+        <h4 class="font-body text-base font-medium mb-2">Longevity Physician</h4>
+        <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Your dedicated physician specializes in proactive medicine and longevity. They interpret your data against optimal ranges, build your medical protocol, and conduct quarterly reassessments as your biomarkers evolve.</p>
+      </div>
+      <div class="card p-7 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg">
+        <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)] mb-4">C</div>
+        <h4 class="font-body text-base font-medium mb-2">Health Coach</h4>
+        <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Regular 1:1 sessions focused on exercise programming, sleep optimization, stress management, and sustainable habits. Your coach translates the physician's protocol into daily action.</p>
+      </div>
+      <div class="card p-7 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg">
+        <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)] mb-4">R</div>
+        <h4 class="font-body text-base font-medium mb-2">Registered Dietitian</h4>
+        <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Nutrition strategy grounded in your lab data. Not generic meal plans. Targeted dietary interventions based on your biomarkers, metabolic profile, and health goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES / SOCIAL PROOF -->
+<section class="py-24 md:py-36" aria-label="Clinical outcomes">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Clinical Outcomes</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">The data from our current members.</h2>
+      <p class="mt-4 text-[var(--text-secondary)] max-w-xl mx-auto">Across 72 active Protocol members, measured over 1,045 medical documents. These are real clinical outcomes, not projections.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal rd1">
+      <div class="card p-8 text-center">
+        <div class="font-display text-[3rem] text-[var(--accent)] leading-none">79</div>
+        <div class="font-mono text-[11px] tracking-[0.1em] text-[var(--text-muted)] mt-2 uppercase">Median ApoB (mg/dL)</div>
+        <p class="text-sm text-[var(--text-secondary)] mt-3">Below the optimal threshold. US average: 100-110.</p>
+      </div>
+      <div class="card p-8 text-center">
+        <div class="font-display text-[3rem] text-[var(--accent)] leading-none">-3.8</div>
+        <div class="font-mono text-[11px] tracking-[0.1em] text-[var(--text-muted)] mt-2 uppercase">Bio age delta (years)</div>
+        <p class="text-sm text-[var(--text-secondary)] mt-3">72% of members are biologically younger than their chronological age.</p>
+      </div>
+      <div class="card p-8 text-center">
+        <div class="font-display text-[3rem] text-[var(--accent)] leading-none">95%</div>
+        <div class="font-mono text-[11px] tracking-[0.1em] text-[var(--text-muted)] mt-2 uppercase">CV risk maintained or improved</div>
+        <p class="text-sm text-[var(--text-secondary)] mt-3">Age-adjusted, longitudinal. All improvements via lifestyle, not medication.</p>
+      </div>
+      <div class="card p-8 text-center">
+        <div class="font-display text-[3rem] text-[var(--accent)] leading-none">71%</div>
+        <div class="font-mono text-[11px] tracking-[0.1em] text-[var(--text-muted)] mt-2 uppercase">HbA1c at optimal</div>
+        <p class="text-sm text-[var(--text-secondary)] mt-3">Compared to 38% prediabetes rate among US adults.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="Pricing">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Pricing</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">One team. One price. No surprises.</h2>
+    </div>
+    <div class="max-w-2xl mx-auto reveal rd1">
+      <div class="card p-10 md:p-12 border-[var(--border-hover)]">
+        <div class="flex items-baseline gap-2 mb-2">
+          <span class="font-display text-[3.5rem] md:text-[4.5rem] text-[var(--accent)] leading-none">$749</span>
+          <span class="text-[var(--text-muted)] text-lg">/month</span>
+        </div>
+        <p class="text-[var(--text-secondary)] text-base mb-8">$749/month or $8,995 paid upfront. One-year commitment. A dedicated longevity physician, health coach, registered dietitian, and comprehensive diagnostics including DEXA and VO2 max.</p>
+        <div class="divider mb-8"></div>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated longevity physician</div>
+          <div class="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Health Coach (regular sessions)</div>
+          <div class="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Registered Dietitian</div>
+          <div class="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Comprehensive bloodwork</div>
+          <div class="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Quarterly physician reassessments</div>
+          <div class="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"><svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Secure messaging between visits</div>
+        </div>
+        <p class="text-sm text-[var(--text-muted)] mb-6">You're already spending on supplements, wearables, and fragmented health services without medical oversight. Healthspan+ replaces that entire stack with a real medical team.</p>
+        <a href="#waitlist" class="btn-accent">Join the Waitlist <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-24 md:py-32" role="region" aria-label="What members say">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="mb-12 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">From Our Members</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.4rem] font-300 mt-4">What it feels like to have a doctor who gets it.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 reveal rd1">
+      <div class="card p-8">
+        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">First time a doctor has ever told me what optimal looks like, not just that I'm 'fine.'</p>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">M</div><div><div class="text-sm font-medium">Michael, 48</div><div class="text-xs text-[var(--text-muted)]">Protocol Member</div></div></div>
+      </div>
+      <div class="card p-8">
+        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">I finally have a doctor who speaks my language. They know what ApoB is. They know why VO2 max matters. I don't have to explain myself.</p>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">K</div><div><div class="text-sm font-medium">Karen, 42</div><div class="text-xs text-[var(--text-muted)]">Protocol Member</div></div></div>
+      </div>
+      <div class="card p-8">
+        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">They don't just test. They coach, follow up, and adjust. It's the first time healthcare has felt like a real relationship.</p>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">D</div><div><div class="text-sm font-medium">David, 55</div><div class="text-xs text-[var(--text-muted)]">Protocol Member</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST FORM -->
+<section id="waitlist" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="Join the waitlist">
+  <div class="max-w-xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-10 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)] mb-4 block">Join the Waitlist</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 leading-[1.08]" style="text-wrap: balance;">Be first when we launch.</h2>
+      <p class="mt-4 text-[var(--text-secondary)] md:text-lg">Healthspan+ is launching soon. We anticipate onboarding the earliest waitlist members in April. Leave your details and we will reach out when spots open.</p>
+    </div>
+    <div class="reveal rd1">
+      <form id="waitlistForm" class="space-y-4" novalidate>
+        <div>
+          <label for="firstName" class="sr-only">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required class="waitlist-input" autocomplete="given-name">
+        </div>
+        <div>
+          <label for="lastName" class="sr-only">Last Name</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required class="waitlist-input" autocomplete="family-name">
+        </div>
+        <div>
+          <label for="email" class="sr-only">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" required class="waitlist-input" autocomplete="email">
+        </div>
+        <div>
+          <label for="phone" class="sr-only">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Phone" required class="waitlist-input" autocomplete="tel">
+        </div>
+        <button type="submit" class="btn-accent w-full justify-center text-base py-4 mt-2">Join the Waitlist <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </form>
+      <div id="waitlistSuccess" class="hidden text-center py-12">
+        <div class="font-display text-3xl md:text-4xl text-[var(--accent)] mb-4">You're on the list.</div>
+        <p class="text-[var(--text-secondary)] text-lg">We will be in touch soon.</p>
+      </div>
+      <p class="text-xs text-[var(--text-muted)] text-center mt-4">No spam. No commitment. We will email you about Healthspan+ availability.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24 md:py-36" aria-label="Frequently asked questions">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Common Questions</span>
+      <h2 class="font-display text-[2.2rem] md:text-[2.8rem] font-300 mt-4">Frequently asked questions</h2>
+    </div>
+    <div class="space-y-4 reveal rd1">
+      <details class="group card p-6 cursor-pointer" open>
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">How does remote longevity medicine work?<svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Your longevity physician orders labs through a national lab network near you. Once results are in, you meet via video for a detailed review. Your health coach and dietitian work with you through regular video sessions. Quarterly physician check-ins track progress and adjust protocols. The medicine is the same. The delivery is remote.</p>
+      </details>
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">What tests will I need to do locally?<svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Bloodwork is drawn at a lab near you. We coordinate the orders and send you to a Quest, Labcorp, or local lab. The draw takes about 15 minutes. If you want DEXA or VO2 max testing, we can recommend facilities in your area, though these are optional add-ons for remote members.</p>
+      </details>
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">Do you accept insurance?<svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Healthspan+ operates outside of insurance. Insurance-driven medicine dictates what your doctor can test for and how long they can spend with you. Our model removes those constraints so we can practice medicine the way the science says it should be practiced. Some lab work may be covered by your insurance separately.</p>
+      </details>
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">What is the commitment?<svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Healthspan+ is $749/month or $8,995 paid upfront, with a one-year commitment. Proactive medicine is a continuous process. Meaningful changes in biomarkers take months to manifest, and longitudinal tracking is where the real value lies. The annual commitment ensures your team can build, implement, and refine your protocol over time.</p>
+      </details>
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">Is this evidence-based?<svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Everything we do is grounded in published, peer-reviewed science. We don't do unproven interventions, trendy supplements, or experimental protocols. Board-certified physicians. If the evidence isn't there, we don't do it.</p>
+      </details>
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">How is this different from concierge medicine?<svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Concierge medicine gives you more time with a doctor who practices the same reactive model. More access to the same playbook. Healthspan+ is built from the ground up around proactive, longevity-focused medicine. Different tests, different targets, different model of care entirely. Plus a health coach and dietitian working alongside your physician.</p>
+      </details>
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">Does this replace my primary care doctor?<svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Healthspan+ focuses on proactive medicine and health optimization. We recommend keeping your local PCP for acute care, prescriptions, and in-person needs. Your longevity physician works alongside your existing care team, not in place of it. We coordinate and share findings as appropriate.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-36 md:py-52 relative" aria-label="Get started">
+  <div class="crosshatch"></div>
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[var(--accent)] opacity-[0.035] blur-[150px]"></div>
+  <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center relative z-10 reveal">
+    <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)] mb-6 block">Get Started</span>
+    <h2 class="font-display text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] font-300 leading-[1.06]" style="text-wrap: balance;">
+      The medical team you've been <span class="italic text-[var(--accent)]">looking for.</span>
+    </h2>
+    <p class="text-[var(--text-secondary)] mt-6 text-lg md:text-xl max-w-xl mx-auto">
+      You've done the reading. You know there's a better way. Healthspan+ is the physician-led longevity practice built to deliver it. From anywhere.
+    </p>
+    <div class="mt-10 flex flex-col items-center gap-3">
+      <a href="#waitlist" class="btn-accent text-base px-12 py-5" style="box-shadow: 0 0 24px rgba(194,224,58,0.15), 0 0 48px rgba(194,224,58,0.06);">Join the Waitlist <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <p class="text-xs text-[var(--text-muted)]">Launching soon. We will notify you when spots open.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="py-16 border-t border-[var(--border)]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="130" height="25" viewBox="0 0 170 33" fill="none" aria-hidden="true" class="mb-4"><path d="M4.4449 0.542739L3.89458 11.2966L3.0056 15.692H3.64059L4.27557 17.9111L4.4449 32.5483L0 30.4146V0.542739H4.4449ZM3.42892 16.9722C3.51359 16.0334 3.71255 15.0306 4.02158 13.9637C4.3306 12.8969 4.76239 11.7788 5.31272 10.6138C5.86304 9.44881 6.56152 8.27954 7.40817 7.11454C8.50881 5.60815 9.63062 4.35353 10.7736 3.35923C11.9166 2.36492 13.0214 1.62239 14.0967 1.14018C15.1677 0.653692 16.1921 0.427519 17.1658 0.453124C18.1394 0.482995 18.9945 0.764644 19.7269 1.3066C20.4889 1.84856 21.0265 2.62097 21.3355 3.63234C21.6446 4.64372 21.7292 5.78738 21.5895 7.0676C21.4498 8.34782 21.0815 9.7262 20.4889 11.207C19.8962 12.6878 19.0496 14.1814 17.9489 15.6878C16.7086 17.4246 15.3963 18.8158 14.012 19.8698C12.6278 20.9239 11.2816 21.6195 9.96928 21.9608C8.65697 22.3022 7.42934 22.2681 6.28636 21.8542C5.14339 21.4402 4.19091 20.6251 3.42892 19.4004C3.34426 18.7176 3.34426 17.9068 3.42892 16.968V16.9722ZM5.03755 30.9907C5.34658 31.3747 5.65984 31.6649 5.96887 31.8655C6.36256 32.0661 6.77318 32.177 7.19651 32.2069H4.14857L4.36024 29.3477C4.49993 30.0604 4.72853 30.6066 5.03755 30.9907ZM4.4449 32.5483L4.3179 32.1215H10.7101V32.5483H4.4449ZM16.7425 13.1743C17.2632 12.0093 17.6399 10.904 17.8643 9.86702C18.0886 8.83004 18.1394 7.89121 18.0124 7.05053C17.8854 6.20985 17.5552 5.60815 17.0176 5.23688C16.5096 4.86562 15.8365 4.76747 15.0068 4.93817C14.1729 5.10886 13.2839 5.48013 12.3399 6.04769C11.3959 6.61526 10.4476 7.34071 9.50362 8.22407C8.55961 9.10742 7.7045 10.0889 6.94251 11.1686C6.26519 12.1373 5.75721 13.1102 5.41855 14.0917C5.07989 15.0733 4.89786 15.9993 4.86823 16.8656C4.83859 17.7318 4.94442 18.5 5.18572 19.17C5.42701 19.8399 5.76991 20.3435 6.22286 20.6849C6.76048 21.0818 7.3997 21.2482 8.14899 21.1756C8.89827 21.1031 9.66449 20.8641 10.4561 20.4502C11.2477 20.0362 12.0224 19.4815 12.7844 18.7859C13.5464 18.0903 14.2237 17.3264 14.8163 16.5028C15.5783 15.4488 16.2218 14.3393 16.7425 13.1743Z" fill="white"/><path d="M25.5 11.0538H29.9503L29.9079 16.2489L28.7211 19.911H29.3569C29.7256 18.8038 30.1876 17.7691 30.7555 16.8024C31.3192 15.8358 31.8999 14.9714 32.4933 14.2049C33.0866 13.4384 33.6503 12.7997 34.1886 12.2887C34.7269 11.7777 35.1507 11.4498 35.4601 11.3093L38.3846 10.2021H41.6905V13.1403L37.2402 15.1843V14.8862C37.2402 13.9792 37.0622 13.3958 36.7104 13.1403C36.3586 12.8849 35.9051 12.8636 35.3541 13.0765C34.8032 13.2894 34.2183 13.6939 33.5952 14.2901C32.9722 14.8862 32.3873 15.5974 31.8363 16.4192C31.2853 17.241 30.8318 18.1225 30.4801 19.0593C30.1283 19.9961 29.9503 20.9202 29.9503 21.8272V32.3451H25.5V11.0538ZM34.2734 17.4412L34.0615 17.1431L39.4018 13.3958L40.2071 13.8217L34.2734 17.4412Z" fill="white"/><path d="M44.2951 16.7473C44.8159 15.3873 45.5654 14.2185 46.5392 13.241C47.513 12.2634 48.6774 11.5112 50.0323 10.9884C51.3872 10.4657 52.8988 10.2021 54.5628 10.2021C56.2268 10.2021 57.7299 10.4657 59.0721 10.9884C60.4143 11.5112 61.5702 12.2634 62.544 13.241C63.5178 14.2185 64.2673 15.3873 64.7881 16.7473C65.3088 18.1073 65.5714 19.6246 65.5714 21.2949C65.5714 22.9652 65.3088 24.4399 64.7881 25.8C64.2673 27.16 63.5178 28.3288 62.544 29.3063C61.5702 30.2838 60.4143 31.0361 59.0721 31.5588C57.7299 32.0816 56.2268 32.3451 54.5628 32.3451C52.8988 32.3451 51.3872 32.0816 50.0323 31.5588C48.6774 31.0361 47.513 30.2838 46.5392 29.3063C45.5654 28.3288 44.8159 27.16 44.2951 25.8C43.7744 24.4399 43.5118 22.9397 43.5118 21.2949C43.5118 19.6501 43.7744 18.1073 44.2951 16.7473ZM47.1658 21.9621C46.8652 23.2117 46.7594 24.3762 46.8483 25.4472C46.933 26.5225 47.2209 27.4787 47.7078 28.3288C48.1947 29.1745 48.8764 29.8375 49.7571 30.3178C50.6378 30.7981 51.5608 30.9978 52.5304 30.9213C53.5 30.8448 54.4527 30.5431 55.3884 30.0118C56.3241 29.4805 57.226 28.741 58.0898 27.789C58.9535 26.8412 59.7326 25.7192 60.427 24.4357C61.1214 23.1479 61.621 21.8771 61.9301 20.6149C62.2391 19.3568 62.3492 18.1838 62.2519 17.1C62.1545 16.0163 61.8708 15.0557 61.3923 14.2185C60.9139 13.3812 60.2364 12.7267 59.3557 12.2464C58.4751 11.7662 57.552 11.5664 56.5824 11.6429C55.6128 11.7194 54.6559 12.0169 53.7075 12.5354C52.7591 13.054 51.853 13.802 50.9892 14.771C50.1212 15.74 49.3422 16.8705 48.652 18.1541C47.9576 19.4418 47.4622 20.7084 47.1616 21.9621H47.1658Z" fill="white"/><path d="M72.48 30.9277C71.5702 29.9842 71.1299 28.6641 71.1592 26.9716L71.2431 17.3671C71.2431 16.5505 71.4234 15.7085 71.7882 14.8496C72.153 13.9907 72.7106 13.2629 73.4654 12.6706L73.2977 12.0782H67.5952V11.1897H71.7043V9.41264L77.1552 0.654297H78.4131L78.497 1.20434C77.7716 1.25934 77.2055 1.62745 76.7988 2.30442C76.3921 2.98139 76.0986 3.81492 75.9183 4.80076C75.738 5.7866 75.6248 6.85283 75.5828 7.99523C75.5409 9.13762 75.5199 10.2039 75.5199 11.1897L82.7738 11.1474V12.0782H75.5619V29.8911C75.5619 30.6231 75.8009 31.1477 76.2747 31.4566C76.7485 31.7654 77.1846 31.922 77.5745 31.922H81.5998V32.3451H76.3166C74.6688 32.3451 73.3899 31.8712 72.48 30.9277Z" fill="white"/><path d="M84.9737 16.7473C85.4945 15.3873 86.244 14.2185 87.2178 13.241C88.1916 12.2634 89.356 11.5112 90.7109 10.9884C92.0658 10.4657 93.5774 10.2021 95.2414 10.2021C96.9054 10.2021 98.4084 10.4657 99.7506 10.9884C101.093 11.5112 102.249 12.2634 103.223 13.241C104.196 14.2185 104.946 15.3873 105.467 16.7473C105.987 18.1073 106.25 19.6246 106.25 21.2949C106.25 22.9652 105.987 24.4399 105.467 25.8C104.946 27.16 104.196 28.3288 103.223 29.3063C102.249 30.2838 101.093 31.0361 99.7506 31.5588C98.4084 32.0816 96.9054 32.3451 95.2414 32.3451C93.5774 32.3451 92.0658 32.0816 90.7109 31.5588C89.356 31.0361 88.1916 30.2838 87.2178 29.3063C86.244 28.3288 85.4945 27.16 84.9737 25.8C84.4529 24.4399 84.1904 22.9397 84.1904 21.2949C84.1904 19.6501 84.4529 18.1073 84.9737 16.7473ZM87.8444 21.9621C87.5438 23.2117 87.438 24.3762 87.5269 25.4472C87.6116 26.5225 87.8995 27.4787 88.3864 28.3288C88.8733 29.1745 89.555 29.8375 90.4357 30.3178C91.3164 30.7981 92.2394 30.9978 93.209 30.9213C94.1786 30.8448 95.1313 30.5431 96.067 30.0118C97.0027 29.4805 97.9046 28.741 98.7683 27.789C99.6321 26.8412 100.411 25.7192 101.106 24.4357C101.8 23.1479 102.3 21.8771 102.609 20.6149C102.918 19.3568 103.028 18.1838 102.93 17.1C102.833 16.0163 102.549 15.0557 102.071 14.2185C101.592 13.3812 100.915 12.7267 100.034 12.2464C99.1536 11.7662 98.2306 11.5664 97.261 11.6429C96.2914 11.7194 95.3345 12.0169 94.3861 12.5354C93.4376 13.054 92.5316 13.802 91.6678 14.771C90.7998 15.74 90.0207 16.8705 89.3306 18.1541C88.6362 19.4418 88.1408 20.7084 87.8402 21.9621H87.8444Z" fill="white"/><path d="M125.392 24.5504C124.758 25.6725 124.055 26.6542 123.281 27.5042C122.419 28.4563 121.518 29.1958 120.579 29.727C119.644 30.2583 118.693 30.5601 117.724 30.6366C116.755 30.7131 115.833 30.5133 114.954 30.033C114.074 29.5528 113.393 28.8898 112.907 28.0398C112.42 27.194 112.133 26.2335 112.048 25.1624C111.959 24.0872 112.065 22.9269 112.365 21.6731C112.666 20.4236 113.16 19.1528 113.854 17.8693C114.543 16.5815 115.322 15.4553 116.189 14.482C117.052 13.513 117.961 12.7692 118.904 12.2507C119.851 11.7279 120.807 11.4304 121.776 11.3539C122.74 11.2774 123.666 11.4814 124.542 11.9617C125.422 12.4419 126.103 13.0965 126.58 13.9337C127.054 14.771 127.342 15.7315 127.439 16.8153C127.456 17.032 127.469 17.2488 127.469 17.474C127.473 17.525 127.473 17.5803 127.473 17.6313C127.477 17.7588 127.481 17.8906 127.481 18.0223H130.738C130.146 15.6125 128.911 13.7085 127.037 12.3059C125.164 10.9034 122.859 10.2021 120.122 10.2021C118.46 10.2021 116.95 10.4614 115.597 10.9884C114.243 11.5112 113.08 12.2634 112.107 13.241C111.135 14.2185 110.386 15.3873 109.866 16.7473C109.345 18.1073 109.083 19.6076 109.083 21.2524C109.083 22.8972 109.345 24.4399 109.866 25.8C110.386 27.16 111.135 28.3288 112.107 29.3063C113.08 30.2838 114.243 31.0318 115.597 31.5588C116.95 32.0816 118.46 32.3451 120.122 32.3451C122.715 32.3451 124.923 31.7118 126.741 30.4538C128.56 29.1915 129.82 26.7605 130.527 24.5504H125.392Z" fill="white"/><path d="M134.152 16.7473C134.673 15.3873 135.423 14.2185 136.396 13.241C137.37 12.2634 138.535 11.5112 139.889 10.9884C141.244 10.4657 142.756 10.2021 144.42 10.2021C146.084 10.2021 147.587 10.4657 148.929 10.9884C150.271 11.5112 151.427 12.2634 152.401 13.241C153.375 14.2185 154.124 15.3873 154.645 16.7473C155.166 18.1073 155.429 19.6246 155.429 21.2949C155.429 22.9652 155.166 24.4399 154.645 25.8C154.124 27.16 153.375 28.3288 152.401 29.3063C151.427 30.2838 150.271 31.0361 148.929 31.5588C147.587 32.0816 146.084 32.3451 144.42 32.3451C142.756 32.3451 141.244 32.0816 139.889 31.5588C138.535 31.0361 137.37 30.2838 136.396 29.3063C135.423 28.3288 134.673 27.16 134.152 25.8C133.632 24.4399 133.369 22.9397 133.369 21.2949C133.369 19.6501 133.632 18.1073 134.152 16.7473ZM137.023 21.9621C136.722 23.2117 136.617 24.3762 136.705 25.4472C136.79 26.5225 137.078 27.4787 137.565 28.3288C138.052 29.1745 138.734 29.8375 139.614 30.3178C140.495 30.7981 141.418 30.9978 142.388 30.9213C143.357 30.8448 144.31 30.5431 145.246 30.0118C146.181 29.4805 147.083 28.741 147.947 27.789C148.811 26.8412 149.59 25.7192 150.284 24.4357C150.979 23.1479 151.478 21.8771 151.787 20.6149C152.096 19.3568 152.206 18.1838 152.109 17.1C152.012 16.0163 151.728 15.0557 151.25 14.2185C150.771 13.3812 150.094 12.7267 149.213 12.2464C148.332 11.7662 147.409 11.5664 146.44 11.6429C145.47 11.7194 144.513 12.0169 143.565 12.5354C142.616 13.054 141.71 13.802 140.846 14.771C139.978 15.74 139.199 16.8705 138.509 18.1541C137.815 19.4418 137.319 20.7084 137.019 21.9621H137.023Z" fill="white"/><path d="M159.274 0.451172H159.567L163.799 5.17148V32.3451L159.4 30.2189L159.274 0.451172ZM163.715 29.1557C163.853 29.8659 164.08 30.4102 164.386 30.793C164.691 31.1757 165.001 31.4649 165.307 31.6647C165.697 31.8646 166.103 31.9752 166.522 32.0049H163.506L163.715 29.1557ZM170 32.3451H163.799L163.673 31.9199H170V32.3451Z" fill="white"/></svg>
+        <p class="text-sm text-[var(--text-muted)]">Healthspan+ &middot; Remote</p>
+      </div>
+      <div>
+        <h3 class="text-[11px] tracking-[0.2em] uppercase text-[var(--text-muted)] mb-4 font-body">Navigate</h3>
+        <div class="space-y-2.5">
+          <a href="#how-it-works" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">How It Works</a>
+          <a href="#your-team" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Your Team</a>
+          <a href="#pricing" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Pricing</a>
+          <a href="#faq" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">FAQ</a>
+          <a href="#waitlist" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Join the Waitlist</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-[11px] tracking-[0.2em] uppercase text-[var(--text-muted)] mb-4 font-body">Connect</h3>
+        <div class="space-y-2.5">
+          <a href="mailto:info@protocol.us" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">info@protocol.us</a>
+          <a href="https://www.instagram.com/protocolcare/" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/protocolcare.us" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-[11px] tracking-[0.2em] uppercase text-[var(--text-muted)] mb-4 font-body">Legal</h3>
+        <div class="space-y-2.5">
+          <a href="javascript:void(0)" onclick="openLegal('privacy')" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="openLegal('terms')" class="block text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="divider mt-12 mb-8"></div>
+    <p class="text-xs text-[var(--text-muted)] text-center">&copy; 2026 Protocol Healthspan Partners, LLC. All rights reserved.</p>
+    <p class="text-[10px] text-[var(--text-muted)] text-center mt-4 max-w-2xl mx-auto opacity-60">Medical disclaimer: The content on this site is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider regarding any medical condition. Individual results may vary.</p>
+  </div>
+</footer>
+
+<!-- LEGAL MODALS -->
+<div id="legalBackdrop" class="modal-backdrop" onclick="closeLegal()"></div>
+<div id="legalPanel" class="modal-panel wide" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+  <button onclick="closeLegal()" class="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+  <h3 id="legalTitle" class="font-display text-3xl md:text-4xl text-[var(--accent)] mb-2"></h3>
+  <div id="legalBody" class="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed space-y-4"></div>
+</div>
+
+<script>
+  var legalContent={privacy:{title:'Privacy Policy',body:'<p>At Protocol, we are committed to protecting your privacy. This Privacy Policy outlines the types of information we collect, how we use and safeguard that information, and your rights regarding your personal data.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">1. Information We Collect</h4><p>We collect the following personal information when you fill out contact forms on our website:</p><ul style="list-style:disc;padding-left:20px;"><li>Name</li><li>Email Address</li><li>Phone Number (optional)</li></ul><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">2. How We Use Your Information</h4><p>We use the information collected to:</p><ul style="list-style:disc;padding-left:20px;"><li>Respond to your inquiries and provide customer support.</li><li>Send you updates, news, or information related to our services if you have opted in.</li></ul><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">3. How We Protect Your Information</h4><p>We take reasonable measures to protect your personal information from unauthorized access, use, or disclosure.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">4. Cookies</h4><p>Protocol does not use cookies or other tracking technologies.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">5. Third-Party Disclosure</h4><p>We do not sell, trade, or otherwise transfer your personal information to outside parties, except when necessary to comply with the law.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">6. Your Rights</h4><p>You have the right to access, correct, or delete your personal data. Contact us at <a href="mailto:info@protocol.us" style="color:var(--accent);">info@protocol.us</a></p>'},terms:{title:'Terms of Service',body:'<p style="color:var(--text-muted);font-size:0.875rem;">Updated: March 3, 2026</p><p>These Terms govern your participation in services offered by Protocol Healthspan Partners, LLC, including the Longevity Audit, healthspan coaching, and membership programs.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">1. Scope of Services</h4><p>Protocol provides health education, wellness guidance, and program coordination designed to support individuals in understanding and optimizing factors that may influence long-term healthspan.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">2. Independent Physician Practices</h4><p>Certain services may be provided by independent physician practices. Protocol does not control or direct medical decision-making by these practices.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">3. Nature of Services</h4><p>Protocol services are designed for educational and informational purposes only and are not intended to diagnose, treat, cure, or prevent any disease.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">4. Payment Terms</h4><p>Certain Services require advance payment. For the Longevity Audit, full payment is required prior to scheduling and all sales are final.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">5. No Guarantees</h4><p>Protocol makes no guarantees regarding specific outcomes or results from participation in the Services.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">6. Governing Law</h4><p>These Terms are governed by the laws of the State of Delaware.</p><h4 style="color:var(--text-primary);font-weight:500;margin-top:20px;">Contact</h4><p>Email: <a href="mailto:info@protocol.us" style="color:var(--accent);">info@protocol.us</a></p>'}};
+  function openLegal(k){var d=legalContent[k];if(!d)return;document.getElementById('legalTitle').textContent=d.title;document.getElementById('legalBody').innerHTML=d.body;document.getElementById('legalBackdrop').classList.add('open');document.getElementById('legalPanel').classList.add('open');document.body.style.overflow='hidden';}
+  function closeLegal(){document.getElementById('legalBackdrop').classList.remove('open');document.getElementById('legalPanel').classList.remove('open');document.body.style.overflow='';}
+</script>
+
+<script>
+  // Mobile nav
+  var mobNav=document.getElementById('mobNav');
+  var menuBtn=document.querySelector('[aria-label="Open menu"]');
+  function openMobileNav(){mobNav.classList.add('open');mobNav.setAttribute('aria-hidden','false');mobNav.querySelectorAll('a,button').forEach(function(el){el.setAttribute('tabindex','0')});mobNav.querySelector('button').focus();document.body.style.overflow='hidden';}
+  function closeMobileNav(){mobNav.classList.remove('open');mobNav.setAttribute('aria-hidden','true');mobNav.querySelectorAll('a,button').forEach(function(el){el.setAttribute('tabindex','-1')});document.body.style.overflow='';if(menuBtn)menuBtn.focus();}
+
+  // Scroll reveal
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+
+  // Nav border on scroll
+  var navBar=document.querySelector('.nav-bar');
+  var ticking=false;
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){navBar.style.borderBottomColor=window.scrollY>60?'rgba(155,152,136,0.18)':'rgba(155,152,136,0.1)';ticking=false;});ticking=true;}},{passive:true});
+
+  // Mobile sticky CTA
+  document.addEventListener('DOMContentLoaded',function(){var s=document.getElementById('mobileCta');if(s)window.addEventListener('scroll',function(){s.classList.toggle('visible',window.scrollY>600);},{passive:true});});
+
+  // Escape key closes all
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMobileNav();if(document.getElementById('legalPanel').classList.contains('open'))closeLegal();}});
+
+  // Waitlist form submission
+  document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var firstName = form.firstName.value.trim();
+    var lastName = form.lastName.value.trim();
+    var email = form.email.value.trim();
+    var phone = form.phone.value.trim();
+
+    if (!firstName || !lastName || !email || !phone) return;
+
+    // Fire GTM dataLayer events
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'form_submit',
+      form_name: 'healthspan_plus_waitlist',
+      form_type: 'waitlist'
+    });
+    window.dataLayer.push({
+      event: 'generate_lead',
+      lead_source: 'healthspan_plus_waitlist',
+      currency: 'USD',
+      value: 8995
+    });
+
+    // POST to webhook
+    var payload = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      source: 'healthspan_plus_waitlist',
+      page: window.location.href,
+      timestamp: new Date().toISOString()
+    };
+
+    // Capture UTM params from URL
+    var params = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(function(k) {
+      var v = params.get(k);
+      if (v) payload[k] = v;
+    });
+
+    fetch('https://services.leadconnectorhq.com/hooks/zzCgVAROmrKXyBvq0cfL/webhook-trigger/c7e6f327-84f5-4219-8cac-c8234e1eb985', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function() { /* fail silently */ });
+
+    // Show success state
+    form.style.display = 'none';
+    document.getElementById('waitlistSuccess').classList.remove('hidden');
+  });
+
+  // Store GCLID in sessionStorage on page load
+  (function(){var g=new URLSearchParams(window.location.search).get('gclid');if(g)sessionStorage.setItem('protocol_gclid',g);})();
+</script>
+
+<!-- Mobile sticky CTA -->
+<div id="mobileCta" class="mobile-sticky-cta md:hidden">
+  <a href="#waitlist" class="btn-accent w-full justify-center text-[15px] py-3">Join the Waitlist</a>
+</div>
+
+</body>
+</html>
