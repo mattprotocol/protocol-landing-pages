@@ -1,3 +1,10 @@
 {
-  "framework": "astro"
+  "framework": "astro",
+  "redirects": [
+    {
+      "source": "/vo2-max-testing-boston",
+      "destination": "/longevity-audit-boston",
+      "permanent": true
+    }
+  ]
 }
