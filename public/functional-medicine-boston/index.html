@@ -1558,6 +1558,8 @@
   });
 
   function showBooking() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'generate_lead', form_name: 'functional_medicine', page_path: window.location.pathname });
     var bookingUrl = 'https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5';
     var modal = document.getElementById('form-modal');
     if (window.innerWidth >= 768) {
