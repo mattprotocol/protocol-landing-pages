@@ -1,0 +1,74 @@
+name: "Healthspan+"
+slug: healthspan-plus
+status: live
+created: 2026-03-23
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: healthspan_plus
+  display_price: "$749/mo"
+  anchor_price: "$8,995/yr paid upfront"
+
+audience:
+  description: "Remote longevity medicine waitlist -- nationwide, health-conscious individuals who cannot access or prefer not to relocate for in-person concierge care"
+  geo:
+    - Nationwide (remote)
+
+traffic_sources:
+  google_ads:
+    enabled: false
+    daily_budget: 0
+    bid_strategy: target_cpa
+    target_cpa: 200
+    keywords:
+      - "remote longevity medicine"
+      - "online longevity doctor"
+      - "remote concierge medicine"
+      - "longevity doctor online"
+  meta_ads:
+    enabled: false
+    daily_budget: 0
+    objective: lead_generation
+
+cta:
+  type: discovery_call
+  url: "https://protocol.us/book"
+  note: "Old page used a native HTML waitlist form with a direct webhook POST to GHL (https://services.leadconnectorhq.com/hooks/zzCgVAROmrKXyBvq0cfL/webhook-trigger/c7e6f327-84f5-4219-8cac-c8234e1eb985). No GHL form embed URL found. Astro system should use lead form with discovery_call CTA. Webhook URL preserved for reference."
+  webhook_url_legacy: "https://services.leadconnectorhq.com/hooks/zzCgVAROmrKXyBvq0cfL/webhook-trigger/c7e6f327-84f5-4219-8cac-c8234e1eb985"
+  form_url: null
+  booking_url: null
+
+ghl:
+  tag: "source:healthspan-plus"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 150
+  target_cvr: 0.04
+  test_budget_total: 3000
+  test_duration_days: 14
+
+utm:
+  campaign: healthspan-plus
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/healthspan-plus"
+
+campaign_intent: waitlist_capture
+
+experiments:
+  - id: "healthspan-plus-v1"
+    hypothesis: "Remote longevity medicine waitlist page converts nationally to qualified lead signups ahead of April launch"
+    variant: original
+    start_date: "2026-03-23"
+    status: active
+    result: null
+    change_notes: "Initial launch -- migrated from monolithic HTML"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null

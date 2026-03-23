@@ -3,16 +3,52 @@
     {
       "slug": "concierge-medicine-boston",
       "name": "Concierge Medicine Boston",
-      "status": "draft",
+      "status": "live",
       "offer_type": "concierge_membership",
       "template": "standard",
       "created": "2026-03-18",
       "url": "https://landing.protocol.us/concierge-medicine-boston"
     },
     {
+      "slug": "executive-health-boston",
+      "name": "Executive Health Boston",
+      "status": "live",
+      "offer_type": "executive_physical",
+      "template": "standard",
+      "created": "2026-03-23",
+      "url": "https://landing.protocol.us/executive-health-boston"
+    },
+    {
+      "slug": "functional-medicine-boston",
+      "name": "Functional Medicine Boston",
+      "status": "live",
+      "offer_type": "concierge_membership",
+      "template": "standard",
+      "created": "2026-03-23",
+      "url": "https://landing.protocol.us/functional-medicine-boston"
+    },
+    {
+      "slug": "healthspan-plus",
+      "name": "Healthspan+",
+      "status": "live",
+      "offer_type": "healthspan_plus",
+      "template": "standard",
+      "created": "2026-03-23",
+      "url": "https://landing.protocol.us/healthspan-plus"
+    },
+    {
+      "slug": "longevity-audit-boston",
+      "name": "Longevity Audit Boston",
+      "status": "live",
+      "offer_type": "longevity_audit",
+      "template": "standard",
+      "created": "2026-03-23",
+      "url": "https://landing.protocol.us/longevity-audit-boston"
+    },
+    {
       "slug": "longevity-doctor-boston",
       "name": "Longevity Doctor Boston",
-      "status": "draft",
+      "status": "live",
       "offer_type": "longevity_audit",
       "template": "standard",
       "created": "2026-03-18",
@@ -37,5 +73,5 @@
       "url": "https://landing.protocol.us/vo2-max-testing-boston"
     }
   ],
-  "generated_at": "2026-03-19T01:52:29.781Z"
+  "generated_at": "2026-03-23T16:17:10.759Z"
 }

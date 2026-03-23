@@ -1,0 +1,75 @@
+name: "Longevity Audit Boston"
+slug: longevity-audit-boston
+status: live
+created: 2026-03-23
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: longevity_audit
+  display_price: "$1,700"
+  anchor_price: null
+
+audience:
+  description: "Boston-area professionals and health-conscious individuals seeking a comprehensive longevity health assessment"
+  geo:
+    - Boston, MA
+
+traffic_sources:
+  google_ads:
+    enabled: true
+    daily_budget: 100
+    bid_strategy: target_cpa
+    target_cpa: 300
+    keywords:
+      - "longevity assessment boston"
+      - "comprehensive health assessment boston"
+      - "VO2 max test boston"
+      - "DEXA scan boston"
+      - "longevity medicine boston"
+  meta_ads:
+    enabled: false
+    daily_budget: 0
+    objective: lead_generation
+
+cta:
+  type: ghl_modal
+  url: "#lead-form"
+  form_url: "https://link.decyphernow.com/widget/form/HbRcETn4W9DoqYXBp2a4"
+  booking_url: "https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5"
+  note: "Old page used Stripe checkout (https://buy.stripe.com/bJe9AT1nXg8jdAxewvbMQ0Q) -- Astro system uses lead form instead. Stripe URL preserved for reference."
+  stripe_url_legacy: "https://buy.stripe.com/bJe9AT1nXg8jdAxewvbMQ0Q"
+
+ghl:
+  tag: "source:longevity-audit-boston"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 300
+  target_cvr: 0.03
+  test_budget_total: 5000
+  test_duration_days: 14
+
+utm:
+  campaign: longevity-audit-boston
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/longevity-audit-boston"
+
+campaign_intent: keyword_targeting
+
+experiments:
+  - id: "longevity-audit-boston-v1"
+    hypothesis: "Comprehensive longevity assessment page converts Boston health-conscious professionals to audit bookings"
+    variant: original
+    start_date: "2026-03-23"
+    status: active
+    result: null
+    change_notes: "Initial launch -- migrated from monolithic HTML"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null

@@ -1,7 +1,7 @@
-name: "Concierge Medicine Boston"
-slug: concierge-medicine-boston
+name: "Functional Medicine Boston"
+slug: functional-medicine-boston
 status: live
-created: 2026-03-18
+created: 2026-03-23
 template: standard
 owner: matt
 version: v1
@@ -12,7 +12,7 @@ offer:
   anchor_price: "$27,000+/yr à la carte"
 
 audience:
-  description: "Boston-area professionals searching for concierge primary care, concierge medicine, and concierge doctors"
+  description: "Boston-area professionals searching for functional medicine, root-cause medicine, and evidence-based integrative care"
   geo:
     - Boston, MA
 
@@ -23,10 +23,11 @@ traffic_sources:
     bid_strategy: target_cpa
     target_cpa: 200
     keywords:
-      - "concierge primary care"
-      - "concierge medicine boston"
-      - "Boston concierge medicine"
-      - "concierge doctor boston"
+      - "functional medicine boston"
+      - "functional medicine doctor boston"
+      - "root cause medicine boston"
+      - "integrative medicine boston"
+      - "evidence based functional medicine"
   meta_ads:
     enabled: false
     daily_budget: 0
@@ -39,7 +40,7 @@ cta:
   booking_url: "https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5"
 
 ghl:
-  tag: "source:concierge-medicine-boston"
+  tag: "source:functional-medicine-boston"
   pipeline_stage: new_lead
 
 success_metrics:
@@ -49,19 +50,19 @@ success_metrics:
   test_duration_days: 14
 
 utm:
-  campaign: concierge-medicine-boston
+  campaign: functional-medicine-boston
 
 seo:
   index: false
-  canonical: "https://landing.protocol.us/concierge-medicine-boston"
+  canonical: "https://landing.protocol.us/functional-medicine-boston"
 
 campaign_intent: keyword_targeting
 
 experiments:
-  - id: "concierge-medicine-boston-v1"
-    hypothesis: "Concierge medicine keyword targeting with content-rich page converts Boston searchers to discovery call bookings"
+  - id: "functional-medicine-boston-v1"
+    hypothesis: "Functional medicine keyword targeting with evidence-rigour positioning converts Boston searchers to discovery call bookings"
     variant: original
-    start_date: "2026-03-18"
+    start_date: "2026-03-23"
     status: active
     result: null
     change_notes: "Initial launch"

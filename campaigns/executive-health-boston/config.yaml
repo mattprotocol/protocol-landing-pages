@@ -1,0 +1,73 @@
+name: "Executive Health Boston"
+slug: executive-health-boston
+status: live
+created: 2026-03-23
+template: standard
+owner: matt
+version: v1
+
+offer:
+  type: executive_physical
+  display_price: "$2,995"
+  anchor_price: "$2,000-5,000 hospital executive physical programs"
+
+audience:
+  description: "Boston-area executives and senior professionals searching for executive health assessments, executive physicals, and comprehensive health screenings"
+  geo:
+    - Boston, MA
+
+traffic_sources:
+  google_ads:
+    enabled: true
+    daily_budget: 100
+    bid_strategy: target_cpa
+    target_cpa: 300
+    keywords:
+      - "executive health assessment boston"
+      - "executive physical boston"
+      - "executive health screening boston"
+      - "comprehensive health assessment boston"
+      - "executive health check boston"
+  meta_ads:
+    enabled: false
+    daily_budget: 0
+    objective: lead_generation
+
+cta:
+  type: ghl_modal
+  url: "#lead-form"
+  form_url: "https://link.decyphernow.com/widget/form/HbRcETn4W9DoqYXBp2a4"
+  booking_url: "https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5"
+
+ghl:
+  tag: "source:executive-health-boston"
+  pipeline_stage: new_lead
+
+success_metrics:
+  target_cpl: 300
+  target_cvr: 0.03
+  test_budget_total: 5000
+  test_duration_days: 14
+
+utm:
+  campaign: executive-health-boston
+
+seo:
+  index: false
+  canonical: "https://landing.protocol.us/executive-health-boston"
+
+campaign_intent: keyword_targeting
+
+experiments:
+  - id: "executive-health-boston-v1"
+    hypothesis: "Executive health keyword targeting with 'rebuilt executive physical' positioning converts Boston executives to assessment bookings"
+    variant: original
+    start_date: "2026-03-23"
+    status: active
+    result: null
+    change_notes: "Initial launch"
+
+archive:
+  archived: false
+  archive_date: null
+  archive_reason: null
