@@ -10,8 +10,8 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Concierge Primary Care Boston | Protocol</title>
-  <meta name="description" content="Your dedicated physician. 24/7 access. Personalized care plans built on 60+ biomarkers. Concierge medicine in Boston from Protocol.">
+  <title>Concierge Medicine Boston | Physician-Directed Longevity Medicine | Protocol</title>
+  <meta name="description" content="Concierge medicine in Boston built on longevity science. 60+ biomarkers, DEXA, VO2 max, health coaching, and quarterly retesting. Physician-directed care team. Schedule a consultation.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://link.decyphernow.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -550,6 +550,24 @@
       .prose-body h3 { font-size: 2rem; }
       .prose-body p { font-size: 1.125rem; }
     }
+
+    /* -- Comparison table -- */
+    .compare-check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-glow);
+    }
+    .compare-dash {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+    }
   </style>
 </head>
 <body>
@@ -615,23 +633,23 @@
       </div>
 
       <h1 class="hero-headline font-display text-[3.2rem] md:text-[4.8rem] lg:text-[5.8rem] font-300 leading-[1.04] tracking-[-0.01em] anim-fade-up d2" style="text-wrap: balance;">
-        Concierge Primary Care Boston | <span class="italic text-[var(--accent)]">Protocol</span>
+        You searched for concierge medicine. You need concierge <span class="italic text-[var(--accent)]">intelligence</span>.
       </h1>
 
       <p class="mt-8 text-lg md:text-[1.4rem] text-[var(--text-secondary)] font-light leading-relaxed max-w-xl anim-fade-up d3">
-        Your dedicated physician. 24/7 access. Personalized care plans built on 60+ biomarkers. Extended visits, same-day appointments, and a full care team  - not 7 minutes with a rotating doctor.
+        Most concierge practices give you more time with a doctor running the same 20 markers. Protocol gives you 60+ biomarkers, a full care team, and a system that measures whether you are actually getting healthier. Every quarter.
       </p>
 
       <!-- Credentials -->
       <p class="mt-5 text-sm md:text-base text-[var(--text-muted)] anim-fade-up d4">
-        Board-Certified Physicians &nbsp;&middot;&nbsp; Boston, MA &nbsp;&middot;&nbsp; HSA/FSA Eligible
+        Physician-Directed &nbsp;&middot;&nbsp; Boston, MA &nbsp;&middot;&nbsp; Limited Enrollment
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4 anim-fade-up d5">
         <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
           Schedule Your Consultation &rarr;
         </a>
-        <a href="#how" class="btn-outline">See What's Included</a>
+        <a href="#whats-included" class="btn-outline">See What's Included</a>
       </div>
     </div>
   </div>
@@ -647,70 +665,84 @@
 </section>
 
 
-<!-- HOW IT WORKS / BENEFITS -->
-<section id="how" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="The Protocol Approach">
+<!-- THE DIAGNOSTIC GAP -->
+<section id="diagnostic-gap" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="The Diagnostic Gap">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12">
+    <div class="mb-12 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Diagnostic Gap</span>
+    </div>
+
+    <div class="prose-body reveal rd1">
+      <p>One member's primary care physician said her cholesterol was "a little borderline." No treatment recommended. No follow-up scheduled.</p>
+
+      <p>Protocol tested her ApoB. That is the single strongest predictor of cardiovascular disease and a marker most annual physicals never order. Her level was flagged immediately. Within 30 days, it was cut in half.</p>
+
+      <p>She was not an outlier. She was typical.</p>
+
+      <p>The standard annual physical tests roughly 20 biomarkers. Protocol tests over 60. The gap between those two numbers is where preventable disease hides.</p>
+
+      <p>Your current doctor is not doing anything wrong. The system they operate in tests too little, too infrequently, and calls the results "fine" because they fall within a population reference range. Population ranges tell you that you are not sick today. They tell you nothing about where you are heading.</p>
+
+      <p>Markers like ApoB, HOMA-IR, Lp(a), and hsCRP do not appear on most standard panels. DEXA body composition and VO2 max are almost never included. These are not exotic tests. They are the diagnostics that peer-reviewed research has linked most directly to long-term cardiovascular, metabolic, and functional health.</p>
+
+      <p>The cost of missing them is not a bad lab report. It is years of silent, correctable risk going unaddressed.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- COHORT OUTCOMES -->
+<section class="py-24 md:py-32 bg-[var(--bg-deep)]" role="region" aria-label="Cohort outcomes">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="mb-12 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Data From Our Current Members</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl reveal rd1">
+      <div class="text-center card p-8">
+        <div class="stat-val text-4xl md:text-5xl">88%</div>
+        <p class="text-sm text-[var(--text-muted)] mt-3">of members with ApoB under 100 mg/dL</p>
+      </div>
+      <div class="text-center card p-8">
+        <div class="stat-val text-4xl md:text-5xl">79</div>
+        <p class="text-sm text-[var(--text-muted)] mt-3">median ApoB (mg/dL) vs national ~100</p>
+      </div>
+      <div class="text-center card p-8">
+        <div class="stat-val text-4xl md:text-5xl">-3.8</div>
+        <p class="text-sm text-[var(--text-muted)] mt-3">years biological age vs chronological</p>
+      </div>
+      <div class="text-center card p-8">
+        <div class="stat-val text-4xl md:text-5xl">95%</div>
+        <p class="text-sm text-[var(--text-muted)] mt-3">maintained or improved CV risk profile</p>
+      </div>
+    </div>
+
+    <p class="text-[var(--text-secondary)] mt-10 max-w-2xl text-sm md:text-base reveal rd2">Quarterly retesting is how we know these numbers. A single blood draw tells you where you are. Four tell you where you are going.</p>
+  </div>
+</section>
+
+
+<!-- WHAT YOUR MEMBERSHIP INCLUDES -->
+<section id="whats-included" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="What Your Membership Includes">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
     <div class="text-center mb-16 md:mb-20 reveal">
-      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Protocol Approach</span>
-      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">Physician-Directed. Team-Based. Data-Driven.</h2>
-      <p class="mt-4 text-[var(--text-secondary)] md:text-lg max-w-xl mx-auto">A concierge medical practice built around your outcomes  - not your insurance company's constraints.</p>
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">What You Get</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">What Your Membership Includes</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-5 md:gap-7">
       <!-- Card 01 -->
       <div class="card p-8 lg:p-10 reveal">
         <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">01</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Your Dedicated Physician</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          A board-certified physician who knows your history, your goals, and your data. Not a different doctor every visit. Not a 7-minute appointment. Extended visits with a physician who practices proactive, longevity-focused medicine.
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Same physician every visit</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>24/7 direct access  - phone, text, video</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Same-day and next-day appointments</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 02 -->
-      <div class="card p-8 lg:p-10 reveal rd1">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">02</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Full Care Team</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Your physician leads a team built around your health: MD, PA, certified health coach, registered dietitian, and care coordinators. Each with a defined role. No fragmented care, no falling through the cracks.
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Physician-led, team-based model</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Health coach for daily habit change</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Care coordination across all specialists</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 03 -->
-      <div class="card p-8 lg:p-10 reveal rd2">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">03</span>
         <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Advanced Diagnostics</h3>
         <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Comprehensive baseline assessment including DEXA body composition, VO2 max testing, and advanced bloodwork panels with 60+ biomarkers. We test ApoB, Lp(a), hs-CRP, hormones, metabolic markers  - not the basic panel your annual physical uses.
+          60+ biomarkers, DEXA body composition scan, and VO2 max cardiorespiratory testing. Includes ApoB, Lp(a), HOMA-IR, hsCRP, metabolic and hormonal panels, and more.
         </p>
         <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Catches what standard physicals miss</span>
+          </li>
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <button onclick="openModal('dexa')" class="text-left group cursor-pointer">
@@ -735,71 +767,47 @@
         </ul>
       </div>
 
+      <!-- Card 02 -->
+      <div class="card p-8 lg:p-10 reveal rd1">
+        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">02</span>
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Your Care Team</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
+          A physician-directed team that includes your dedicated physician, a Healthspan Specialist, a registered dietitian, a health coach, and care coordinators. Five roles, not one doctor doing everything.
+        </p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Each specialist works at the top of their expertise</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="card p-8 lg:p-10 reveal rd2">
+        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">03</span>
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Physician-Directed Access</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
+          A dedicated physician who knows your full history and data. 24/7 availability. Same-day appointments when you need them.
+        </p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Directed by a physician who has seen every one of your 60+ markers</span>
+          </li>
+        </ul>
+      </div>
+
       <!-- Card 04 -->
       <div class="card p-8 lg:p-10 reveal rd3">
         <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">04</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Quarterly Health Assessments</h3>
+        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Quarterly Protocols</h3>
         <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Your health is not a once-a-year event. Quarterly biomarker retesting, protocol adjustments, and trend analysis. Your physician tracks your trajectory and adjusts your care plan based on real data, not guesswork.
+          Full diagnostic retesting every quarter. Your protocols are adjusted based on what the new data shows, not based on how you feel or what you report.
         </p>
         <ul class="space-y-2.5">
           <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
             <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Quarterly biomarker retesting</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Data-driven protocol adjustments</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Trend analysis, not just snapshots</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 05 -->
-      <div class="card p-8 lg:p-10 reveal rd4">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">05</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Personalized Protocols</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Every recommendation is customized to your biomarkers, your goals, and your life. Nutrition, exercise, sleep, stress management, supplementation  - all evidence-based, all calibrated to your data.
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Customized to your biomarkers</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Evidence-based recommendations</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Adjusted quarterly based on results</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 06 -->
-      <div class="card p-8 lg:p-10 reveal rd4">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">06</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Insurance-Friendly Model</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          We bill insurance for primary care services. Your membership covers the additional longevity and optimization services that insurance does not  - advanced diagnostics, health coaching, extended visits, and 24/7 access.
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Primary care billed to insurance</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Membership covers longevity services</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>HSA/FSA eligible</span>
+            <span>A single blood panel is a photograph. Quarterly retesting is the movie.</span>
           </li>
         </ul>
       </div>
@@ -815,113 +823,162 @@
 </section>
 
 
-<!-- BODY CONTENT: CONCIERGE MEDICINE -->
-<section class="py-24 md:py-36 bg-[var(--bg-deep)]">
-  <div class="max-w-3xl mx-auto px-6 lg:px-12 prose-body reveal">
+<!-- COMPARISON CHART -->
+<section class="py-24 md:py-36 bg-[var(--bg-deep)]" aria-label="Comparison chart">
+  <div class="max-w-4xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-12 md:mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Difference</span>
+      <h2 class="font-display text-[2.2rem] md:text-[3rem] font-300 mt-4">What "Concierge" Usually Means. And What It Could.</h2>
+      <p class="mt-4 text-[var(--text-secondary)] md:text-lg max-w-xl mx-auto">Every concierge practice gives you more time with a doctor. The question is what happens during that time.</p>
+    </div>
 
-    <h2>What Is Concierge Medicine?</h2>
+    <div class="card overflow-hidden reveal rd1">
+      <table class="w-full text-sm md:text-base">
+        <thead>
+          <tr class="border-b border-[var(--border)]">
+            <th class="text-left p-4 md:p-6 text-[var(--text-muted)] font-body font-normal text-xs md:text-sm tracking-[0.1em] uppercase w-1/2"></th>
+            <th class="p-4 md:p-6 text-[var(--text-muted)] font-body font-normal text-xs md:text-sm tracking-[0.1em] uppercase text-center w-1/4">Standard Concierge</th>
+            <th class="p-4 md:p-6 text-[var(--accent)] font-body font-medium text-xs md:text-sm tracking-[0.1em] uppercase text-center w-1/4">Protocol</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">Dedicated physician</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">Longer appointments</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">24/7 physician access</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">Same-day scheduling</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">60+ biomarkers</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-dash"><svg class="w-4 h-4 text-[var(--text-muted)] opacity-40" viewBox="0 0 16 16" fill="none"><line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">DEXA body composition</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-dash"><svg class="w-4 h-4 text-[var(--text-muted)] opacity-40" viewBox="0 0 16 16" fill="none"><line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">VO2 max testing</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-dash"><svg class="w-4 h-4 text-[var(--text-muted)] opacity-40" viewBox="0 0 16 16" fill="none"><line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">Dedicated health coach</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-dash"><svg class="w-4 h-4 text-[var(--text-muted)] opacity-40" viewBox="0 0 16 16" fill="none"><line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">Registered dietitian</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-dash"><svg class="w-4 h-4 text-[var(--text-muted)] opacity-40" viewBox="0 0 16 16" fill="none"><line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">Healthspan Specialist</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-dash"><svg class="w-4 h-4 text-[var(--text-muted)] opacity-40" viewBox="0 0 16 16" fill="none"><line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="border-b border-[var(--border)]">
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">Quarterly retesting</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-dash"><svg class="w-4 h-4 text-[var(--text-muted)] opacity-40" viewBox="0 0 16 16" fill="none"><line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="p-4 md:p-6 text-[var(--text-secondary)]">Data-driven protocol adjustments</td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-dash"><svg class="w-4 h-4 text-[var(--text-muted)] opacity-40" viewBox="0 0 16 16" fill="none"><line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="p-4 md:p-6 text-center"><span class="compare-check"><svg class="w-4 h-4 text-[var(--accent)]" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <p>Concierge medicine is a membership-based approach to primary care that removes the constraints of the traditional healthcare system. Instead of rushing through a 7-minute appointment with a doctor who has 2,500 patients on their panel, you get a dedicated physician who limits their practice to give you the time, attention, and access you deserve.</p>
+    <p class="text-[var(--text-secondary)] mt-10 max-w-2xl text-sm md:text-base reveal rd2">Protocol includes everything you would expect from a concierge practice. Then it adds the diagnostics, the team, and the system that make concierge medicine actually change outcomes.</p>
+  </div>
+</section>
 
-    <p>In a concierge medical practice, your doctor typically maintains a panel of 200 to 600 patients  - compared to the 2,000+ patients most traditional primary care physicians manage. The result: longer appointments, same-day availability, direct physician access, and care that is proactive rather than reactive.</p>
 
-    <h3>The Problem with Traditional Primary Care</h3>
+<!-- HOW IT WORKS -->
+<section id="how" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="How it works">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Your First 90 Days</span>
+      <h2 class="font-display text-[2.2rem] md:text-[2.8rem] font-300 mt-4">From First Call to First Protocol</h2>
+    </div>
 
-    <p>The average primary care visit in the United States lasts 7 minutes. Your doctor has 15 to 20 patients to see that day, a waiting room that is always full, and a system that only pays them when something is wrong. Prevention, optimization, and the kind of deep diagnostic work that catches problems early  - none of that fits into the model.</p>
+    <div class="space-y-0">
+      <!-- Step 1 -->
+      <div class="flex gap-6 reveal rd1">
+        <div class="flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">1</div>
+          <div class="w-px flex-1 bg-[var(--border)]"></div>
+        </div>
+        <div class="pb-10">
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Week 1: Baseline Assessment</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Your care team orders your full diagnostic panel. 60+ biomarkers, DEXA body composition, and VO2 max testing. This is the most complete picture of your health you have ever had.</p>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="flex gap-6 reveal rd2">
+        <div class="flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">2</div>
+          <div class="w-px flex-1 bg-[var(--border)]"></div>
+        </div>
+        <div class="pb-10">
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Weeks 2-3: Analysis and Protocol Design</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Your physician reviews every result with the full care team. Together, they identify what needs attention, what is already strong, and what the data says about your trajectory. Your personalized protocol is built from this analysis.</p>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="flex gap-6 reveal rd3">
+        <div class="flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">3</div>
+          <div class="w-px flex-1 bg-[var(--border)]"></div>
+        </div>
+        <div class="pb-10">
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Week 4: Protocol Review</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">You meet with your physician to walk through every finding, every recommendation, and every target. No rushed summary. You understand exactly what your data means and what happens next.</p>
+        </div>
+      </div>
+      <!-- Step 4 -->
+      <div class="flex gap-6 reveal rd4">
+        <div class="flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] bg-[var(--accent-glow)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">4</div>
+        </div>
+        <div>
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Ongoing: Quarterly Retesting and Adjustment</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Every 90 days, you retest. Your care team compares your new results to your baseline and every quarter before it. Protocols are adjusted based on what the data shows. Progress is measured, not assumed.</p>
+        </div>
+      </div>
+    </div>
 
-    <p>That is why 80% of chronic disease in America is preventable but rarely prevented. The system is not designed for prevention. It is designed for treatment after the fact.</p>
-
-    <h3>How Concierge Primary Care at Protocol Works</h3>
-
-    <p>Protocol is a physician-led concierge medical practice in Boston that combines the access and attention of concierge medicine with the rigor of data-driven longevity medicine. Every member gets:</p>
-
-    <ul class="space-y-2">
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>A dedicated physician who knows your complete health history and is available 24/7</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Extended visits (60 minutes, not 7) focused on your goals, not just your symptoms</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Same-day and next-day appointments when you need them</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Advanced diagnostics including DEXA, VO2 max, and 60+ biomarker panels</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>A full care team  - MD, PA, health coach, dietitian, and care coordinators</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Quarterly reassessments with protocol adjustments based on your latest data</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Insurance billing for primary care services, with membership covering longevity optimization</span>
-      </li>
-    </ul>
-
-    <h3>Who Is Concierge Medicine Right For?</h3>
-
-    <p>Concierge primary care at Protocol is designed for people in the Boston area who want more from their healthcare:</p>
-
-    <ul class="space-y-2">
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Professionals who value their time and want same-day access to their physician</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Health-conscious individuals who want proactive, data-driven care  - not reactive sick care</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Anyone frustrated with the 7-minute visit model and want a doctor who actually knows them</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>People interested in longevity medicine and healthspan optimization</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Families seeking a dedicated physician who coordinates all their care</span>
-      </li>
-    </ul>
-
-    <h3>Boston Concierge Medicine  - Limited Availability</h3>
-
-    <p>Protocol currently accepts 10 new members per month in Boston to ensure every member receives the dedicated attention that defines concierge primary care. If you are ready for a physician who treats your health as their priority, schedule your consultation today.</p>
-
+    <div class="text-center mt-12 reveal">
+      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
+        Schedule Your Consultation &rarr;
+      </a>
+    </div>
   </div>
 </section>
 
 
 <!-- TESTIMONIALS -->
-<section class="py-24 md:py-32 bg-[var(--bg-surface)]" role="region" aria-label="Member testimonials">
+<section class="py-24 md:py-32 bg-[var(--bg-deep)]" role="region" aria-label="Member testimonials">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 reveal">
     <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Member Stories</span>
     <h2 class="font-display text-[2.8rem] md:text-[3.4rem] font-300 mt-4">Hear from our members.</h2>
-  </div>
-
-  <!-- Stats row -->
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-16 px-6 lg:px-12 reveal rd1">
-    <div class="text-center">
-      <div class="stat-val text-4xl md:text-5xl">88%</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">of members achieved ApoB below 100 mg/dL</p>
-    </div>
-    <div class="text-center">
-      <div class="stat-val text-4xl md:text-5xl">95%</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">maintained or improved cardiovascular risk profiles</p>
-    </div>
-    <div class="text-center">
-      <div class="stat-val text-4xl md:text-5xl">24/7</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">direct physician access  - phone, text, or video</p>
-    </div>
   </div>
 
   <div class="marquee-wrap relative">
@@ -931,23 +988,10 @@
       <span id="marqueeToggleLabel">Pause</span>
     </button>
     <div class="marquee-track px-6">
-      <!-- Card 1: Rachel K. -->
+      <!-- Card 1: Jennifer D. - Cholesterol -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Access to focused, engaged, thoughtful, thorough doctors. I can call and get help immediately. Appointments, feedback, testing, specialists.</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">R</div>
-          <div>
-            <div class="text-sm font-medium">Rachel K.</div>
-            <div class="text-xs text-[var(--text-muted)]">Protocol Member, Boston</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: Jennifer D. -->
-      <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
-        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">I wanted a longevity concierge and I was thrilled that Protocol came to Boston. I love the in-depth testing. It&rsquo;s not just check-the-box blood work once a year. The DEXA scan, the VO2 max tests. I&rsquo;m excited to see the progress.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different. Thirty days later I cut my cholesterol in half.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div>
@@ -957,29 +1001,36 @@
         </div>
       </div>
 
-      <!-- Card 3: Jill N. -->
+      <!-- Card 2: Jennifer D. - Testing -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My previous &ldquo;team&rdquo; was one doctor that I could only see once a year. I now have a team and they are looking at my entire life and body to see all of me and to take up the work of being well and striving for a vibrant future.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">I love the in-depth testing. It&rsquo;s not just check-the-box blood work once a year. The DEXA scan, the VO2 max tests. I&rsquo;m excited to see the progress.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div>
-            <div class="text-sm font-medium">Jill N.</div>
-            <div class="text-xs text-[var(--text-muted)]">Small Business Owner, Cape Cod</div>
+            <div class="text-sm font-medium">Jennifer D.</div>
+            <div class="text-xs text-[var(--text-muted)]">Protocol Member, Boston</div>
           </div>
         </div>
       </div>
 
-      <!-- Card 4: Jennifer D. -->
+      <!-- Card 3: Biotech Executive -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <div class="flex items-center gap-4 mb-4">
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Outstanding expertise and actionable recommendations.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">B</div>
           <div>
-            <div class="stat-val text-3xl">-50%</div>
-            <div class="text-xs text-[var(--text-muted)]">cholesterol in 30 days</div>
+            <div class="text-sm font-medium">Biotech Executive</div>
+            <div class="text-xs text-[var(--text-muted)]">Cambridge</div>
           </div>
         </div>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different. I went on medication and 30 days later I cut my cholesterol in half. Best-in-class numbers now.</p>
+      </div>
+
+      <!-- Card 4: Jennifer D. - Value -->
+      <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
+        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">I&rsquo;m more than willing to pay for that type of service.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div>
@@ -992,15 +1043,7 @@
       <!-- Duplicates for seamless loop -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Access to focused, engaged, thoughtful, thorough doctors. I can call and get help immediately. Appointments, feedback, testing, specialists.</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">R</div>
-          <div><div class="text-sm font-medium">Rachel K.</div><div class="text-xs text-[var(--text-muted)]">Protocol Member, Boston</div></div>
-        </div>
-      </div>
-      <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
-        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">I wanted a longevity concierge and I was thrilled that Protocol came to Boston. I love the in-depth testing. It&rsquo;s not just check-the-box blood work once a year. The DEXA scan, the VO2 max tests. I&rsquo;m excited to see the progress.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different. Thirty days later I cut my cholesterol in half.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div><div class="text-sm font-medium">Jennifer D.</div><div class="text-xs text-[var(--text-muted)]">Protocol Member, Boston</div></div>
@@ -1008,97 +1051,35 @@
       </div>
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My previous &ldquo;team&rdquo; was one doctor that I could only see once a year. I now have a team and they are looking at my entire life and body to see all of me and to take up the work of being well and striving for a vibrant future.</p>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
-          <div><div class="text-sm font-medium">Jill N.</div><div class="text-xs text-[var(--text-muted)]">Small Business Owner, Cape Cod</div></div>
-        </div>
-      </div>
-      <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
-        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
-        <div class="flex items-center gap-4 mb-4">
-          <div>
-            <div class="stat-val text-3xl">-50%</div>
-            <div class="text-xs text-[var(--text-muted)]">cholesterol in 30 days</div>
-          </div>
-        </div>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different. I went on medication and 30 days later I cut my cholesterol in half. Best-in-class numbers now.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">I love the in-depth testing. It&rsquo;s not just check-the-box blood work once a year. The DEXA scan, the VO2 max tests. I&rsquo;m excited to see the progress.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div><div class="text-sm font-medium">Jennifer D.</div><div class="text-xs text-[var(--text-muted)]">Protocol Member, Boston</div></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- FIRST 30 DAYS -->
-<section class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="What to expect in your first 30 days">
-  <div class="max-w-3xl mx-auto px-6 lg:px-12">
-    <div class="text-center mb-16 reveal">
-      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Your First 30 Days</span>
-      <h2 class="font-display text-[2.2rem] md:text-[2.8rem] font-300 mt-4">What to expect when you join</h2>
-    </div>
-
-    <div class="space-y-0">
-      <!-- Step 1 -->
-      <div class="flex gap-6 reveal rd1">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">1</div>
-          <div class="w-px flex-1 bg-[var(--border)]"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Week 1: Meet your physician</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Comprehensive intake with your dedicated concierge physician. Full health history, family risk factors, and goal-setting. This is the 60-minute conversation your last doctor never had time for.</p>
+      <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
+        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">Outstanding expertise and actionable recommendations.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">B</div>
+          <div><div class="text-sm font-medium">Biotech Executive</div><div class="text-xs text-[var(--text-muted)]">Cambridge</div></div>
         </div>
       </div>
-      <!-- Step 2 -->
-      <div class="flex gap-6 reveal rd2">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">2</div>
-          <div class="w-px flex-1 bg-[var(--border)]"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Weeks 2 to 3: Complete diagnostics</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">DEXA body composition, VO2 max, and advanced bloodwork  - 60+ biomarkers tested against longevity thresholds. Your physician orders everything based on your intake, not a cookie-cutter panel.</p>
+      <div class="shrink-0 w-[360px] md:w-[420px] card p-8" aria-hidden="true">
+        <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">I&rsquo;m more than willing to pay for that type of service.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
+          <div><div class="text-sm font-medium">Jennifer D.</div><div class="text-xs text-[var(--text-muted)]">Protocol Member, Boston</div></div>
         </div>
       </div>
-      <!-- Step 3 -->
-      <div class="flex gap-6 reveal rd3">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">3</div>
-          <div class="w-px flex-1 bg-[var(--border)]"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Week 4: Your personalized protocol</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Your care team walks you through a customized, evidence-based plan. Nutrition, training, supplementation, recovery  - all calibrated to your biomarkers and your goals.</p>
-        </div>
-      </div>
-      <!-- Step 4 -->
-      <div class="flex gap-6 reveal rd4">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] bg-[var(--accent-glow)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">4</div>
-        </div>
-        <div>
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Ongoing: Quarterly reassessments</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Regular check-ins with your health coach and care team. Quarterly retesting and protocol adjustments. Your physician reviews your data and adjusts your care plan based on measurable progress.</p>
-        </div>
-      </div>
-      <p class="text-xs text-[var(--text-muted)] mt-6 pl-16">All testing at partner facilities in Boston. Limited to 10 new members per month.</p>
-    </div>
-
-    <div class="text-center mt-12 reveal">
-      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
-        Schedule Your Consultation &rarr;
-      </a>
     </div>
   </div>
 </section>
 
 
 <!-- FAQ -->
-<section id="faq" class="py-24 md:py-36" aria-label="Frequently asked questions">
+<section id="faq" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="Frequently asked questions">
   <div class="max-w-3xl mx-auto px-6 lg:px-12">
     <div class="text-center mb-16 reveal">
       <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Common Questions</span>
@@ -1108,66 +1089,42 @@
     <div class="space-y-4 reveal rd1">
       <details class="group card p-6 cursor-pointer" open>
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          How is Protocol different from traditional primary care?
+          How is Protocol different from other concierge practices?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Traditional primary care gives you 7 to 15 minutes with a doctor you may never see again, basic bloodwork once a year, and reactive treatment when something goes wrong. Protocol gives you a dedicated physician who knows your history, extended visits, 24/7 direct access, 60+ biomarker panels, quarterly reassessments, and a full care team  - physician, PA, health coach, dietitian, and care coordinators  - all focused on optimizing your health proactively.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Most concierge practices offer what your current doctor offers with more time and better access. That is valuable, but it does not change the diagnostic model. You still get roughly 20 biomarkers, an annual physical, and results interpreted against broad population ranges. Protocol starts with 60+ biomarkers, DEXA body composition, and VO2 max testing. A physician-directed care team of five, not a single doctor, reviews your data and builds a personalized protocol. Then we retest every quarter and adjust based on what the numbers show. The difference is not just more attention. It is a fundamentally different system for tracking and improving your health.</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          Does insurance cover concierge medicine?
+          What happens during my first visit?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Protocol bills insurance for primary care services including office visits, standard labwork, and referrals. Your membership covers the additional longevity and optimization services that insurance typically does not: advanced diagnostics like DEXA and VO2 max, health coaching, extended visit times, 24/7 access, and quarterly biomarker reassessments. Many members successfully use HSA or FSA funds for their membership. We provide an itemized receipt upon request.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Before your first visit, your care team orders a full diagnostic panel: 60+ biomarkers, a DEXA body composition scan, and a VO2 max cardiorespiratory fitness test. This gives us the most complete baseline of your health available in clinical practice. Your physician and care team then analyze every result. In your first physician meeting, typically in week 4, you walk through every finding together. No rushed summary. You leave with a clear understanding of where you stand and a personalized protocol for what to focus on first.</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          What tests are included in the initial assessment?
+          Do I keep my current primary care doctor?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Your comprehensive baseline assessment includes DEXA body composition scan, VO2 max cardiorespiratory fitness test, and advanced bloodwork panels covering 60+ biomarkers  - including ApoB, Lp(a), HbA1c, hs-CRP, comprehensive metabolic panel, hormones, thyroid function, and inflammation markers. All results are evaluated against longevity-medicine thresholds, not just the permissive &ldquo;normal&rdquo; ranges most labs use.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Yes. Protocol operates alongside your existing primary care physician. We handle the advanced diagnostics, longevity-focused care, and ongoing optimization that falls outside what a traditional PCP visit covers. If our testing reveals something that requires specialist referral or coordination with your PCP, your care team manages that communication directly.</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          How often will I see my doctor?
+          How does the care team model work?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Your dedicated physician is available 24/7 via phone, text, or video for urgent questions. You will have a comprehensive intake visit, a results review, and then quarterly reassessment visits. Between visits, your health coach and care team provide regular check-ins to keep your protocol on track. Most members interact with their care team multiple times per month.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Your dedicated physician directs your overall care strategy and oversees every clinical decision. Your Healthspan Specialist is your day-to-day partner, translating the physician's strategy into actionable guidance and tracking your progress between visits. A registered dietitian builds your nutrition protocols. A health coach supports habit implementation. Care coordinators handle scheduling, lab logistics, and referrals. Five people working at the top of their expertise. Your physician leads. The team executes.</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          What does concierge medicine cost at Protocol?
+          Is this covered by insurance?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Protocol membership includes your dedicated physician, full care team, advanced diagnostics (60+ biomarkers, DEXA, VO2 max), health coaching, and 24/7 access. Primary care services are billed to your insurance separately. HSA and FSA eligible. Book a free discovery call to discuss pricing and what's included.</p>
-      </details>
-
-      <details class="group card p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          Where is Protocol located in Boston?
-          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
-        </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Protocol is located on Merrimac Street in Boston. Diagnostic testing (DEXA scans, VO2 max, bloodwork) is completed at our Boston location and partner facilities. Physician visits and coaching sessions are available both in-person and via telehealth for maximum flexibility.</p>
-      </details>
-
-      <details class="group card p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          Can I keep my existing primary care doctor?
-          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
-        </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">With the concierge membership, your Protocol physician becomes your new primary care doctor. You get full primary care (sick visits, prescriptions, referrals) plus proactive health optimization, longevity diagnostics, and ongoing coaching. One physician who handles all of it. We coordinate with any existing specialists to ensure continuity.</p>
-      </details>
-
-      <details class="group card p-6 cursor-pointer">
-        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          What makes concierge primary care worth it?
-          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
-        </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">The average American sees their doctor for 7 minutes once a year. Concierge primary care at Protocol means a physician who spends 60 minutes with you, tests 60+ biomarkers instead of 10, reassesses quarterly instead of annually, and is available 24/7  - not just during office hours. Members who invest in proactive care catch risks years earlier and optimize their health trajectory instead of just reacting to problems.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Your Protocol membership covers the advanced diagnostics, care team access, quarterly retesting, and personalized protocols that insurance does not cover. These are the longevity-focused services that go beyond standard primary care. Standard primary care services, when applicable, are billed to your insurance separately. Your care coordinators can help you understand what is covered under your specific plan.</p>
       </details>
     </div>
   </div>
@@ -1182,17 +1139,34 @@
   <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center relative z-10 reveal">
     <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)] mb-6 block">Get Started</span>
     <h2 class="font-display text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] font-300 leading-[1.06]" style="text-wrap: balance;">
-      Your Concierge Doctor in Boston Is Ready
+      Not sure if Protocol is right for you? That is exactly what the consultation is for.
     </h2>
     <p class="text-[var(--text-secondary)] mt-6 text-lg md:text-xl max-w-xl mx-auto">
-      Schedule a free 15-minute consultation. Tell us your health goals. We will walk you through the care team, the diagnostics, and what your first 30 days of concierge primary care look like.
+      A 15-minute call with our team. We will answer your questions, walk through what membership includes, and help you decide if Protocol fits what you are looking for. No pressure. No obligation.
     </p>
     <div class="mt-10 flex flex-col items-center gap-3">
       <a href="javascript:void(0)" onclick="openForm()" class="btn-accent text-base px-12 py-5" style="box-shadow: 0 0 24px rgba(194,224,58,0.15), 0 0 48px rgba(194,224,58,0.06);">
         Schedule Your Consultation &rarr;
       </a>
-      <p class="text-xs text-[var(--text-muted)]">15 min. Free. No obligation. | Limited to 10 new members per month.</p>
+      <p class="text-xs text-[var(--text-muted)]">15 minutes. Free. No obligation.</p>
+      <p class="text-xs text-[var(--text-muted)]">Limited to 10 new members per month.</p>
     </div>
+  </div>
+</section>
+
+
+<!-- SEO BODY CONTENT -->
+<section class="py-24 md:py-36 bg-[var(--bg-surface)]">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12 prose-body reveal">
+
+    <h2>What Is Concierge Medicine?</h2>
+
+    <p>Concierge medicine is a model of primary care where patients pay an annual membership fee for enhanced access to their physician. That typically means longer appointments, same-day or next-day scheduling, 24/7 direct physician contact, and a smaller patient panel so your doctor has time to focus on you. It is a meaningful upgrade from the standard 7-minute visit and a panel of 2,000 patients. For people who value their health and their time, it makes sense. But access alone does not change outcomes. Most concierge practices run the same 20-marker blood panel, conduct the same annual physical, and interpret results against the same broad population reference ranges as any other practice. The experience is better. The diagnostic depth is often identical.</p>
+
+    <h3>Why Protocol Is Different from Other Boston Concierge Practices</h3>
+
+    <p>Protocol is a concierge medical practice built on longevity science. We provide everything you would expect from a concierge doctor in Boston: a dedicated physician, unhurried appointments, 24/7 access, and same-day availability. Then we go further. Every Protocol member receives 60+ biomarker diagnostics, DEXA body composition scanning, and VO2 max cardiorespiratory fitness testing. A physician-directed care team of five works together on your case. And every quarter, you retest so your protocols are adjusted based on data, not assumptions. If you are searching for concierge medicine in Boston or a concierge doctor who offers more than a better version of the same annual physical, Protocol was built for exactly that. We are a concierge primary care practice for people who want to know, with precision, whether they are actually getting healthier.</p>
+
   </div>
 </section>
 
@@ -1235,7 +1209,7 @@
           <path d="M134.152 16.7473C134.673 15.3873 135.423 14.2185 136.396 13.241C137.37 12.2634 138.535 11.5112 139.889 10.9884C141.244 10.4657 142.756 10.2021 144.42 10.2021C146.084 10.2021 147.587 10.4657 148.929 10.9884C150.271 11.5112 151.427 12.2634 152.401 13.241C153.375 14.2185 154.124 15.3873 154.645 16.7473C155.166 18.1073 155.429 19.6246 155.429 21.2949C155.429 22.9652 155.166 24.4399 154.645 25.8C154.124 27.16 153.375 28.3288 152.401 29.3063C151.427 30.2838 150.271 31.0361 148.929 31.5588C147.587 32.0816 146.084 32.3451 144.42 32.3451C142.756 32.3451 141.244 32.0816 139.889 31.5588C138.535 31.0361 137.37 30.2838 136.396 29.3063C135.423 28.3288 134.673 27.16 134.152 25.8C133.632 24.4399 133.369 22.9397 133.369 21.2949C133.369 19.6501 133.632 18.1073 134.152 16.7473ZM137.023 21.9621C136.722 23.2117 136.617 24.3762 136.705 25.4472C136.79 26.5225 137.078 27.4787 137.565 28.3288C138.052 29.1745 138.734 29.8375 139.614 30.3178C140.495 30.7981 141.418 30.9978 142.388 30.9213C143.357 30.8448 144.31 30.5431 145.246 30.0118C146.181 29.4805 147.083 28.741 147.947 27.789C148.811 26.8412 149.59 25.7192 150.284 24.4357C150.979 23.1479 151.478 21.8771 151.787 20.6149C152.096 19.3568 152.206 18.1838 152.109 17.1C152.012 16.0163 151.728 15.0557 151.25 14.2185C150.771 13.3812 150.094 12.7267 149.213 12.2464C148.332 11.7662 147.409 11.5664 146.44 11.6429C145.47 11.7194 144.513 12.0169 143.565 12.5354C142.616 13.054 141.71 13.802 140.846 14.771C139.978 15.74 139.199 16.8705 138.509 18.1541C137.815 19.4418 137.319 20.7084 137.019 21.9621H137.023Z" fill="white"/>
           <path d="M159.274 0.451172H159.567L163.799 5.17148V32.3451L159.4 30.2189L159.274 0.451172ZM163.715 29.1557C163.853 29.8659 164.08 30.4102 164.386 30.793C164.691 31.1757 165.001 31.4649 165.307 31.6647C165.697 31.8646 166.103 31.9752 166.522 32.0049H163.506L163.715 29.1557ZM170 32.3451H163.799L163.673 31.9199H170V32.3451Z" fill="white"/>
         </svg>
-        <p class="text-sm md:text-base text-[var(--text-muted)] leading-relaxed">A physician-led concierge medical practice specializing in longevity medicine in Boston.</p>
+        <p class="text-sm md:text-base text-[var(--text-muted)] leading-relaxed">A physician-directed concierge medical practice specializing in longevity medicine in Boston.</p>
       </div>
 
       <div>
@@ -1266,7 +1240,7 @@
     </div>
 
     <div class="divider mt-12 mb-8"></div>
-    <p class="text-xs text-[var(--text-muted)] text-center">Copyright 2026 &copy; Protocol. All rights reserved. Protocol is a physician-led medical practice.</p>
+    <p class="text-xs text-[var(--text-muted)] text-center">Copyright 2026 &copy; Protocol. All rights reserved. Protocol is a physician-directed medical practice.</p>
     <p class="text-[10px] text-[var(--text-muted)] text-center mt-4 max-w-2xl mx-auto opacity-60">Medical disclaimer: The content on this site is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider regarding any medical condition. Individual results may vary.</p>
   </div>
 </footer>
