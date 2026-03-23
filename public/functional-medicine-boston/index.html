@@ -576,6 +576,10 @@
       border-bottom: none;
     }
   </style>
+
+  <!-- Google Ads gtag.js for online conversion tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11484308994"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11484308994');</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1560,6 +1564,7 @@
   function showBooking() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'generate_lead', form_name: 'functional_medicine', page_path: window.location.pathname });
+    if (typeof gtag === 'function') { gtag('event', 'conversion', { 'send_to': 'AW-11484308994/gDzjCKz4mY4cEILMkuQq' }); }
     var bookingUrl = 'https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5';
     var modal = document.getElementById('form-modal');
     if (window.innerWidth >= 768) {
