@@ -1524,6 +1524,35 @@
     ></iframe>
   </div>
 </div>
+<script>
+  // Capture tracking params from URL and cookies, append to GHL iframe src
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var trackingKeys = ['gclid','fbclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+    var tracking = {};
+    trackingKeys.forEach(function(k) {
+      var v = params.get(k);
+      if (v) {
+        tracking[k] = v;
+        document.cookie = k + '=' + encodeURIComponent(v) + '; path=/; max-age=2592000';
+      } else {
+        var match = document.cookie.match(new RegExp('(?:^|; )' + k + '=([^;]*)'));
+        if (match) tracking[k] = decodeURIComponent(match[1]);
+      }
+    });
+
+    // Append tracking params to GHL form iframe src
+    var formIframe = document.querySelector('iframe[src*="widget/form/"]');
+    if (formIframe && Object.keys(tracking).length) {
+      var sep = formIframe.src.includes('?') ? '&' : '?';
+      var qs = Object.keys(tracking).map(function(k) { return k + '=' + encodeURIComponent(tracking[k]); }).join('&');
+      formIframe.src = formIframe.src + sep + qs;
+    }
+
+    // Expose for booking iframe
+    window._trackingParams = tracking;
+  })();
+</script>
 <script src="https://link.decyphernow.com/js/form_embed.js" defer></script>
 <script>
   var _formOpened = false;
@@ -1572,6 +1601,10 @@
     window.dataLayer.push({ event: 'generate_lead', form_name: 'concierge_medicine', page_path: window.location.pathname });
     if (typeof gtag === 'function') { gtag('event', 'conversion', { 'send_to': 'AW-11484308994/gDzjCKz4mY4cEILMkuQq' }); }
     var bookingUrl = 'https://link.decyphernow.com/widget/booking/NldeHbX1VRw95dPu7kx5';
+    if (window._trackingParams && Object.keys(window._trackingParams).length) {
+      var qs = Object.keys(window._trackingParams).map(function(k) { return k + '=' + encodeURIComponent(window._trackingParams[k]); }).join('&');
+      bookingUrl += '?' + qs;
+    }
     var modal = document.getElementById('form-modal');
     if (window.innerWidth >= 768) {
       modal.style.maxWidth = '700px';
