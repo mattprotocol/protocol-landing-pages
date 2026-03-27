@@ -16,8 +16,8 @@
   <link rel="preconnect" href="https://link.decyphernow.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <link rel="preload" as="image" href="https://protocol.us/wp-content/uploads/2025/11/Graph-4.jpg">
+
+  <link rel="preload" as="image" href="hero.webp">
   <link rel="stylesheet" href="/assets/tailwind.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
@@ -551,7 +551,7 @@
       .prose-body p { font-size: 1.125rem; }
     }
 
-    /* -- Comparison columns -- */
+    /* -- Comparison columns (kept for potential reuse) -- */
     .compare-col {
       padding: 2rem;
       border-radius: 3px;
@@ -574,6 +574,42 @@
     }
     .compare-col ul li:last-child {
       border-bottom: none;
+    }
+
+    /* -- Social proof stats bar -- */
+    .stats-bar {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* -- Differentiator grid -- */
+    .diff-card {
+      padding: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      transition: border-color 0.4s cubic-bezier(0.16,1,0.3,1), background 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .diff-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-elevated);
+    }
+
+    /* -- Fit section -- */
+    .fit-list li {
+      padding: 0.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* -- Collapsible body content -- */
+    .body-content-toggle {
+      cursor: pointer;
+      list-style: none;
+    }
+    .body-content-toggle::-webkit-details-marker {
+      display: none;
     }
   </style>
 
@@ -626,12 +662,14 @@
 </div>
 
 
-<!-- HERO -->
+<!-- ============================================================ -->
+<!-- SECTION 1: HERO -->
+<!-- ============================================================ -->
 <main id="main-content">
 <section class="relative min-h-screen flex items-center">
   <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline preload="metadata" role="presentation" poster="https://protocol.us/wp-content/uploads/2025/11/Graph-4.jpg">
-      <source src="https://protocol.us/wp-content/uploads/2025/10/protocol_hero.webm" type="video/webm">
+    <video autoplay muted loop playsinline preload="none" role="presentation" poster="hero.webp">
+      <source src="hero-video.webm" type="video/webm">
     </video>
   </div>
   <div class="crosshatch"></div>
@@ -640,28 +678,28 @@
     <div class="max-w-3xl">
       <div class="anim-fade-up d1 flex items-center gap-3 mb-7">
         <div class="accent-line" style="animation: drawLine 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s both;"></div>
-        <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--text-muted)] font-body">Functional Medicine in Boston</span>
+        <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--text-muted)] font-body">Functional Medicine Doctor in Boston</span>
       </div>
 
       <h1 class="hero-headline font-display text-[3.2rem] md:text-[4.8rem] lg:text-[5.8rem] font-300 leading-[1.04] tracking-[-0.01em] anim-fade-up d2" style="text-wrap: balance;">
-        Root-Cause Medicine Backed by <span class="italic text-[var(--accent)]">Published Science</span>
+        Boston's Evidence-Based <span class="italic text-[var(--accent)]">Functional Medicine Practice</span>
       </h1>
 
       <p class="mt-8 text-lg md:text-[1.4rem] text-[var(--text-secondary)] font-light leading-relaxed max-w-xl anim-fade-up d3">
-        Protocol integrates functional medicine philosophy  - systems-level thinking, advanced diagnostics, root-cause investigation  - with the evidence base of academic medicine. Board-certified physicians. 60+ biomarkers. One medical team that sees your complete picture.
+        Board-certified physicians. 60+ biomarkers. Root-cause diagnostics with the rigor of academic medicine &mdash; not guesswork.
       </p>
 
       <!-- Credentials -->
       <p class="mt-5 text-sm md:text-base text-[var(--text-muted)] anim-fade-up d4">
-        Board-Certified Physicians &nbsp;&middot;&nbsp; Boston, MA &nbsp;&middot;&nbsp; Evidence-Based Integrative Care
+        Board-Certified Physicians &nbsp;&middot;&nbsp; MGH Specialist Network &nbsp;&middot;&nbsp; 60+ Biomarkers &nbsp;&middot;&nbsp; Boston, MA
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4 anim-fade-up d5">
         <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
           Book a Free Discovery Call &rarr;
         </a>
-        <a href="#how" class="btn-outline">See How It Works</a>
       </div>
+      <p class="text-xs md:text-sm text-[var(--text-muted)] mt-3 anim-fade-up d6">15-minute call. No commitment. Just answers.</p>
     </div>
   </div>
 
@@ -676,260 +714,14 @@
 </section>
 
 
-<!-- PROBLEM SECTION: TWO KINDS OF INCOMPLETE MEDICINE -->
-<section class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="The problem with current medicine">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="text-center mb-16 md:mb-20 reveal">
-      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Gap</span>
-      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">Two Kinds of Incomplete Medicine</h2>
-      <p class="mt-4 text-[var(--text-secondary)] md:text-lg max-w-2xl mx-auto">You have been told to choose between rigorous medicine and integrative thinking. You should not have to.</p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-5 md:gap-7 max-w-4xl mx-auto">
-      <!-- Left: Conventional -->
-      <div class="compare-col bg-[var(--bg-card)] border border-[var(--border)] reveal">
-        <h3 class="text-[var(--text-muted)]">Conventional Medicine</h3>
-        <ul>
-          <li class="text-[var(--text-muted)]">Treats symptoms, not systems</li>
-          <li class="text-[var(--text-muted)]">7-minute visits, narrow focus</li>
-          <li class="text-[var(--text-muted)]">&ldquo;Your labs are normal&rdquo;  - benchmarked against a sick population</li>
-          <li class="text-[var(--text-muted)]">Misses root causes because it does not look for them</li>
-        </ul>
-      </div>
-
-      <!-- Right: Unrigorous Functional -->
-      <div class="compare-col bg-[var(--bg-card)] border border-[var(--border)] reveal rd1">
-        <h3 class="text-[var(--text-muted)]">Unrigorous Functional Medicine</h3>
-        <ul>
-          <li class="text-[var(--text-muted)]">Right instincts, inconsistent evidence</li>
-          <li class="text-[var(--text-muted)]">Supplement stacking without clinical reasoning</li>
-          <li class="text-[var(--text-muted)]">Testing without a clear interpretation framework</li>
-          <li class="text-[var(--text-muted)]">Philosophy without accountability</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="text-center mt-12 reveal rd2">
-      <p class="font-display text-[1.6rem] md:text-[2rem] font-300 text-[var(--text-primary)] max-w-2xl mx-auto" style="text-wrap: balance;">You do not have to choose between functional and rigorous. Protocol is both.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- HOW IT WORKS / SOLUTION SECTION -->
-<section id="how" class="py-24 md:py-36 bg-[var(--bg-deep)]" aria-label="Evidence-based functional medicine at Protocol">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="text-center mb-16 md:mb-20 reveal">
-      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Protocol Approach</span>
-      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">What Evidence-Based Functional Medicine Looks Like</h2>
-      <p class="mt-4 text-[var(--text-secondary)] md:text-lg max-w-xl mx-auto">Root-cause medicine practiced with the rigor of academic medicine  - not the guesswork of the speculative fringe.</p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-5 md:gap-7">
-      <!-- Card 01 -->
-      <div class="card p-8 lg:p-10 reveal">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">01</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Systems-Level Diagnostics</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          60+ biomarkers, DEXA body composition, VO2 max, advanced cardiovascular markers. Not a basic blood panel. A comprehensive picture of cardiovascular, metabolic, hormonal, and body composition health  - because root causes do not live in a single lab value.
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <button onclick="openModal('bloodwork')" class="text-left group cursor-pointer">
-              <span class="group-hover:text-[var(--accent)] transition-colors">ApoB, Lp(a), advanced lipid particle analysis</span>
-              <svg class="inline w-3.5 h-3.5 ml-1 text-[var(--accent-dim)] group-hover:text-[var(--accent)] transition-colors" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <button onclick="openModal('dexa')" class="text-left group cursor-pointer">
-              <span class="group-hover:text-[var(--accent)] transition-colors">DEXA body composition  - muscle, fat, bone density</span>
-              <svg class="inline w-3.5 h-3.5 ml-1 text-[var(--accent-dim)] group-hover:text-[var(--accent)] transition-colors" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <button onclick="openModal('vo2')" class="text-left group cursor-pointer">
-              <span class="group-hover:text-[var(--accent)] transition-colors">VO2 max  - the strongest predictor of all-cause mortality</span>
-              <svg class="inline w-3.5 h-3.5 ml-1 text-[var(--accent-dim)] group-hover:text-[var(--accent)] transition-colors" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 02 -->
-      <div class="card p-8 lg:p-10 reveal rd1">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">02</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Physician-Directed Interpretation Against Optimal Ranges</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Not &ldquo;your numbers are normal.&rdquo; What does optimal look like for your age, sex, and goals? Where are the early signals? What do the trends say? Board-certified physicians who specialize in reading the full picture.
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Optimal targets, not population-average &ldquo;normal&rdquo;</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Trend analysis across systems, not isolated snapshots</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Clinical reasoning you can follow and verify</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 03 -->
-      <div class="card p-8 lg:p-10 reveal rd2">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">03</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Integrative, Evidence-Based Protocols</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Interventions grounded in published science. Lifestyle, nutrition, exercise prescription, medication when warranted. No unproven supplements. No speculation. If the evidence supports it, we use it. If it does not, we do not.
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Every recommendation backed by peer-reviewed research</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Lifestyle, nutrition, exercise, medication  - as indicated</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>No supplement dispensary. No speculation.</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 04 -->
-      <div class="card p-8 lg:p-10 reveal rd3">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">04</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">Ongoing Medical Coaching</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Quarterly reassessments. Protocol adjustments as data evolves. A physician and Healthspan Advisor who know your history, track your trajectory, and catch what you cannot see on your own.
-        </p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Quarterly biomarker retesting and trend tracking</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Data-driven protocol adjustments each quarter</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>A medical team that knows your complete history</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Card 05 -->
-      <div class="card p-8 lg:p-10 md:col-span-2 reveal rd4">
-        <span class="font-display text-[3.5rem] text-[var(--accent)] leading-none">05</span>
-        <h3 class="font-body text-lg md:text-xl font-medium mt-4 mb-3">A Real Medical Home</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-6">
-          Full primary care. Specialist referrals through the MGH network when needed. One team, one relationship, complete medical picture. Not a supplement dispensary. Not a testing service. A medical practice.
-        </p>
-        <ul class="space-y-2.5 md:flex md:gap-8 md:space-y-0">
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Full primary care + integrative expertise</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>MGH network access for specialist referrals</span>
-          </li>
-          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-            <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>One team that sees your complete picture</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="text-center mt-12 reveal rd3">
-      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
-        Book a Free Discovery Call &rarr;
-      </a>
-      <p class="text-xs md:text-sm text-[var(--text-muted)] mt-3">15-minute call. No pressure. No supplement pitch.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- BODY CONTENT: FUNCTIONAL MEDICINE -->
-<section class="py-24 md:py-36 bg-[var(--bg-surface)]">
-  <div class="max-w-3xl mx-auto px-6 lg:px-12 prose-body reveal">
-
-    <h2>Functional Medicine at Protocol: Where Root-Cause Thinking Meets Real Evidence</h2>
-
-    <p>The core philosophy of functional medicine is sound: look upstream for root causes, think in systems, treat the whole person rather than isolated symptoms. Most people searching for a functional medicine doctor in Boston already believe this. The question is not whether the philosophy is right. The question is whether the practice matches the philosophy.</p>
-
-    <p>Too often, it does not. The functional medicine landscape ranges from rigorous, physician-led practices to supplement dispensaries with a stethoscope on the wall. The gap between the best and worst is vast  - and patients bear the cost of that inconsistency.</p>
-
-    <h3>The Evidence Standard That Makes the Difference</h3>
-
-    <p>Protocol was built to close this gap. Our physicians share the functional medicine commitment to root-cause investigation and systems-level thinking. Where we differ is the evidence standard. Every diagnostic we order, every protocol we build, every intervention we recommend is grounded in published, peer-reviewed science. Not trends. Not anecdote. Not what sold well at last year's integrative medicine conference.</p>
-
-    <p>This means we test 60+ biomarkers  - including ApoB, Lp(a), advanced metabolic panels, hormones, and inflammatory markers  - because the published evidence says these predict long-term health outcomes. We use DEXA body composition and VO2 max because the data on their prognostic value is extensive and unambiguous. We interpret results against optimal ranges, not the population-average &ldquo;normal&rdquo; ranges that most labs use  - because &ldquo;normal&rdquo; is benchmarked against a population where 88% have at least one marker of metabolic dysfunction.</p>
-
-    <h3>How a Physician-Directed Functional Medicine Practice Works in Boston</h3>
-
-    <p>When you join Protocol, you are matched with a board-certified physician who leads a care team built around your health: physician, Healthspan Advisor, registered dietitian, and care coordinators. Your care begins with a comprehensive intake  - not a questionnaire, but a 60-minute conversation about your health history, family risk factors, goals, and the questions your previous doctors could not answer.</p>
-
-    <p>From there, your physician orders a systems-level diagnostic workup. Within weeks, you sit down with your medical team to review every result, understand what each biomarker means in the context of your whole health picture, and build an evidence-based protocol. Lifestyle. Nutrition. Exercise prescription. Medication when the science warrants it. No filler. No speculation.</p>
-
-    <p>Quarterly reassessments track your trajectory. Your protocol evolves as your data evolves. This is not a one-time assessment. It is an ongoing medical partnership  - the kind of relationship that functional medicine promises but rarely delivers at this level of rigor.</p>
-
-    <h3>Is Protocol Right for You?</h3>
-
-    <p>Protocol may be right for you if:</p>
-
-    <ul class="space-y-2">
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You believe in root-cause medicine but want it grounded in published evidence</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You have been frustrated by doctors who treat symptoms without investigating underlying causes</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You want advanced diagnostics interpreted by physicians who understand the full picture</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You are looking for a long-term medical partner, not a one-time assessment</span>
-      </li>
-      <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
-        <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>You want integrative thinking without sacrificing scientific rigor</span>
-      </li>
-    </ul>
-
-    <p>Protocol is probably not right for you if you are looking for the cheapest option (this is a premium medical practice), want a supplement-heavy protocol, or need acute or emergency care. We prescribe evidence-based interventions only.</p>
-
-  </div>
-</section>
-
-
-<!-- TESTIMONIALS -->
-<section class="py-24 md:py-32 bg-[var(--bg-deep)]" role="region" aria-label="Member testimonials">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 reveal">
-    <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Clinical Outcomes</span>
-    <h2 class="font-display text-[2.8rem] md:text-[3.4rem] font-300 mt-4">The approach produces measurable results.</h2>
-  </div>
-
-  <!-- Stats row -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16 px-6 lg:px-12 reveal rd1">
+<!-- ============================================================ -->
+<!-- SECTION 2: SOCIAL PROOF STATS BAR -->
+<!-- ============================================================ -->
+<section class="stats-bar py-10 md:py-12" aria-label="Clinical outcomes">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto px-6 lg:px-12 reveal">
     <div class="text-center">
       <div class="stat-val text-4xl md:text-5xl">79</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">median member ApoB (mg/dL)  - below optimal threshold</p>
+      <p class="text-sm text-[var(--text-muted)] mt-2">median member ApoB (mg/dL) &mdash; below optimal threshold</p>
     </div>
     <div class="text-center">
       <div class="stat-val text-4xl md:text-5xl">69%</div>
@@ -937,12 +729,128 @@
     </div>
     <div class="text-center">
       <div class="stat-val text-4xl md:text-5xl">-3.8</div>
-      <p class="text-sm text-[var(--text-muted)] mt-2">years biological age vs. chronological  - 72% biologically younger</p>
+      <p class="text-sm text-[var(--text-muted)] mt-2">years biological age vs. chronological &mdash; 72% biologically younger</p>
     </div>
     <div class="text-center">
       <div class="stat-val text-4xl md:text-5xl">95%</div>
       <p class="text-sm text-[var(--text-muted)] mt-2">maintained or improved cardiovascular risk profiles</p>
     </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- SECTION 3: WHAT SETS THIS PRACTICE APART -->
+<!-- ============================================================ -->
+<section class="py-24 md:py-36 bg-[var(--bg-deep)]" aria-label="What sets this practice apart">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 md:mb-20 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">The Difference</span>
+      <h2 class="font-display text-[2.8rem] md:text-[3.6rem] font-300 mt-4">What Sets This Practice Apart</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5 md:gap-7 max-w-4xl mx-auto">
+      <!-- Differentiator 1 -->
+      <div class="diff-card reveal">
+        <h3 class="font-body text-lg md:text-xl font-medium mb-3">Published science, not trends</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">Every protocol backed by peer-reviewed research. No supplement stacking. No speculation.</p>
+      </div>
+
+      <!-- Differentiator 2 -->
+      <div class="diff-card reveal rd1">
+        <h3 class="font-body text-lg md:text-xl font-medium mb-3">Real diagnostics, not a basic blood panel</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">60+ biomarkers including ApoB, Lp(a), DEXA body composition, VO2 max.</p>
+      </div>
+
+      <!-- Differentiator 3 -->
+      <div class="diff-card reveal rd2">
+        <h3 class="font-body text-lg md:text-xl font-medium mb-3">Physician-directed, not coach-led</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">Board-certified physicians lead your care. MGH network for specialist referrals when you need them.</p>
+      </div>
+
+      <!-- Differentiator 4 -->
+      <div class="diff-card reveal rd3">
+        <h3 class="font-body text-lg md:text-xl font-medium mb-3">Ongoing partnership, not a one-time assessment</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">Quarterly retesting, protocol adjustments, trend tracking. Your medical team evolves your care as your data evolves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- SECTION 4: HOW IT WORKS / FIRST 30 DAYS -->
+<!-- ============================================================ -->
+<section id="how" class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="What to expect in your first 30 days">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Your First 30 Days</span>
+      <h2 class="font-display text-[2.2rem] md:text-[2.8rem] font-300 mt-4">What to expect when you join</h2>
+    </div>
+
+    <div class="space-y-0">
+      <!-- Step 1 -->
+      <div class="flex gap-6 reveal rd1">
+        <div class="flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">1</div>
+          <div class="w-px flex-1 bg-[var(--border)]"></div>
+        </div>
+        <div class="pb-10">
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Discovery call + comprehensive intake</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Free 15-minute call first, then a 60-minute physician-led deep dive into your health history, family risk factors, and the questions your previous doctors could not answer.</p>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="flex gap-6 reveal rd2">
+        <div class="flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">2</div>
+          <div class="w-px flex-1 bg-[var(--border)]"></div>
+        </div>
+        <div class="pb-10">
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Systems-level diagnostics</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">DEXA body composition, VO2 max, and 60+ biomarkers at partner facilities in Boston. Your physician orders everything based on your intake and clinical picture, not a cookie-cutter panel.</p>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="flex gap-6 reveal rd3">
+        <div class="flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">3</div>
+          <div class="w-px flex-1 bg-[var(--border)]"></div>
+        </div>
+        <div class="pb-10">
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Your evidence-based protocol</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Every recommendation with clear clinical rationale. Lifestyle, nutrition, exercise prescription, medication when warranted. No filler.</p>
+        </div>
+      </div>
+      <!-- Step 4 -->
+      <div class="flex gap-6 reveal rd4">
+        <div class="flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full border border-[var(--accent)] bg-[var(--accent-glow)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">4</div>
+        </div>
+        <div>
+          <h3 class="font-body text-base md:text-lg font-medium mb-1">Quarterly reassessments</h3>
+          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Biomarker retesting, protocol adjustments, and trend analysis each quarter. Your physician tracks your trajectory and evolves your care plan based on real data. Ongoing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
+        Book a Free Discovery Call &rarr;
+      </a>
+      <p class="text-xs md:text-sm text-[var(--text-muted)] mt-3">The first step is a 15-minute call. No cost, no commitment.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- SECTION 5: TESTIMONIALS -->
+<!-- ============================================================ -->
+<section class="py-24 md:py-32 bg-[var(--bg-deep)]" role="region" aria-label="Member testimonials">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 reveal">
+    <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">What Members Say</span>
+    <h2 class="font-display text-[2.8rem] md:text-[3.4rem] font-300 mt-4">Real results from real members.</h2>
   </div>
 
   <div class="marquee-wrap relative">
@@ -952,7 +860,7 @@
       <span id="marqueeToggleLabel">Pause</span>
     </button>
     <div class="marquee-track px-6">
-      <!-- Card 1: Jill N. (functional + rigorous) -->
+      <!-- Card 1: Jill N. -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
         <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">To have both a functional doctor and an MGH &ldquo;Medical&rdquo; doctor is terrific. I finally have a practice that combines integrative thinking with real medical rigor.</p>
@@ -978,7 +886,7 @@
         </div>
       </div>
 
-      <!-- Card 3: Jennifer D. (root-cause lipids) -->
+      <!-- Card 3: Jennifer D. -->
       <div class="shrink-0 w-[360px] md:w-[420px] card p-8">
         <svg class="text-[var(--accent)] opacity-30 mb-4" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 7.05C7.56 7.56 5 10.53 5 14a5 5 0 005 5c2.76 0 5-2.24 5-5 0-2.36-1.64-4.33-3.84-4.84C11.56 7.36 12 5.68 12.84 4.3L11 3c-1 1.5-1.68 3.12-2 4.85V7.05zM20 7.05c-3.44.51-6 3.48-6 7.45 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.36-1.64-4.33-3.84-4.84.4-1.8.84-3.48 1.68-4.86L20 3c-1 1.5-1.68 3.12-2 4.85V7.05z"/></svg>
         <div class="flex items-center gap-4 mb-4">
@@ -987,7 +895,7 @@
             <div class="text-xs text-[var(--text-muted)]">cholesterol in 30 days</div>
           </div>
         </div>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different  - &ldquo;This is the number one thing.&rdquo; Thirty days later I cut my cholesterol in half.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different &mdash; &ldquo;This is the number one thing.&rdquo; Thirty days later I cut my cholesterol in half.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div>
@@ -1022,7 +930,7 @@
             <div class="text-xs text-[var(--text-muted)]">cholesterol in 30 days</div>
           </div>
         </div>
-        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different  - &ldquo;This is the number one thing.&rdquo; Thirty days later I cut my cholesterol in half.</p>
+        <p class="text-[var(--text-secondary)] text-[15px] md:text-[17px] leading-relaxed mb-6">My former primary care said my cholesterol was &ldquo;a little borderline, you don&rsquo;t need to do anything.&rdquo; Protocol&rsquo;s response was very different &mdash; &ldquo;This is the number one thing.&rdquo; Thirty days later I cut my cholesterol in half.</p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center font-display text-lg text-[var(--accent)]">J</div>
           <div><div class="text-sm font-medium">Jennifer D.</div><div class="text-xs text-[var(--text-muted)]">Protocol Member, Boston</div></div>
@@ -1033,71 +941,76 @@
 </section>
 
 
-<!-- FIRST 30 DAYS -->
-<section class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="What to expect in your first 30 days">
+<!-- ============================================================ -->
+<!-- SECTION 6: IS PROTOCOL RIGHT FOR YOU? -->
+<!-- ============================================================ -->
+<section class="py-24 md:py-36 bg-[var(--bg-surface)]" aria-label="Is Protocol right for you">
   <div class="max-w-3xl mx-auto px-6 lg:px-12">
     <div class="text-center mb-16 reveal">
-      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Your First 30 Days</span>
-      <h2 class="font-display text-[2.2rem] md:text-[2.8rem] font-300 mt-4">What to expect when you join</h2>
+      <span class="text-[14px] tracking-[0.3em] uppercase text-[var(--accent-dim)]">Is It Right For You?</span>
+      <h2 class="font-display text-[2.2rem] md:text-[2.8rem] font-300 mt-4">Is Protocol Right For You?</h2>
     </div>
 
-    <div class="space-y-0">
-      <!-- Step 1 -->
-      <div class="flex gap-6 reveal rd1">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">1</div>
-          <div class="w-px flex-1 bg-[var(--border)]"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Week 1: Comprehensive intake</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">A 60-minute physician-led conversation about your health history, family risk factors, and the questions your previous doctors could not answer. This is where root-cause investigation begins  - not with a blood draw, but with listening.</p>
-        </div>
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 reveal rd1">
+      <!-- Right for you -->
+      <div>
+        <h3 class="font-body text-base md:text-lg font-medium mb-4 text-[var(--accent)]">Protocol is right for you if:</h3>
+        <ul class="fit-list space-y-2">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]">
+            <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>You believe in root-cause medicine but want it grounded in published evidence</span>
+          </li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]">
+            <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>You've been frustrated by doctors who treat symptoms without investigating causes</span>
+          </li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]">
+            <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>You want advanced diagnostics interpreted by physicians who see the full picture</span>
+          </li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-secondary)]">
+            <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--accent-dim)]" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>You're looking for a long-term medical partner, not a one-time assessment</span>
+          </li>
+        </ul>
       </div>
-      <!-- Step 2 -->
-      <div class="flex gap-6 reveal rd2">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">2</div>
-          <div class="w-px flex-1 bg-[var(--border)]"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Weeks 2 to 3: Systems-level diagnostics</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">DEXA body composition, VO2 max, and advanced bloodwork  - 60+ biomarkers tested against optimal thresholds. Your physician orders everything based on your intake and clinical picture, not a cookie-cutter panel.</p>
-        </div>
+
+      <!-- Not right for you -->
+      <div>
+        <h3 class="font-body text-base md:text-lg font-medium mb-4 text-[var(--text-muted)]">Probably not right for you if:</h3>
+        <ul class="fit-list space-y-2">
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+            <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--text-muted)] opacity-50" viewBox="0 0 16 16" fill="none" aria-hidden="true"><line x1="4" y1="4" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="4" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>You're looking for the cheapest option</span>
+          </li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+            <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--text-muted)] opacity-50" viewBox="0 0 16 16" fill="none" aria-hidden="true"><line x1="4" y1="4" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="4" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>You want a supplement-heavy protocol</span>
+          </li>
+          <li class="flex items-start gap-2.5 text-sm md:text-base text-[var(--text-muted)]">
+            <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--text-muted)] opacity-50" viewBox="0 0 16 16" fill="none" aria-hidden="true"><line x1="4" y1="4" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="4" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>You need acute or emergency care</span>
+          </li>
+        </ul>
       </div>
-      <!-- Step 3 -->
-      <div class="flex gap-6 reveal rd3">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">3</div>
-          <div class="w-px flex-1 bg-[var(--border)]"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Week 4: Your evidence-based protocol</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Your medical team walks you through every result and builds an integrative, evidence-based plan. Lifestyle, nutrition, exercise prescription, medication when warranted. Every recommendation comes with a clear clinical rationale.</p>
-        </div>
-      </div>
-      <!-- Step 4 -->
-      <div class="flex gap-6 reveal rd4">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full border border-[var(--accent)] bg-[var(--accent-glow)] flex items-center justify-center text-[var(--accent)] font-display text-sm shrink-0">4</div>
-        </div>
-        <div>
-          <h3 class="font-body text-base md:text-lg font-medium mb-1">Ongoing: Quarterly reassessments</h3>
-          <p class="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">Biomarker retesting, protocol adjustments, and trend analysis each quarter. Your physician tracks your trajectory and evolves your care plan based on real data. This is the ongoing medical partnership functional medicine promises  - delivered with real evidence.</p>
-        </div>
-      </div>
-      <p class="text-xs text-[var(--text-muted)] mt-6 pl-16">All testing at partner facilities in Boston.</p>
     </div>
 
-    <div class="text-center mt-12 reveal">
-      <a href="javascript:void(0)" onclick="openForm()" class="btn-accent">
-        Book a Free Discovery Call &rarr;
-      </a>
+    <!-- Pricing -->
+    <div class="text-center mt-12 reveal rd2">
+      <div class="card p-8 md:p-10 max-w-lg mx-auto">
+        <h3 class="font-body text-base md:text-lg font-medium mb-3">Membership Pricing</h3>
+        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">
+          Memberships start at <strong class="text-[var(--text-primary)] font-medium">$549/month</strong> (annual) or <strong class="text-[var(--text-primary)] font-medium">$699/month</strong> (monthly). <span class="text-[var(--accent-dim)]">HSA/FSA eligible.</span>
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 
-<!-- FAQ -->
+<!-- ============================================================ -->
+<!-- SECTION 7: FAQ -->
+<!-- ============================================================ -->
 <section id="faq" class="py-24 md:py-36" aria-label="Frequently asked questions">
   <div class="max-w-3xl mx-auto px-6 lg:px-12">
     <div class="text-center mb-16 reveal">
@@ -1106,7 +1019,16 @@
     </div>
 
     <div class="space-y-4 reveal rd1">
+      <!-- NEW: How much does it cost? -->
       <details class="group card p-6 cursor-pointer" open>
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
+          How much does it cost?
+          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Protocol memberships start at $549/month on an annual plan or $699/month on a monthly plan. This includes comprehensive diagnostics (60+ biomarkers, DEXA, VO2 max), physician-led care, quarterly reassessments, and a dedicated Healthspan Advisor. HSA and FSA eligible. Book a free discovery call to learn more about what's included.</p>
+      </details>
+
+      <details class="group card p-6 cursor-pointer">
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
           Is Protocol a functional medicine practice?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
@@ -1119,7 +1041,7 @@
           What diagnostics do you run?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">60+ biomarkers, DEXA body composition, VO2 max cardiopulmonary testing, advanced cardiovascular markers (ApoB, Lp(a)), metabolic panels, hormones, inflammatory markers, and more. These are not add-ons  - they are standard care for every member. All results are interpreted against optimal ranges, not permissive population-average &ldquo;normal.&rdquo;</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">60+ biomarkers, DEXA body composition, VO2 max cardiopulmonary testing, advanced cardiovascular markers (ApoB, Lp(a)), metabolic panels, hormones, inflammatory markers, and more. These are not add-ons &mdash; they are standard care for every member. All results are interpreted against optimal ranges, not permissive population-average &ldquo;normal.&rdquo;</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
@@ -1135,7 +1057,7 @@
           How is this different from my current functional medicine provider?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">We integrate functional medicine thinking with full primary care, advanced diagnostics, and an ongoing medical coaching relationship. Our physicians are board-certified with MGH network access for specialist referrals. Every recommendation comes with a clear clinical rationale grounded in published science  - not trends, not anecdote.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">We integrate functional medicine thinking with full primary care, advanced diagnostics, and an ongoing medical coaching relationship. Our physicians are board-certified with MGH network access for specialist referrals. Every recommendation comes with a clear clinical rationale grounded in published science &mdash; not trends, not anecdote.</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
@@ -1143,7 +1065,7 @@
           What does the membership include?
           <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
         </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Comprehensive diagnostics (60+ biomarkers, DEXA, VO2 max), physician-led interpretation against optimal ranges, ongoing 1:1 medical coaching with a Healthspan Advisor, quarterly reassessments, full primary care, and specialist referrals through MGH when needed. HSA and FSA eligible. Book a free discovery call to discuss pricing.</p>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Comprehensive diagnostics (60+ biomarkers, DEXA, VO2 max), physician-led interpretation against optimal ranges, ongoing 1:1 medical coaching with a Healthspan Advisor, quarterly reassessments, full primary care, and specialist referrals through MGH when needed. HSA and FSA eligible.</p>
       </details>
 
       <details class="group card p-6 cursor-pointer">
@@ -1153,12 +1075,58 @@
         </summary>
         <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Protocol is a membership-based practice. The membership fee is not covered by insurance. However, many of our diagnostic tests and specialist referrals can be billed to insurance. We provide documentation for HSA/FSA reimbursement upon request.</p>
       </details>
+
+      <details class="group card p-6 cursor-pointer">
+        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
+          Do I need a referral?
+          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+        </summary>
+        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">No. You do not need a referral to join Protocol. Simply book a free discovery call and we will walk you through our approach, answer your questions, and help you decide if this is the right fit.</p>
+      </details>
     </div>
   </div>
 </section>
 
 
-<!-- FINAL CTA -->
+<!-- ============================================================ -->
+<!-- SECTION 8: BODY CONTENT (SEO / AdsBot relevance) -->
+<!-- ============================================================ -->
+<section class="py-16 md:py-24 bg-[var(--bg-surface)]">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12">
+    <details class="reveal">
+      <summary class="body-content-toggle flex justify-between items-center cursor-pointer group">
+        <h2 class="font-display text-[1.6rem] md:text-[2rem] font-300 text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">Learn More About Functional Medicine at Protocol</h2>
+        <svg class="w-6 h-6 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+      </summary>
+      <div class="prose-body mt-8">
+        <h2>Functional Medicine at Protocol: Where Root-Cause Thinking Meets Real Evidence</h2>
+
+        <p>The core philosophy of functional medicine is sound: look upstream for root causes, think in systems, treat the whole person rather than isolated symptoms. Most people searching for a functional medicine doctor in Boston already believe this. The question is not whether the philosophy is right. The question is whether the practice matches the philosophy.</p>
+
+        <p>Too often, it does not. The functional medicine landscape ranges from rigorous, physician-led practices to supplement dispensaries with a stethoscope on the wall. The gap between the best and worst is vast &mdash; and patients bear the cost of that inconsistency.</p>
+
+        <h3>The Evidence Standard That Makes the Difference</h3>
+
+        <p>Protocol was built to close this gap. Our physicians share the functional medicine commitment to root-cause investigation and systems-level thinking. Where we differ is the evidence standard. Every diagnostic we order, every protocol we build, every intervention we recommend is grounded in published, peer-reviewed science. Not trends. Not anecdote. Not what sold well at last year's integrative medicine conference.</p>
+
+        <p>This means we test 60+ biomarkers &mdash; including ApoB, Lp(a), advanced metabolic panels, hormones, and inflammatory markers &mdash; because the published evidence says these predict long-term health outcomes. We use DEXA body composition and VO2 max because the data on their prognostic value is extensive and unambiguous. We interpret results against optimal ranges, not the population-average &ldquo;normal&rdquo; ranges that most labs use &mdash; because &ldquo;normal&rdquo; is benchmarked against a population where 88% have at least one marker of metabolic dysfunction.</p>
+
+        <h3>How a Physician-Directed Functional Medicine Practice Works in Boston</h3>
+
+        <p>When you join Protocol, you are matched with a board-certified physician who leads a care team built around your health: physician, Healthspan Advisor, registered dietitian, and care coordinators. Your care begins with a comprehensive intake that focuses on your health history, family risk factors, goals, and the questions your previous doctors could not answer.</p>
+
+        <p>From there, your physician orders a systems-level diagnostic workup. Within weeks, you sit down with your medical team to review every result, understand what each biomarker means in the context of your whole health picture, and build an evidence-based protocol. Lifestyle. Nutrition. Exercise prescription. Medication when the science warrants it. No filler. No speculation.</p>
+
+        <p>Quarterly reassessments track your trajectory. Your protocol evolves as your data evolves. This is not a one-time assessment. It is an ongoing medical partnership &mdash; the kind of relationship that functional medicine promises but rarely delivers at this level of rigor.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- SECTION 9: FINAL CTA -->
+<!-- ============================================================ -->
 <section id="start" class="py-36 md:py-52 relative" aria-label="Get started with Protocol">
   <div class="crosshatch"></div>
   <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[var(--accent)] opacity-[0.035] blur-[150px]"></div>
@@ -1175,36 +1143,35 @@
       <a href="javascript:void(0)" onclick="openForm()" class="btn-accent text-base px-12 py-5" style="box-shadow: 0 0 24px rgba(194,224,58,0.15), 0 0 48px rgba(194,224,58,0.06);">
         Book a Free Discovery Call &rarr;
       </a>
-      <p class="text-xs text-[var(--text-muted)]">15-minute call. No pressure. No supplement pitch.</p>
+      <p class="text-xs text-[var(--text-muted)]">15-minute call. No pressure. Just answers.</p>
     </div>
-  </div>
-</section>
 
-
-<!-- EMAIL CAPTURE -->
-<section class="py-16 border-t border-b border-[var(--border)]">
-  <div class="max-w-2xl mx-auto px-6 lg:px-12 text-center reveal">
-    <h2 class="font-display text-2xl md:text-3xl font-300">Not ready yet? Get our free longevity newsletter.</h2>
-    <p class="text-sm md:text-base text-[var(--text-muted)] mt-2">Weekly insights on healthspan research, biomarker analysis, and evidence-based protocols from our clinical team.</p>
-    <form id="emailForm" class="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-      <label for="email-input" class="sr-only">Email address</label>
-      <input
-        id="email-input"
-        type="email"
-        placeholder="Enter your email"
-        autocomplete="email"
-        required
-        class="flex-1 px-5 py-3.5 bg-[var(--bg-card)] border border-[var(--border)] rounded-sm text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors font-body"
-      >
-      <button type="submit" class="btn-accent py-3.5 px-8 text-[15px]">Get Insights</button>
-    </form>
-    <p id="emailSuccess" class="text-sm text-[var(--accent)] mt-4 hidden" role="status" aria-live="polite" tabindex="-1">Thanks. You are on the list.</p>
-    <p class="text-xs text-[var(--text-muted)] mt-4">We respect your privacy. Unsubscribe anytime. <a href="javascript:void(0)" onclick="openLegal('privacy')" class="underline hover:text-[var(--accent)] transition-colors">Privacy Policy</a></p>
+    <!-- Secondary: email capture -->
+    <div class="mt-16 pt-12 border-t border-[var(--border)]">
+      <p class="font-display text-xl md:text-2xl font-300 mb-2">Not ready for a call?</p>
+      <p class="text-sm md:text-base text-[var(--text-muted)] mb-6">Get our free guide: <em class="text-[var(--text-secondary)]">What to Ask a Functional Medicine Doctor</em></p>
+      <form id="emailForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <label for="email-input" class="sr-only">Email address</label>
+        <input
+          id="email-input"
+          type="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+          class="flex-1 px-5 py-3.5 bg-[var(--bg-card)] border border-[var(--border)] rounded-sm text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors font-body"
+        >
+        <button type="submit" class="btn-accent py-3.5 px-8 text-[15px]">Get the Guide</button>
+      </form>
+      <p id="emailSuccess" class="text-sm text-[var(--accent)] mt-4 hidden" role="status" aria-live="polite" tabindex="-1">Thanks! Check your inbox.</p>
+      <p class="text-xs text-[var(--text-muted)] mt-4">We respect your privacy. Unsubscribe anytime. <a href="javascript:void(0)" onclick="openLegal('privacy')" class="underline hover:text-[var(--accent)] transition-colors">Privacy Policy</a></p>
+    </div>
   </div>
 </section>
 </main>
 
-<!-- FOOTER -->
+<!-- ============================================================ -->
+<!-- SECTION 10: FOOTER -->
+<!-- ============================================================ -->
 <footer class="py-16">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
@@ -1220,6 +1187,7 @@
           <path d="M159.274 0.451172H159.567L163.799 5.17148V32.3451L159.4 30.2189L159.274 0.451172ZM163.715 29.1557C163.853 29.8659 164.08 30.4102 164.386 30.793C164.691 31.1757 165.001 31.4649 165.307 31.6647C165.697 31.8646 166.103 31.9752 166.522 32.0049H163.506L163.715 29.1557ZM170 32.3451H163.799L163.673 31.9199H170V32.3451Z" fill="white"/>
         </svg>
         <p class="text-sm md:text-base text-[var(--text-muted)] leading-relaxed">Evidence-based functional medicine in Boston. Root-cause thinking with real medical rigor.</p>
+        <p class="text-sm text-[var(--text-muted)] mt-3">Protocol &middot; Boston, MA &middot; (617) 555-0100</p>
       </div>
 
       <div>
@@ -1426,70 +1394,6 @@
   });
 </script>
 
-<!-- TEST DETAIL MODALS -->
-<div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
-<div id="modalPanel" class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <button onclick="closeModal()" class="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
-  </button>
-  <h3 id="modalTitle" class="font-display text-3xl md:text-4xl text-[var(--accent)] mb-2"></h3>
-  <p id="modalSubtitle" class="text-sm md:text-base tracking-[0.15em] uppercase text-[var(--text-muted)] mb-5"></p>
-  <div id="modalBody" class="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed space-y-4"></div>
-</div>
-
-<script>
-  const modalData = {
-    dexa: {
-      title: 'DEXA Scan',
-      subtitle: 'Dual-Energy X-Ray Absorptiometry',
-      body: `<img src="https://humanpoweredhealth.com/wp-content/uploads/2025/11/6-Performance-Lab-MPLS-10.29.25.jpg" alt="DEXA scan in progress at a performance lab" class="w-full rounded-sm mb-5" style="max-height:200px;object-fit:cover;" loading="lazy">
-        <p>A DEXA scan is the most accurate way to measure body composition. Using low-dose X-ray beams, it provides a detailed breakdown of bone density, muscle mass, and fat mass throughout your body.</p>
-        <p>It measures specific types of fat, including visceral fat (the fat around your organs that carries the greatest health risk), and monitors physical symmetry to identify imbalances in muscle, fat, and bone health.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">What to expect:</strong> You lie on a scanning table for approximately 15 minutes while the machine scans your body. Quick, painless, and non-invasive.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> Annually, to track changes in body composition, bone density, and overall progress.</p>`
-    },
-    vo2: {
-      title: 'VO\u2082 Max',
-      subtitle: 'Aerobic Capacity Testing',
-      body: `<img src="https://humanpoweredhealth.com/wp-content/uploads/2025/11/v-scaled.png" alt="VO2 Max test on a treadmill with breathing mask" class="w-full rounded-sm mb-5" style="max-height:200px;object-fit:cover;" loading="lazy">
-        <p>A VO\u2082 Max assessment measures the maximum level of oxygen your body can use during exercise. It is one of the strongest predictors of both athletic performance and longevity, and serves as an early indicator of potential cardiovascular or metabolic issues.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">What to expect:</strong> You wear a mask over your nose and mouth while running on a treadmill or biking on a stationary bike. Intensity gradually increases until you reach maximal exertion. The test itself is 7\u201315 minutes.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">What you learn:</strong> Your true VO\u2082 Max, maximum heart rate, anaerobic threshold, and personalized heart rate training zones.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> Annually, to measure improvement and recalibrate your training zones.</p>`
-    },
-    bloodwork: {
-      title: 'Bloodwork Panel',
-      subtitle: '60+ Biomarkers Analyzed',
-      body: `<p>Our bloodwork panel goes far beyond a standard annual physical. We test 60+ biomarkers across metabolic health, cardiovascular risk, hormonal balance, inflammation, nutrient status, and organ function.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">What\u2019s included:</strong> Complete lipid and glucose profiling, thyroid function, sex hormones, inflammatory markers (hsCRP, homocysteine), vitamin and mineral levels, liver and kidney function, ApoB, Lp(a), and more.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">Why it matters:</strong> Standard physicals typically check fewer than 20 markers. Many early-stage risks \u2014 such as insulin resistance, subclinical thyroid issues, or nutrient deficiencies \u2014 only show up in an expanded panel. Root-cause investigation starts here.</p>
-        <p><strong style="color:var(--text-primary);font-weight:400;">How often:</strong> At intake, then quarterly to track the impact of your protocol changes.</p>`
-    }
-  };
-
-  function openModal(key) {
-    const d = modalData[key];
-    if (!d) return;
-    const panel = document.getElementById('modalPanel');
-    document.getElementById('modalTitle').textContent = d.title;
-    document.getElementById('modalSubtitle').textContent = d.subtitle;
-    document.getElementById('modalBody').innerHTML = d.body;
-    panel.classList.toggle('wide', !!d.wide);
-    document.getElementById('modalBackdrop').classList.add('open');
-    panel.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    panel.querySelector('button').focus();
-  }
-  function closeModal() {
-    document.getElementById('modalBackdrop').classList.remove('open');
-    document.getElementById('modalPanel').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.getElementById('modalPanel').classList.contains('open')) closeModal();
-  });
-</script>
-
 <!-- Mobile sticky CTA -->
 <div id="mobileCta" class="mobile-sticky-cta md:hidden">
   <a href="javascript:void(0)" onclick="openForm()" class="btn-accent w-full justify-center text-[15px] py-3">Book a Free Discovery Call</a>
@@ -1522,7 +1426,7 @@
   // Capture tracking params from URL and cookies, append to GHL iframe src
   (function() {
     var params = new URLSearchParams(window.location.search);
-    var trackingKeys = ['gclid','fbclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+    var trackingKeys = ['gclid','gbraid','wbraid','fbclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
     var tracking = {};
     trackingKeys.forEach(function(k) {
       var v = params.get(k);
@@ -1609,8 +1513,7 @@
     modal.innerHTML = '<button id="form-modal-close" onclick="closeForm()" aria-label="Close">&times;</button>' +
       '<iframe src="' + bookingUrl + '" style="width:100%;height:100%;border:none;" id="booking-iframe" title="Schedule Your Call"></iframe>';
 
-    // Detect booking completion: after initial calendar load, the next iframe
-    // load event means GHL navigated (booking done -> thank-you/redirect).
+    // Detect booking completion
     var bookingIframe = document.getElementById('booking-iframe');
     var _iframeLoaded = false;
     bookingIframe.addEventListener('load', function() {

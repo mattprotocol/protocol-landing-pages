@@ -1528,7 +1528,7 @@
   // Capture tracking params from URL and cookies, append to GHL iframe src
   (function() {
     var params = new URLSearchParams(window.location.search);
-    var trackingKeys = ['gclid','fbclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+    var trackingKeys = ['gclid','gbraid','wbraid','fbclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
     var tracking = {};
     trackingKeys.forEach(function(k) {
       var v = params.get(k);
