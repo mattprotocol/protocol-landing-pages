@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preload" as="image" href="hero.webp">
+  <link rel="preload" as="image" href="/functional-medicine-boston/hero.webp">
   <link rel="stylesheet" href="/assets/tailwind.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
@@ -668,8 +668,8 @@
 <main id="main-content">
 <section class="relative min-h-screen flex items-center">
   <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline preload="metadata" role="presentation" poster="hero.webp">
-      <source src="hero-video.webm" type="video/webm">
+    <video autoplay muted loop playsinline preload="metadata" role="presentation" poster="/functional-medicine-boston/hero.webp">
+      <source src="/functional-medicine-boston/hero-video.webm" type="video/webm">
     </video>
   </div>
   <div class="crosshatch"></div>
@@ -1335,14 +1335,16 @@
     marqueeToggle.setAttribute('aria-label', isPaused ? 'Play testimonial carousel' : 'Pause testimonial carousel');
   });
 
-  // Email form
-  document.getElementById('emailForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const successMsg = document.getElementById('emailSuccess');
-    successMsg.classList.remove('hidden');
-    successMsg.focus();
-    e.target.style.display = 'none';
-  });
+  // Email form (guard against missing element)
+  var emailForm = document.getElementById('emailForm');
+  if (emailForm) {
+    emailForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const successMsg = document.getElementById('emailSuccess');
+      if (successMsg) { successMsg.classList.remove('hidden'); successMsg.focus(); }
+      e.target.style.display = 'none';
+    });
+  }
 
   // Scroll reveal
   const obs = new IntersectionObserver((entries) => {
