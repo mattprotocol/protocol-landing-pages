@@ -668,7 +668,7 @@
 <main id="main-content">
 <section class="relative min-h-screen flex items-center">
   <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline preload="none" role="presentation" poster="hero.webp">
+    <video autoplay muted loop playsinline preload="metadata" role="presentation" poster="hero.webp">
       <source src="hero-video.webm" type="video/webm">
     </video>
   </div>
@@ -995,15 +995,7 @@
       </div>
     </div>
 
-    <!-- Pricing -->
-    <div class="text-center mt-12 reveal rd2">
-      <div class="card p-8 md:p-10 max-w-lg mx-auto">
-        <h3 class="font-body text-base md:text-lg font-medium mb-3">Membership Pricing</h3>
-        <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">
-          Memberships start at <strong class="text-[var(--text-primary)] font-medium">$549/month</strong> (annual) or <strong class="text-[var(--text-primary)] font-medium">$699/month</strong> (monthly). <span class="text-[var(--accent-dim)]">HSA/FSA eligible.</span>
-        </p>
-      </div>
-    </div>
+    <!-- Pricing removed per user request -->
   </div>
 </section>
 
@@ -1019,15 +1011,6 @@
     </div>
 
     <div class="space-y-4 reveal rd1">
-      <!-- NEW: How much does it cost? -->
-      <details class="group card p-6 cursor-pointer" open>
-        <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
-          How much does it cost?
-          <svg class="w-5 h-5 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
-        </summary>
-        <p class="mt-4 text-sm text-[var(--text-secondary)] leading-relaxed">Protocol memberships start at $549/month on an annual plan or $699/month on a monthly plan. This includes comprehensive diagnostics (60+ biomarkers, DEXA, VO2 max), physician-led care, quarterly reassessments, and a dedicated Healthspan Advisor. HSA and FSA eligible. Book a free discovery call to learn more about what's included.</p>
-      </details>
-
       <details class="group card p-6 cursor-pointer">
         <summary class="flex justify-between items-center font-body font-medium text-[15px] md:text-[17px] list-none [&::-webkit-details-marker]:hidden">
           Is Protocol a functional medicine practice?
@@ -1094,9 +1077,9 @@
 <section class="py-16 md:py-24 bg-[var(--bg-surface)]">
   <div class="max-w-3xl mx-auto px-6 lg:px-12">
     <details class="reveal">
-      <summary class="body-content-toggle flex justify-between items-center cursor-pointer group">
-        <h2 class="font-display text-[1.6rem] md:text-[2rem] font-300 text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">Learn More About Functional Medicine at Protocol</h2>
-        <svg class="w-6 h-6 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+      <summary class="body-content-toggle flex justify-between items-center cursor-pointer group list-none [&::-webkit-details-marker]:hidden">
+        <h2 class="font-display text-[1.2rem] md:text-[1.4rem] font-300 text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors">Learn More About Functional Medicine at Protocol</h2>
+        <svg class="w-4 h-4 shrink-0 text-[var(--accent-dim)] transition-transform duration-300 group-open:rotate-90" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg>
       </summary>
       <div class="prose-body mt-8">
         <h2>Functional Medicine at Protocol: Where Root-Cause Thinking Meets Real Evidence</h2>
@@ -1143,28 +1126,29 @@
       <a href="javascript:void(0)" onclick="openForm()" class="btn-accent text-base px-12 py-5" style="box-shadow: 0 0 24px rgba(194,224,58,0.15), 0 0 48px rgba(194,224,58,0.06);">
         Book a Free Discovery Call &rarr;
       </a>
-      <p class="text-xs text-[var(--text-muted)]">15-minute call. No pressure. Just answers.</p>
+      <p class="text-xs text-[var(--text-muted)]">15-minute call. No pressure. No supplement pitch.</p>
     </div>
+  </div>
+</section>
 
-    <!-- Secondary: email capture -->
-    <div class="mt-16 pt-12 border-t border-[var(--border)]">
-      <p class="font-display text-xl md:text-2xl font-300 mb-2">Not ready for a call?</p>
-      <p class="text-sm md:text-base text-[var(--text-muted)] mb-6">Get our free guide: <em class="text-[var(--text-secondary)]">What to Ask a Functional Medicine Doctor</em></p>
-      <form id="emailForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <label for="email-input" class="sr-only">Email address</label>
-        <input
-          id="email-input"
-          type="email"
-          placeholder="Enter your email"
-          autocomplete="email"
-          required
-          class="flex-1 px-5 py-3.5 bg-[var(--bg-card)] border border-[var(--border)] rounded-sm text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors font-body"
-        >
-        <button type="submit" class="btn-accent py-3.5 px-8 text-[15px]">Get the Guide</button>
-      </form>
-      <p id="emailSuccess" class="text-sm text-[var(--accent)] mt-4 hidden" role="status" aria-live="polite" tabindex="-1">Thanks! Check your inbox.</p>
-      <p class="text-xs text-[var(--text-muted)] mt-4">We respect your privacy. Unsubscribe anytime. <a href="javascript:void(0)" onclick="openLegal('privacy')" class="underline hover:text-[var(--accent)] transition-colors">Privacy Policy</a></p>
-    </div>
+<!-- Newsletter section (separate from CTA, old style) -->
+<section class="py-16 md:py-20 bg-[var(--bg-surface)]">
+  <div class="max-w-2xl mx-auto px-6 lg:px-12 text-center">
+    <h2 class="font-display text-[1.6rem] md:text-[2rem] font-300">Not ready yet? Get our free longevity newsletter.</h2>
+    <p class="text-sm md:text-base text-[var(--text-secondary)] mt-3 mb-8">Weekly insights on healthspan research, biomarker analysis, and evidence-based protocols from our clinical team.</p>
+    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <label for="newsletter-email" class="sr-only">Email address</label>
+      <input
+        id="newsletter-email"
+        type="email"
+        placeholder="Enter your email"
+        autocomplete="email"
+        required
+        class="flex-1 px-5 py-3.5 bg-[var(--bg-card)] border border-[var(--border)] rounded-sm text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors font-body"
+      >
+      <button type="submit" class="btn-accent py-3.5 px-8 text-[15px]">Get Insights</button>
+    </form>
+    <p class="text-xs text-[var(--text-muted)] mt-4">We respect your privacy. Unsubscribe anytime. <a href="javascript:void(0)" onclick="openLegal('privacy')" class="underline hover:text-[var(--accent)] transition-colors">Privacy Policy</a></p>
   </div>
 </section>
 </main>
