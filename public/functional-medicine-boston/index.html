@@ -1404,7 +1404,7 @@
   <div id="form-modal">
     <button id="form-modal-close" onclick="closeForm()" aria-label="Close form">&times;</button>
     <iframe
-      src="https://link.decyphernow.com/widget/form/HbRcETn4W9DoqYXBp2a4"
+      data-src="https://link.decyphernow.com/widget/form/HbRcETn4W9DoqYXBp2a4"
       sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
       id="inline-HbRcETn4W9DoqYXBp2a4"
       data-layout="{'id':'INLINE'}"
@@ -1439,25 +1439,40 @@
       }
     });
 
-    // Append tracking params to GHL form iframe src
-    var formIframe = document.querySelector('iframe[src*="widget/form/"]');
-    if (formIframe && Object.keys(tracking).length) {
-      var sep = formIframe.src.includes('?') ? '&' : '?';
-      var qs = Object.keys(tracking).map(function(k) { return k + '=' + encodeURIComponent(tracking[k]); }).join('&');
-      formIframe.src = formIframe.src + sep + qs;
-    }
-
-    // Expose for booking iframe
+    // Expose for lazy-loaded iframe and booking widget
+    // (iframe src is set in openForm() with tracking params appended)
     window._trackingParams = tracking;
   })();
 </script>
-<script src="https://link.decyphernow.com/js/form_embed.js" defer></script>
+<script>
+  // Lazy-load form_embed.js — only when CTA is clicked
+  var _formEmbedLoaded = false;
+  function loadFormEmbed() {
+    if (_formEmbedLoaded) return;
+    _formEmbedLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://link.decyphernow.com/js/form_embed.js';
+    document.body.appendChild(s);
+  }
+</script>
 <script>
   var _formOpened = false;
   var _bookingShown = false;
   var _bookingConfirmed = false;
 
   function openForm() {
+    // Lazy-load iframe src + form_embed.js on first open
+    var iframe = document.getElementById('inline-HbRcETn4W9DoqYXBp2a4');
+    if (iframe && !iframe.src) {
+      var baseSrc = iframe.getAttribute('data-src');
+      // Append tracking params if available
+      if (window._trackingParams && Object.keys(window._trackingParams).length) {
+        var qs = Object.keys(window._trackingParams).map(function(k) { return k + '=' + encodeURIComponent(window._trackingParams[k]); }).join('&');
+        baseSrc += (baseSrc.includes('?') ? '&' : '?') + qs;
+      }
+      iframe.src = baseSrc;
+      loadFormEmbed();
+    }
     document.getElementById('form-modal-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
     _formOpened = false;
