@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "Vibma": {
+      "args": [
+        "-y",
+        "@ufira/vibma"
+      ],
+      "command": "npx",
+      "env": {},
+      "type": "stdio"
+    }
+  }
+}
